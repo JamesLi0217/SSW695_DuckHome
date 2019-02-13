@@ -4,9 +4,6 @@ Ziang Lin
 Pan Chen  
 
 Team Name: Duck Home
-GitHub:  Duck Home
-
-
 
 | No. | Date    |  Content                    | Version |
 |:---:|:-------:|-----------------------------|:-------:|
@@ -19,7 +16,7 @@ We aim to build an Apartment Finder Website collecting data from communities aro
 * House Owners could post ad (house information, the format can be text, picture, and video)
 * Search communities’ information around the campus about communities by distance, price, and evaluation. Communities’ streetscape can be provided through Google Map API.
 * A Forum for communication, users can thumb and forward other’s comments. (text only) E.g. Reddit 
-Recommendation: according to the users' behavior, post source they may interest in. Related tech: Machine learning.
+* Recommendation: according to the users' behavior, post source they may interest in. Related tech: Machine learning.
 * Navigation: show the path between user and destination and provide navigation for the user based on Google Map API.
 * Appointment(link with Email): Users could make an appointment with the landlord(House Owner) and send inbox message. Require sign in with email.
 
