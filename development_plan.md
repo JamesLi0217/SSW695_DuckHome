@@ -3,7 +3,8 @@ Jun Zhe
 Ziang Lin  
 Pan Chen  
 
-Team Name: Duck Home
+Team Name: Duck Home  
+GitHub URL: https://github.com/pchen12567/SSW695_DuckHome  
 
 | No. | Date    |  Content                    | Version |
 |:---:|:-------:|-----------------------------|:-------:|
