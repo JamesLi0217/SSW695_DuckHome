@@ -23,8 +23,8 @@ def write_data(filename):
     csvfile.close()
     print(f'{filename} is {str(line)} points and {str(num)} paths')
 
-def main():
-    write_data('shape_parser')
 
+def main():
+    write_data('/Users/franklin/SSW695/SSW695_DuckHome/ZillowNeighborhoods-NJ/ZillowNeighborhoods-NJ.shp')
 if __name__ == '__main__':
     main()
