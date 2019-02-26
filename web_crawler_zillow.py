@@ -19,17 +19,17 @@ def get_data(city_dict): #get data from zillow for rent part, url consist of pre
         cur_page = 1
         url = pre_url + suffix #combin the url of the first page of the city
         print(city)
+        writer.writerow([city])
         while url: #go through each page under the city and inspect if it the last page
             headers = {'User-Agent': random.choice(user_agents)}  #randomly pick a browser to form the header
             #print(url)
-            writer.writerow([city])
             response = requests.get(url, headers=headers)
             print(f'current page is :{cur_page}')
             #print(response.text)
             parser = html.fromstring(response.text)
             search_results = parser.xpath("//div[@id='search-results']//article") #crawl all apartment info in the page
             next_suffix = parser.xpath("//li[@class='zsg-pagination-next']/a[1]/@href") #crawl the suffix of next page
-            print(next_suffix)
+            #print(next_suffix)
             if next_suffix != []:
                 next_url = pre_url + next_suffix[0]
                 cur_page += 1
@@ -54,7 +54,7 @@ def get_data(city_dict): #get data from zillow for rent part, url consist of pre
                 #matchobj = re.match(r"(\$\S+)" ,''.join(raw_price).strip())
                 #price = matchobj.group(1) if matchobj else 'None'
                 price = ''.join(raw_price).strip() if raw_price else 'None'
-                print(price)
+                #print(price)
                 info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '') #replace dot with comma
                 location = raw_location[0] if raw_location else 'None'
                 title = ''.join(raw_title) if raw_title else 'None'
