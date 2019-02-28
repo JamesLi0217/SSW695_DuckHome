@@ -4,6 +4,7 @@ import random
 import time
 import re
 import csv
+from api_key import google_keys
 from api import get_coordinate
 city_dict = {'Hoboken': 'Hoboken-NJ/rentals', 'Jersey city': 'Jersey-city-NJ/rentals', 'Union city': 'Union-city-NJ/rentals'}
 #city_dict = {'Jersey city': 'Jersey-city-NJ_rb'}
@@ -56,18 +57,6 @@ def get_data(city_dict, file): #get data from zillow for rent part, url consist 
                 #print(price)
                 info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '').replace(',', '') #replace dot with comma
                 location = raw_location[0].replace(',', '') if raw_location else 'None'
-                # if location:
-                #     print(f"The location is {location}")
-                #     api_pool = ['AIzaSyCC9JC6uRITBWXydnWLrDk8j2Fl5ECshPU', 'AIzaSyDSWaAKEr2g5e9_IfJCLdTm_xkql0A3ALI',
-                #                 'AIzaSyDaUwm7EEMzsy-h9hSkOxnYedJ3CRnhclw']
-                #     #AIzaSyCC9JC6uRITBWXydnWLrDk8j2Fl5ECshPU
-                #     #AIzaSyDSWaAKEr2g5e9_IfJCLdTm_xkql0A3ALI
-                #     key = random.choice(api_pool)
-                #     print(key)
-                #     coordinate_x, coordinate_y = get_coordinate(location, key)
-                #     time.sleep(random.randint(1, 3))
-                # else:
-                #     coordinate_x, coordinate_y = 'None', 'None'
                 title = ''.join(raw_title).replace(',', '') if raw_title else 'None'
                 property_url = ("https://www.zillow.com" + link[0]).replace(',', '') if link else 'None'
 
@@ -103,8 +92,7 @@ def add_coordinate(file): #apartmentlist, target_file
             addr = item_list[6]
         else:
             addr = ','.join([item_list[0], item_list[1], item_list[2], item_list[3]])
-        api_pool = ['AIzaSyCC9JC6uRITBWXydnWLrDk8j2Fl5ECshPU', 'AIzaSyDSWaAKEr2g5e9_IfJCLdTm_xkql0A3ALI',
-                    'AIzaSyDaUwm7EEMzsy-h9hSkOxnYedJ3CRnhclw']
+        api_pool = google_keys()
         key = random.choice(api_pool)
         x, y = get_coordinate(addr, key)
         lines[i] = lines[i].replace('\n', '') + f', {x}, {y}\n'
@@ -117,8 +105,12 @@ def add_coordinate(file): #apartmentlist, target_file
 
 if __name__ == '__main__':
     #go first then run add_coordinate()
-    #get_data(city_dict, 'completed_info.csv')
-    add_coordinate('completed_info.csv')
+    get_data(city_dict, 'completed_info.csv')
+    #add_coordinate('completed_info.csv')
+
+
+
+
 # from bs4 import BeautifulSoup as bs
 # import requests
 # import csv
