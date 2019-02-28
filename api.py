@@ -33,7 +33,7 @@ def zillow_validformat(string): # replace the ' ' with '-'
 
 # google geocoding API
 def google_validformat(string):
-    return ('+').join(string.strip().split())
+    return '+'.join(string.strip().replace('#', '').split())
 
 #according to the latitude and longitude, return the specific address.
 def get_address(lat, lng):

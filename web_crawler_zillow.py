@@ -119,8 +119,8 @@ def add_coordinate(file): #apartmentlist, target_file
 
 if __name__ == '__main__':
     #go first then run add_coordinate()
-    get_data(city_dict, 'completed_info.csv')
-    #add_coordinate('completed_info.csv')
+    #get_data(city_dict, 'completed_info.csv')
+    add_coordinate('completed_info.csv')
 # from bs4 import BeautifulSoup as bs
 # import requests
 # import csv
