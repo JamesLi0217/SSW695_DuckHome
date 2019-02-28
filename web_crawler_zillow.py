@@ -19,8 +19,6 @@ def get_data(city_dict, file): #get data from zillow for rent part, url consist 
     for city, suffix in city_dict.items(): # go through the city list
         cur_page = 1
         url = pre_url + suffix #combin the url of the first page of the city
-        print(city)
-        writer.writerow([city])
         while url: #go through each page under the city and inspect if it the last page
             headers = {'User-Agent': random.choice(user_agents)}  #randomly pick a browser to form the header
             #print(url)
@@ -109,7 +107,7 @@ def add_coordinate(file): #apartmentlist, target_file
                     'AIzaSyDaUwm7EEMzsy-h9hSkOxnYedJ3CRnhclw']
         key = random.choice(api_pool)
         x, y = get_coordinate(addr, key)
-        lines[i] = lines[i].replace('\n', ' ') + f',{x}, {y}\n'
+        lines[i] = lines[i].replace('\n', '') + f', {x}, {y}\n'
         print(lines[i])
     print(lines)
     f2.writelines(lines)

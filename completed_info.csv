@@ -1,4 +1,4 @@
-Hoboken
+address, city, state, postal_code, price, info, location, property_url, title, lat, lng
 113 14th St,Hoboken,NJ,07030,$2400/mo,1 bd  1 ba  600 sqft,113 14th St Hoboken NJ,https://www.zillow.com/homedetails/113-14th-St-Hoboken-NJ-07030/2086614669_zpid/,Apartment for rent ,40.7315757, -74.0385362
 1118 Washington St # 1,Hoboken,NJ,07030,$2400/mo,2 bds  1 ba  -- sqft,1118 Washington St # 1 Hoboken NJ,https://www.zillow.com/homedetails/1118-Washington-St-1-Hoboken-NJ-07030/2085653082_zpid/,Apartment for rent ,40.7507429, -74.0271593
 651 Monroe St,Hoboken,NJ,07030,$1650/mo,1 bd  1 ba  -- sqft,651 Monroe St Hoboken NJ,https://www.zillow.com/homedetails/651-Monroe-St-Hoboken-NJ-07030/2085653255_zpid/,Apartment for rent ,40.7460473, -74.0377393
@@ -499,7 +499,6 @@ Newark St,Hoboken,NJ,07030,$2900/mo,2 bds  2 ba  1050 sqft,Newark St Hoboken NJ,
 513 1st St # 3,Hoboken,NJ,07030,$2775/mo,2 bds  1 ba  1000 sqft,513 1st St # 3 Hoboken NJ,https://www.zillow.com/homedetails/513-1st-St-3-Hoboken-NJ-07030/2106920302_zpid/,Apartment for rent ,40.7388117, -74.0389718
 618 Park Ave # 2,Hoboken,NJ,07030,$3400/mo,4 bds  2 ba  2000 sqft,618 Park Ave # 2 Hoboken NJ,https://www.zillow.com/homedetails/618-Park-Ave-2-Hoboken-NJ-07030/2112952798_zpid/,Apartment for rent ,40.7445972, -74.0316885
 None,None,None,None,None,4 $3800+,311 Willow Ave Hoboken NJ,https://www.zillow.com/b/311-Willow-Ave-Hoboken-NJ/40.740946-74.033331_ll/,For Rent ,40.7409463, -74.0333314
-Jersey city
 351 7th St APT 3R,Jersey City,NJ,07302,$1900/mo,1 bd  1 ba  700 sqft,351 7th St APT 3R Jersey City NJ,https://www.zillow.com/homedetails/351-7th-St-APT-3R-Jersey-City-NJ-07302/2097556586_zpid/,Apartment for rent ,40.7264496, -74.0499097
 None,None,None,None,None,1 $1395+,502 Baldwin Ave Jersey City NJ,https://www.zillow.com/b/502-Baldwin-Ave-Jersey-City-NJ/40.737873-74.050604_ll/,For Rent ,40.7379604, -74.050676
 504 Baldwin Ave # 34,Jersey City,NJ,07306,$1450/mo,1 bd  1 ba  625 sqft,504 Baldwin Ave # 34 Jersey City NJ,https://www.zillow.com/homedetails/504-Baldwin-Ave-34-Jersey-City-NJ-07306/2085649438_zpid/,Apartment for rent ,40.7380055, -74.0506673
@@ -1000,7 +999,6 @@ None,None,None,None,None,0 $1225 1 $1450,209 New York Ave Jersey City NJ,https:/
 253 Lexington Ave,JERSEY CITY,NJ,07304,$1550/mo,2 bds  1 ba  626 sqft,253 Lexington Ave Jersey City NJ,https://www.zillow.com/homedetails/253-Lexington-Ave-Jersey-City-NJ-07304/38910116_zpid/,Townhouse for rent ,40.721789, -74.087986
 520 Central Ave APT 3Q,Jersey City,NJ,07307,$1475/mo,1 bd  1 ba  650 sqft,520 Central Ave APT 3Q Jersey City NJ,https://www.zillow.com/homedetails/520-Central-Ave-APT-3Q-Jersey-City-NJ-07307/2085792366_zpid/,Apartment for rent ,40.7522611, -74.0449117
 None,None,None,None,None,2 $1550+,18 Wright Ave Jersey City NJ,https://www.zillow.com/b/18-wright-ave-jersey-city-nj-5hKjVk/,For Rent ,40.73442290000001, -74.0748356
-Union city
 120 32nd St APT 2F,UNION CITY,NJ,07087,$1650/mo,2 bds  1 ba  600 sqft,120 32nd St APT 2F Union City NJ,https://www.zillow.com/homedetails/120-32nd-St-APT-2F-Union-City-NJ-07087/38942744_zpid/,Condo for rent ,40.7683796, -74.0258913
 120 32nd St,Union City,NJ,07087,$200/mo,1 bd  1 ba  50 sqft,120 32nd St Union City NJ,https://www.zillow.com/homedetails/120-32nd-St-Union-City-NJ-07087/162147410_zpid/,Apartment for rent ,40.7683796, -74.0258913
 315 47th St APT B2,Union City,NJ,07087,$1067/mo,1 bd  1 ba  -- sqft,315 47th St APT B2 Union City NJ,https://www.zillow.com/homedetails/315-47th-St-APT-B2-Union-City-NJ-07087/2095298784_zpid/,Apartment for rent ,40.7803053, -74.02103819999999
