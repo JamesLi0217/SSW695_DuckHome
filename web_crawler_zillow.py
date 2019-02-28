@@ -4,16 +4,17 @@ import random
 import time
 import re
 import csv
+from api import get_coordinate
 city_dict = {'Hoboken': 'Hoboken-NJ/rentals', 'Jersey city': 'Jersey-city-NJ/rentals', 'Union city': 'Union-city-NJ/rentals'}
 #city_dict = {'Jersey city': 'Jersey-city-NJ_rb'}
 pre_url = 'https://www.zillow.com/'
 
-def get_data(city_dict): #get data from zillow for rent part, url consist of pre_url and items in city_dict
+def get_data(city_dict, file): #get data from zillow for rent part, url consist of pre_url and items in city_dict
     user_agents = ['Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1',
                    'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50',
                    'Opera/9.80 (Windows NT 6.1; U; en) Presto/2.8.131 Version/11.11']
 
-    csvfile = open('apartmentlist', 'w', newline='') #open a csv file and ready to pull data
+    csvfile = open(file, 'w', newline='') #open a csv file and ready to pull data
     writer = csv.writer(csvfile)
     for city, suffix in city_dict.items(): # go through the city list
         cur_page = 1
@@ -47,18 +48,30 @@ def get_data(city_dict): #get data from zillow for rent part, url consist of pre
                 link = properties.xpath(".//a[contains(@class,'overlay-link')]/@href")
                 raw_title = properties.xpath(".//h4//text()")
 
-                address = ' '.join(' '.join(raw_address).split()) if raw_address else 'None'
-                city = ''.join(raw_city).strip() if raw_city else 'None'
-                state = ''.join(raw_state).strip() if raw_state else 'None'
-                postal_code = ''.join(raw_postal_code).strip() if raw_postal_code else 'None'
+                address = ' '.join(' '.join(raw_address).split()).replace(',', '') if raw_address else 'None'
+                city = ''.join(raw_city).strip().replace(',', '') if raw_city else 'None'
+                state = ''.join(raw_state).strip().replace(',', '') if raw_state else 'None'
+                postal_code = ''.join(raw_postal_code).strip().replace(',', '') if raw_postal_code else 'None'
                 #matchobj = re.match(r"(\$\S+)" ,''.join(raw_price).strip())
                 #price = matchobj.group(1) if matchobj else 'None'
-                price = ''.join(raw_price).strip() if raw_price else 'None'
+                price = ''.join(raw_price).strip().replace(',', '') if raw_price else 'None'
                 #print(price)
-                info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '') #replace dot with comma
-                location = raw_location[0] if raw_location else 'None'
-                title = ''.join(raw_title) if raw_title else 'None'
-                property_url = "https://www.zillow.com" + link[0] if link else 'None'
+                info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '').replace(',', '') #replace dot with comma
+                location = raw_location[0].replace(',', '') if raw_location else 'None'
+                # if location:
+                #     print(f"The location is {location}")
+                #     api_pool = ['AIzaSyCC9JC6uRITBWXydnWLrDk8j2Fl5ECshPU', 'AIzaSyDSWaAKEr2g5e9_IfJCLdTm_xkql0A3ALI',
+                #                 'AIzaSyDaUwm7EEMzsy-h9hSkOxnYedJ3CRnhclw']
+                #     #AIzaSyCC9JC6uRITBWXydnWLrDk8j2Fl5ECshPU
+                #     #AIzaSyDSWaAKEr2g5e9_IfJCLdTm_xkql0A3ALI
+                #     key = random.choice(api_pool)
+                #     print(key)
+                #     coordinate_x, coordinate_y = get_coordinate(location, key)
+                #     time.sleep(random.randint(1, 3))
+                # else:
+                #     coordinate_x, coordinate_y = 'None', 'None'
+                title = ''.join(raw_title).replace(',', '') if raw_title else 'None'
+                property_url = ("https://www.zillow.com" + link[0]).replace(',', '') if link else 'None'
 
                 # print(address)
                 # print(city)
@@ -74,11 +87,40 @@ def get_data(city_dict): #get data from zillow for rent part, url consist of pre
                 print(info)
                 writer.writerow(info)
             url = next_url
-            time.sleep(random.randint(0, 3))
+            time.sleep(random.randint(1, 3))
     csvfile.close()
 
-get_data(city_dict)
+def add_coordinate(file): #apartmentlist, target_file
+    f1 = open(file, 'r+')
+    lines = f1.readlines()
+    print(lines)
+    f1.close()
 
+    f2 = open(file, 'w+')
+    for i in range(len(lines)): # add coordinates after each line.
+        item_list = lines[i].split(',')
+        if len(item_list) == 1: #if the city name, pass
+            continue
+        elif item_list[0] == item_list[1] == item_list[2] == item_list[3] == 'None': #dont have detail address, going to have location info
+            addr = item_list[6]
+        else:
+            addr = ','.join([item_list[0], item_list[1], item_list[2], item_list[3]])
+        api_pool = ['AIzaSyCC9JC6uRITBWXydnWLrDk8j2Fl5ECshPU', 'AIzaSyDSWaAKEr2g5e9_IfJCLdTm_xkql0A3ALI',
+                    'AIzaSyDaUwm7EEMzsy-h9hSkOxnYedJ3CRnhclw']
+        key = random.choice(api_pool)
+        x, y = get_coordinate(addr, key)
+        lines[i] = lines[i].replace('\n', ' ') + f',{x}, {y}\n'
+        print(lines[i])
+    print(lines)
+    f2.writelines(lines)
+    f2.close()
+    print('Done!')
+
+
+if __name__ == '__main__':
+    #go first then run add_coordinate()
+    get_data(city_dict, 'completed_info.csv')
+    #add_coordinate('completed_info.csv')
 # from bs4 import BeautifulSoup as bs
 # import requests
 # import csv
