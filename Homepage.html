@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--建立一个静态苹果官网-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The Apple Web</title>
+        <!--href调用semantic工具-->
+        <link rel="stylesheet" href="css/semantic.css">
+    </head>
+    <body>
+        <!--fluid随着屏幕改变改变尺寸，borderless把menu变为无边框，fixed固定菜单栏，nine item一共九个图标,fitted对于menu可以取消内距-->
+        <div class="ui fluid borderless fixed inverted menu">
+            <div class="ui simple dropdown item">
+                Menu
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item">Profile</div>
+                    <div class="item">Favorite</div>
+                    <div class="item">Appointment</div>
+                    <div class="item">Forum</div>
+                </div>
+            </div>
+            <div class="right menu">
+                <a class="ui item">
+                    <div class="ui button">Sign in/up</div>
+                </a>
+            </div>
+        </div>
+        <!--basic消除黑边， secondary对于segment来说消除背景颜色, vertical消除两边的圆角、阴影，同一vertical作用下的多个segment之间缝隙消失-->
+        <div class="ui vertical basic secondary segment">
+            <img src="images/banner.png" class="ui image">
+        </div>
+        <div class="ui selection dropdown">
+            <input type="hidden" name="address">
+            <i class="dropdown icon"></i>
+            <div class="default text">search</div>
+            <div class="menu">
+                <div class="item">Hoboken</div>
+                <div class="item">Jesery City</div>
+                <div class="item">Union City</div>
+            </div>
+        </div>
+        <div class="ui vertical secondary basic segment">
+            <div class="ui fitted four item text menu">
+                <a class="item">
+                    <img src="images/img1.png" class="ui image">
+                </a>
+                <a class="item">
+                    <img src="images/img2.png" class="ui image">
+                </a>
+                <a class="item">
+                    <img src="images/img3.png" class="ui image">
+                </a>
+                <a class="item">
+                    <img src="images/img4.png" class="ui image">
+                </a>
+            </div>
+        </div>
+        <div class="ui vertical secondary basic segment">
+            <div class="ui fitted two item text menu">
+                <a class="item">
+                    <img src="images/img1.png" class="ui image">
+                </a>
+                <a class="item">
+                    <img src="images/img2.png" class="ui image">
+                </a>
+            </div>
+        </div>
+        <div class="ui vertical very padded segment">
+            <div class="ui vertical basic segment">
+                <p>This is a fantasy apartment web for stevens students!!</p>
+            </div>
+            <div class="ui divider"></div>
+            <div class="ui three column grid">
+                <div class="column">
+                    <div class="ui vertical text menu">
+                        <a href="#" class="item">Account</a>
+                        <a href="#" class="item">About us</a>
+                        <a href="#" class="item">Forum</a>
+                        <a href="#" class="item">Contact us</a>
+                        <a href="#" class="item">Search</a>
+                        <a href="#" class="item">Favorite</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui vertical text menu">
+                        <a href="#" class="item">Account</a>
+                        <a href="#" class="item">About us</a>
+                        <a href="#" class="item">Forum</a>
+                        <a href="#" class="item">Recommendation</a>
+                        <a href="#" class="item">Search</a>
+                        <a href="#" class="item">Favorite</a>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="ui vertical text menu">
+                        <a href="#" class="item">Account</a>
+                        <a href="#" class="item">About us</a>
+                        <a href="#" class="item">Forum</a>
+                        <a href="#" class="item">Recommendation</a>
+                        <a href="#" class="item">Search</a>
+                        <a href="#" class="item">Favorite</a>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </body>
+</html>
