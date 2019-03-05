@@ -10,13 +10,17 @@ city_dict = {'Hoboken': 'Hoboken-NJ/rentals', 'Jersey city': 'Jersey-city-NJ/ren
 #city_dict = {'Jersey city': 'Jersey-city-NJ_rb'}
 pre_url = 'https://www.zillow.com/'
 
-def get_data(city_dict, file): #get data from zillow for rent part, url consist of pre_url and items in city_dict
+def get_data(city_dict, file1, file2): #get data from zillow for rent part, url consist of pre_url and items in city_dict
     user_agents = ['Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1',
                    'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50',
                    'Opera/9.80 (Windows NT 6.1; U; en) Presto/2.8.131 Version/11.11']
 
-    csvfile = open(file, 'w', newline='') #open a csv file and ready to pull data
-    writer = csv.writer(csvfile)
+    csvfile1 = open(file1, 'w', newline='') #open a csv file and ready to pull data
+    csvfile2 = open(file2, 'w', newline='')
+
+    writer1 = csv.writer(csvfile1)
+    writer2 = csv.writer(csvfile2)
+
     for city, suffix in city_dict.items(): # go through the city list
         cur_page = 1
         url = pre_url + suffix #combin the url of the first page of the city
@@ -35,7 +39,11 @@ def get_data(city_dict, file): #get data from zillow for rent part, url consist 
                 cur_page += 1
             else:
                 next_url = None
+
             for properties in search_results:
+                raw_zpid = properties.xpath("./@data-zpid")
+                raw_lat = properties.xpath("./@data-latitude")
+                raw_lng = properties.xpath("./@data-longitude")
                 raw_address = properties.xpath(".//span[@itemprop='address']//span[@itemprop='streetAddress']//text()")
                 raw_city = properties.xpath(".//span[@itemprop='address']//span[@itemprop='addressLocality']//text()")
                 raw_state = properties.xpath(".//span[@itemprop='address']//span[@itemprop='addressRegion']//text()")
@@ -43,16 +51,28 @@ def get_data(city_dict, file): #get data from zillow for rent part, url consist 
                 raw_price = properties.xpath(".//span[@class='zsg-photo-card-price']//text()")
                 raw_info = properties.xpath(".//span[@class='zsg-photo-card-info']//text()")
                 raw_location = properties.xpath(".//span[@class='zsg-photo-card-address']//text()")
+                load_pic = properties.xpath(".//div[@class='zsg-photo-card-img']/img[contains(@src, 'https:')]/@src")
+                raw_pic = properties.xpath(".//div[@class='zsg-photo-card-img']/img/@data-src")
+                # reg = 'src="(.+?\.jpg)" alt='
+                # imgre = re.compile(reg)
+                # imglist = re.findall(imgre, properties)
 
                 link = properties.xpath(".//a[contains(@class,'overlay-link')]/@href")
                 raw_title = properties.xpath(".//h4//text()")
+                print(load_pic)
+                print(raw_pic)
+                if not load_pic and raw_pic:
+                    pic = raw_pic[0]
+                elif not raw_pic and load_pic:
+                    pic = load_pic[0]
+                else:
+                    pic = 'None'
 
+                zpid = raw_zpid[0] if raw_zpid else int(time.time())
                 address = ' '.join(' '.join(raw_address).split()).replace(',', '') if raw_address else 'None'
                 city = ''.join(raw_city).strip().replace(',', '') if raw_city else 'None'
                 state = ''.join(raw_state).strip().replace(',', '') if raw_state else 'None'
                 postal_code = ''.join(raw_postal_code).strip().replace(',', '') if raw_postal_code else 'None'
-                #matchobj = re.match(r"(\$\S+)" ,''.join(raw_price).strip())
-                #price = matchobj.group(1) if matchobj else 'None'
                 price = ''.join(raw_price).strip().replace(',', '') if raw_price else 'None'
                 #print(price)
                 info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '').replace(',', '') #replace dot with comma
@@ -60,6 +80,16 @@ def get_data(city_dict, file): #get data from zillow for rent part, url consist 
                 title = ''.join(raw_title).replace(',', '') if raw_title else 'None'
                 property_url = ("https://www.zillow.com" + link[0]).replace(',', '') if link else 'None'
 
+                if not raw_lat or not raw_lng:
+                    if address == city == state == postal_code == 'None':  # dont have detail address, going to have location info
+                        addr = location
+                    else:
+                        addr = ','.join([address, city, state, postal_code])
+                    api_pool = google_keys()
+                    key = random.choice(api_pool)
+                    lat, lng = get_coordinate(addr, key)
+                else:
+                    lat, lng = raw_lat[0], raw_lng[0]
                 # print(address)
                 # print(city)
                 # print(state)
@@ -70,12 +100,16 @@ def get_data(city_dict, file): #get data from zillow for rent part, url consist 
                 # print(property_url)
                 # print(title)
 
-                info = [address, city, state, postal_code, price, info, location, property_url, title]
+                info = [zpid, address, city, state, postal_code, price, info, location, property_url, title, lat, lng]
                 print(info)
-                writer.writerow(info)
+                img = [zpid, pic]
+                print(img)
+                writer1.writerow(info)
+                writer2.writerow(img)
             url = next_url
             time.sleep(random.randint(1, 3))
-    csvfile.close()
+    csvfile1.close()
+    csvfile2.close()
 
 def add_coordinate(file): #apartmentlist, target_file
     f1 = open(file, 'r+')
@@ -105,54 +139,5 @@ def add_coordinate(file): #apartmentlist, target_file
 
 if __name__ == '__main__':
     #go first then run add_coordinate()
-    get_data(city_dict, 'completed_info.csv')
+    get_data(city_dict, 'completed_info.csv', 'img.csv')
     #add_coordinate('completed_info.csv')
-
-
-
-
-# from bs4 import BeautifulSoup as bs
-# import requests
-# import csv
-# city_dict = {'Hoboken': 'Hoboken-NJ_rb', 'Jersey city': 'Jersey-city-NJ_rb', 'Union city': 'Union-city-NJ_rb'}
-#
-# pre_url = 'https://www.zillow.com/homes/for_rent/'
-#
-# def get_data(city_dict): #get data from zillow for rent part, url consist of pre_url and items in city_dict
-#     DEFAULT_ADDRESS_NUMBER = 500
-#     headers = {
-#         'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-#         'accept-encoding': 'gzip, deflate, sdch, br',
-#         'accept-language': 'en-GB,en;q=0.8,en-US;q=0.6,ml;q=0.4',
-#         'cache-control': 'max-age=0',
-#         'upgrade-insecure-requests': '1',
-#         'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
-#     }
-#     csvfile = open('addresslist', 'w', newline='')
-#     writer = csv.writer(csvfile)
-#     for city, suffix in city_dict.items():
-#         num = 0
-#         url = pre_url + suffix
-#         print(f'{city}:')
-#         writer.writerow([city])
-#         while num < DEFAULT_ADDRESS_NUMBER:
-#             print(url)
-#             html = requests.get(url, headers=headers).text
-#             print(html)
-#             soup = bs(html, 'lxml')
-#             address_list = soup.find_all(class_ = 'zsg-photo-card-address')
-#             for address in address_list:
-#                 num += 1
-#                 print(address.text)
-#                 writer.writerow([address.text, url])
-#                 if num == DEFAULT_ADDRESS_NUMBER: #first DEFAULT_ADDRESS_NUMBER address each city
-#                     break
-#
-#             if num < DEFAULT_ADDRESS_NUMBER:
-#                 next = soup.find(class_ = 'zsg-pagination-next')
-#                 if not next:
-#                     break
-#                 url = 'https://www.zillow.com/' + next.a.get('href')
-#
-#
-# get_data(city_dict)
