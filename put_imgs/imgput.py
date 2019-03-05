@@ -28,6 +28,6 @@ for line in f.readlines():
 
     if not fs.find_one({"url": url}):
         fs.put(data, **dic)
-    
+
 f.close()
 
