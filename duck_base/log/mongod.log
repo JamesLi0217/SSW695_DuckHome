@@ -42,3 +42,71 @@
 2019-03-05T15:39:46.457-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:61010 #4 (2 connections now open)
 2019-03-05T15:39:46.468-0500 I STORAGE  [conn4] createCollection: duckbase.img_info with generated UUID: 52d952b0-d001-47ba-850c-c5b4137482e7
 2019-03-05T15:39:46.495-0500 I NETWORK  [conn4] end connection 127.0.0.1:61010 (1 connection now open)
+2019-03-05T17:31:16.908-0500 I COMMAND  [conn2] CMD: drop duckbase.img_info
+2019-03-05T17:31:16.914-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.img_info (52d952b0-d001-47ba-850c-c5b4137482e7).
+2019-03-05T17:45:15.246-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62601 #5 (2 connections now open)
+2019-03-05T17:45:15.295-0500 I STORAGE  [conn5] createCollection: duckbase.img_url with generated UUID: eaac7493-b276-4e7f-b464-83d24947728d
+2019-03-05T17:45:15.381-0500 I NETWORK  [conn5] end connection 127.0.0.1:62601 (1 connection now open)
+2019-03-05T18:07:10.053-0500 I COMMAND  [conn2] CMD: drop duckbase.img_url
+2019-03-05T18:07:10.057-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.img_url (eaac7493-b276-4e7f-b464-83d24947728d).
+2019-03-05T18:10:18.801-0500 I STORAGE  [conn2] createCollection: duckbase.imgs with generated UUID: a535bbe4-ebf9-4861-a454-22913c3c35a3
+2019-03-05T18:10:51.947-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62807 #6 (2 connections now open)
+2019-03-05T18:10:51.949-0500 I NETWORK  [conn6] received client metadata from 127.0.0.1:62807 conn6: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:10:52.743-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62809 #7 (3 connections now open)
+2019-03-05T18:10:52.744-0500 I NETWORK  [conn7] received client metadata from 127.0.0.1:62809 conn7: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:10:52.754-0500 I STORAGE  [conn7] createCollection: duckbase.imgs.files with generated UUID: ba73a1aa-15e1-42ec-9b31-594a2c432000
+2019-03-05T18:10:52.829-0500 I INDEX    [conn7] build index on: duckbase.imgs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "duckbase.imgs.files" }
+2019-03-05T18:10:52.831-0500 I INDEX    [conn7] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-05T18:10:52.862-0500 I INDEX    [conn7] build index done.  scanned 0 total records. 0 secs
+2019-03-05T18:10:52.864-0500 I COMMAND  [conn7] command duckbase.$cmd command: createIndexes { createIndexes: "imgs.files", indexes: [ { key: { filename: 1, uploadDate: 1 }, unique: false, name: "filename_1_uploadDate_1" } ], lsid: { id: UUID("01cb5924-efcb-441b-bdad-ea35d101310e") }, $db: "duckbase", $readPreference: { mode: "primary" } } numYields:0 reslen:98 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_msg 109ms
+2019-03-05T18:10:52.869-0500 I STORAGE  [conn7] createCollection: duckbase.imgs.chunks with generated UUID: 16fe1728-0948-4a36-8606-18fb0ebc1d88
+2019-03-05T18:10:52.911-0500 I INDEX    [conn7] build index on: duckbase.imgs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "duckbase.imgs.chunks" }
+2019-03-05T18:10:52.913-0500 I INDEX    [conn7] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-05T18:10:52.921-0500 I INDEX    [conn7] build index done.  scanned 0 total records. 0 secs
+2019-03-05T18:11:21.650-0500 I NETWORK  [conn7] end connection 127.0.0.1:62809 (2 connections now open)
+2019-03-05T18:11:21.650-0500 I NETWORK  [conn6] end connection 127.0.0.1:62807 (1 connection now open)
+2019-03-05T18:15:56.013-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62890 #8 (2 connections now open)
+2019-03-05T18:15:56.015-0500 I NETWORK  [conn8] received client metadata from 127.0.0.1:62890 conn8: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:15:56.368-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62892 #9 (3 connections now open)
+2019-03-05T18:15:56.370-0500 I NETWORK  [conn9] received client metadata from 127.0.0.1:62892 conn9: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:20:37.566-0500 I NETWORK  [conn9] end connection 127.0.0.1:62892 (2 connections now open)
+2019-03-05T18:20:37.566-0500 I NETWORK  [conn8] end connection 127.0.0.1:62890 (1 connection now open)
+2019-03-05T18:22:20.959-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs
+2019-03-05T18:22:20.963-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs (a535bbe4-ebf9-4861-a454-22913c3c35a3).
+2019-03-05T18:22:36.585-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.chunks
+2019-03-05T18:22:36.587-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.chunks (16fe1728-0948-4a36-8606-18fb0ebc1d88).
+2019-03-05T18:22:46.169-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.files
+2019-03-05T18:22:46.172-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.files (ba73a1aa-15e1-42ec-9b31-594a2c432000).
+2019-03-05T18:23:42.076-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:63644 #10 (2 connections now open)
+2019-03-05T18:23:42.077-0500 I NETWORK  [conn10] received client metadata from 127.0.0.1:63644 conn10: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:23:43.862-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:63646 #11 (3 connections now open)
+2019-03-05T18:23:43.863-0500 I NETWORK  [conn11] received client metadata from 127.0.0.1:63646 conn11: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:23:43.868-0500 I STORAGE  [conn11] createCollection: duckbase.imgs.files with generated UUID: 1edd4c65-e5cf-4dc0-8918-587486f88df1
+2019-03-05T18:23:43.929-0500 I INDEX    [conn11] build index on: duckbase.imgs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "duckbase.imgs.files" }
+2019-03-05T18:23:43.932-0500 I INDEX    [conn11] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-05T18:23:43.938-0500 I INDEX    [conn11] build index done.  scanned 0 total records. 0 secs
+2019-03-05T18:23:43.943-0500 I STORAGE  [conn11] createCollection: duckbase.imgs.chunks with generated UUID: 14fb7710-be39-4889-a3fd-1dff269cbf59
+2019-03-05T18:23:43.987-0500 I INDEX    [conn11] build index on: duckbase.imgs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "duckbase.imgs.chunks" }
+2019-03-05T18:23:43.990-0500 I INDEX    [conn11] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-05T18:23:43.997-0500 I INDEX    [conn11] build index done.  scanned 0 total records. 0 secs
+2019-03-05T18:26:39.098-0500 I NETWORK  [conn11] end connection 127.0.0.1:63646 (2 connections now open)
+2019-03-05T18:26:39.098-0500 I NETWORK  [conn10] end connection 127.0.0.1:63644 (1 connection now open)
+2019-03-05T18:28:13.006-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs
+2019-03-05T18:28:45.889-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.files
+2019-03-05T18:28:45.893-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.files (1edd4c65-e5cf-4dc0-8918-587486f88df1).
+2019-03-05T18:28:50.043-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.chunks
+2019-03-05T18:28:50.045-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.chunks (14fb7710-be39-4889-a3fd-1dff269cbf59).
+2019-03-05T18:28:58.097-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:64306 #12 (2 connections now open)
+2019-03-05T18:28:58.100-0500 I NETWORK  [conn12] received client metadata from 127.0.0.1:64306 conn12: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:28:58.305-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:64308 #13 (3 connections now open)
+2019-03-05T18:28:58.308-0500 I NETWORK  [conn13] received client metadata from 127.0.0.1:64308 conn13: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-05T18:28:58.314-0500 I STORAGE  [conn13] createCollection: duckbase.imgs.files with generated UUID: cab306c6-7948-4683-ad53-f80e704432e7
+2019-03-05T18:28:58.359-0500 I INDEX    [conn13] build index on: duckbase.imgs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "duckbase.imgs.files" }
+2019-03-05T18:28:58.363-0500 I INDEX    [conn13] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-05T18:28:58.372-0500 I INDEX    [conn13] build index done.  scanned 0 total records. 0 secs
+2019-03-05T18:28:58.376-0500 I STORAGE  [conn13] createCollection: duckbase.imgs.chunks with generated UUID: 58795a4b-bff7-478d-8246-2d3b2eb4b5f1
+2019-03-05T18:28:58.419-0500 I INDEX    [conn13] build index on: duckbase.imgs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "duckbase.imgs.chunks" }
+2019-03-05T18:28:58.421-0500 I INDEX    [conn13] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-05T18:28:58.429-0500 I INDEX    [conn13] build index done.  scanned 0 total records. 0 secs
+2019-03-05T18:32:48.806-0500 I NETWORK  [conn13] end connection 127.0.0.1:64308 (2 connections now open)
+2019-03-05T18:32:48.806-0500 I NETWORK  [conn12] end connection 127.0.0.1:64306 (1 connection now open)
