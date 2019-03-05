@@ -59,8 +59,7 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
 
                 link = properties.xpath(".//a[contains(@class,'overlay-link')]/@href")
                 raw_title = properties.xpath(".//h4//text()")
-                print(load_pic)
-                print(raw_pic)
+
                 if not load_pic and raw_pic:
                     pic = raw_pic[0]
                 elif not raw_pic and load_pic:
@@ -69,6 +68,7 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     pic = 'None'
 
                 zpid = raw_zpid[0] if raw_zpid else int(time.time())
+                print(zpid)
                 address = ' '.join(' '.join(raw_address).split()).replace(',', '') if raw_address else 'None'
                 city = ''.join(raw_city).strip().replace(',', '') if raw_city else 'None'
                 state = ''.join(raw_state).strip().replace(',', '') if raw_state else 'None'
@@ -89,7 +89,8 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     key = random.choice(api_pool)
                     lat, lng = get_coordinate(addr, key)
                 else:
-                    lat, lng = raw_lat[0], raw_lng[0]
+                    lat_str, lng_str = raw_lat[0], raw_lng[0]
+                    lat, lng = f"{lat_str[:2]}.{lat_str[2:]}", f"{lng_str[:3]}.{lng_str[3:]}"
                 # print(address)
                 # print(city)
                 # print(state)
@@ -103,7 +104,7 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                 info = [zpid, address, city, state, postal_code, price, info, location, property_url, title, lat, lng]
                 print(info)
                 img = [zpid, pic]
-                print(img)
+                #print(img)
                 writer1.writerow(info)
                 writer2.writerow(img)
             url = next_url
