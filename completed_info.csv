@@ -1,3 +1,4 @@
+zpid, address, city, state, postal_code, price, info, location, property_url, title, lat, lng
 2125023194,207 14th St APT 2F,Hoboken,NJ,07030,$2500/mo,2 bds  1 ba  850 sqft,207 14th St APT 2F Hoboken NJ,https://www.zillow.com/homedetails/207-14th-St-APT-2F-Hoboken-NJ-07030/2125023194_zpid/,Apartment for rent,40753399,-74028337
 2085556784,14th St,Hoboken,NJ,07030,$2600/mo,2 bds  1 ba  950 sqft,14th St Hoboken NJ,https://www.zillow.com/homedetails/14th-St-Hoboken-NJ-07030/2085556784_zpid/,Condo for rent,40753750,-74028780
 2100055720,1129 Washington St,Hoboken,NJ,07030,$3200/mo,2 bds  1 ba  1100 sqft,1129 Washington St Hoboken NJ,https://www.zillow.com/homedetails/1129-Washington-St-Hoboken-NJ-07030/2100055720_zpid/,Apartment for rent,40750200,-74026802
