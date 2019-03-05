@@ -110,3 +110,11 @@
 2019-03-05T18:28:58.429-0500 I INDEX    [conn13] build index done.  scanned 0 total records. 0 secs
 2019-03-05T18:32:48.806-0500 I NETWORK  [conn13] end connection 127.0.0.1:64308 (2 connections now open)
 2019-03-05T18:32:48.806-0500 I NETWORK  [conn12] end connection 127.0.0.1:64306 (1 connection now open)
+2019-03-05T18:50:54.865-0500 I COMMAND  [conn2] terminating, shutdown command received
+2019-03-05T18:50:54.869-0500 I NETWORK  [conn2] shutdown: going to close listening sockets...
+2019-03-05T18:50:54.870-0500 I NETWORK  [conn2] removing socket file: /tmp/mongodb-27017.sock
+2019-03-05T18:50:54.881-0500 I FTDC     [conn2] Shutting down full-time diagnostic data capture
+2019-03-05T18:50:54.885-0500 I STORAGE  [conn2] WiredTigerKVEngine shutting down
+2019-03-05T18:50:54.995-0500 I STORAGE  [conn2] shutdown: removing fs lock...
+2019-03-05T18:50:54.999-0500 I CONTROL  [conn2] now exiting
+2019-03-05T18:50:55.001-0500 I CONTROL  [conn2] shutting down with code:0

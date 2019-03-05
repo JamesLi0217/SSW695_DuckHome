@@ -38,7 +38,7 @@ def main():
         series = pd.Series(dic)
         df = df.append(series, ignore_index=True)
 
-    df.to_csv('./Administration/init_users.csv')
+    df.to_csv('init_users.csv')
 
 
 if __name__ == '__main__':
