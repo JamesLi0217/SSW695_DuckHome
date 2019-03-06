@@ -6,19 +6,26 @@ import re
 import csv
 from api_key import google_keys
 from api import get_coordinate
+from pymongo import MongoClient
 city_dict = {'Hoboken': 'Hoboken-NJ/rentals', 'Jersey city': 'Jersey-city-NJ/rentals', 'Union city': 'Union-city-NJ/rentals'}
 #city_dict = {'Jersey city': 'Jersey-city-NJ_rb'}
 pre_url = 'https://www.zillow.com/'
+
+
 
 def get_data(city_dict, file1, file2): #get data from zillow for rent part, url consist of pre_url and items in city_dict
     user_agents = ['Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1',
                    'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50',
                    'Opera/9.80 (Windows NT 6.1; U; en) Presto/2.8.131 Version/11.11']
-
-    csvfile1 = open(file1, 'w', newline='') #open a csv file and ready to pull data
+    # Connect mongodb
+    client = MongoClient('127.0.0.1', 27017)
+    # Connect database
+    db = client.duckbase
+    collection = db.apartment_list
+    #csvfile1 = open(file1, 'w', newline='') #open a csv file and ready to pull data
     csvfile2 = open(file2, 'w', newline='')
 
-    writer1 = csv.writer(csvfile1)
+    #writer1 = csv.writer(csvfile1)
     writer2 = csv.writer(csvfile2)
 
     for city, suffix in city_dict.items(): # go through the city list
@@ -73,9 +80,47 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                 city = ''.join(raw_city).strip().replace(',', '') if raw_city else 'None'
                 state = ''.join(raw_state).strip().replace(',', '') if raw_state else 'None'
                 postal_code = ''.join(raw_postal_code).strip().replace(',', '') if raw_postal_code else 'None'
-                price = ''.join(raw_price).strip().replace(',', '') if raw_price else 'None'
-                #print(price)
-                info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '').replace(',', '') #replace dot with comma
+
+                # replace dot with comma
+                info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '').replace(',','')
+                info_list = []
+                if not raw_price: #format of info is like 0 $2425+ 1 $2910+ 2 $4000+
+                    pattern = re.compile(r'(\d \$[0-9]+)')
+                    info_arr = pattern.findall(info)
+                    #print(info_arr)
+                    if not info_arr:
+                        continue
+                    for item in info_arr:
+                        bed, price = item.split(' ')[0], item.split(' ')[1]
+                        p = re.compile(r'(\d+)')
+                        price = p.findall(price)[0]
+                        info_dict = {
+                            "bed": bed,
+                            'price': price,
+                            'bath': str(1),
+                            'sqft': str(1095)
+                        }
+                        info_list.append(info_dict)
+                else: #format of info is like 3 bds  1 ba  1300 sqft
+                    pattern = re.compile(r'(.+)\sbd[s]?\s\s(.+)\sba\s\s(.+)\ssqft')
+                    info_arr = pattern.findall(info)
+                    #print(info_arr)
+                    if not info_arr:
+                        continue
+                    info_arr = info_arr[0]
+                    bed, bath, sqft = info_arr[0], info_arr[1], info_arr[2]
+                    price = ''.join(raw_price).strip().replace(',', '')
+                    p = re.compile(r'(\d+)')
+                    price = p.findall(price)[0]
+                    info_dict = {
+                        "bed": bed,
+                        'price': price,
+                        'bath': bath,
+                        'sqft': sqft
+                    }
+                    info_list.append(info_dict)
+
+                #print(info_list)
                 location = raw_location[0].replace(',', '') if raw_location else 'None'
                 title = ''.join(raw_title).replace(',', '') if raw_title else 'None'
                 property_url = ("https://www.zillow.com" + link[0]).replace(',', '') if link else 'None'
@@ -91,25 +136,34 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                 else:
                     lat_str, lng_str = raw_lat[0], raw_lng[0]
                     lat, lng = f"{lat_str[:2]}.{lat_str[2:]}", f"{lng_str[:3]}.{lng_str[3:]}"
-                # print(address)
-                # print(city)
-                # print(state)
-                # print(postal_code)
-                # print(price)
-                # print(info)
-                # print(location)
-                # print(property_url)
-                # print(title)
 
-                info = [zpid, address, city, state, postal_code, price, info, location, property_url, title, lat, lng]
-                print(info)
+                #info = [zpid, address, city, state, postal_code, info_list, location, property_url, title, lat, lng]
+                apartment_info = {
+                    'zpid': zpid,
+                    'address': address,
+                    'city': city,
+                    'state': state,
+                    'postal_code': postal_code,
+                    'info': info_list,
+                    'location': location,
+                    'property_url': property_url,
+                    'title': title,
+                    'coordinates': {
+                        'lat': lat,
+                        'lng': lng
+                    }
+                }
+                print(apartment_info)
+                db.apartment_list.insert(apartment_info)
+
+                #print(info)
                 img = [zpid, pic]
                 #print(img)
-                writer1.writerow(info)
+                #writer1.writerow(info)
                 writer2.writerow(img)
             url = next_url
             time.sleep(random.randint(1, 3))
-    csvfile1.close()
+    #csvfile1.close()
     csvfile2.close()
 
 def add_coordinate(file): #apartmentlist, target_file
