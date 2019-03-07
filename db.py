@@ -16,13 +16,41 @@ def filter_apartments(filters):
     min_price, max_price = filters['min_price'], filters['max_price']
     bed, bath = filters['bed'], filters['bath']
     min_sqft, max_sqft = filters['min_sqft'], filters['max_sqft']
+    cond = {}
+    if city:
+        cond['city'] =city
+
+    if min_price:
+        if 'info.price' in cond.keys():
+            cond['info.price']['$gte'] = min_price
+        else:
+            cond['info.price'] = {'$gte': min_price}
+
+    if max_price:
+        if 'info.price' in cond.keys():
+            cond['info.price']['$lte'] = max_price
+        else:
+            cond['info.price'] = {'$lte': max_price}
+
+    if bed:
+        cond['info.bed'] = bed
+
+    if bath:
+        cond['info.bath'] = bath
+
+    if min_sqft:
+        if 'info.sqft' in cond.keys():
+            cond['info.sqft']['$gte'] = min_sqft
+        else:
+            cond['info.sqft'] = {'$gte': min_sqft}
+    if max_price:
+        if 'info,sqft' in cond.keys():
+            cond['info.sqft']['$lte'] = max_sqft
+        else:
+            cond['info.sqft'] = {'$lte': max_sqft}
+
     result = db.apartment_list.find(
-        {'city': city,
-         'info.price': {'$gte': min_price, '$lte': max_price},
-         'info.bed': bed,
-         'info.bath': bath,
-         'info.sqft': {'$gte': min_sqft, '$lte': max_sqft}
-         }
+        cond
     )
     res_list = list(result)
 
