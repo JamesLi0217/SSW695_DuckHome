@@ -21,10 +21,12 @@ def filter_apartments(filters):
         'info.sqft': {'$gte': min_sqft, '$lte': max_sqft}
         }
     )
-    if len(result) == 0:
-        return {'success': False, 'desc': "can't find any apartment as filters in database"}
-    return {'success': True, 'data': list(result)}
+    res_list = list(result)
 
+    if len(res_list) == 0:
+        return {'success': False, 'desc': "can't find any apartment as filters in database"}
+    else:
+        return {'success': True, 'data': res_list}
 
 if __name__ == '__main__':
     filters = {
@@ -36,4 +38,9 @@ if __name__ == '__main__':
         'min_sqft': 0,
         'max_sqft': 1500
     }
-    filter_apartments(filters)
+    res = filter_apartments(filters)
+    if res['success'] == True:
+        for item in res['data']:
+            print(item['address'])
+    else:
+        print(res['desc'])
