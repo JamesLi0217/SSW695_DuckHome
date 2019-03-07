@@ -1,120 +1,525 @@
-2019-03-05T15:08:51.678-0500 I CONTROL  [initandlisten] MongoDB starting : pid=64436 port=27017 dbpath=/Users/ryne/SSW695_DuckHome/duck_base/data 64-bit host=RyneMBP.local
-2019-03-05T15:08:51.680-0500 I CONTROL  [initandlisten] db version v3.6.10
-2019-03-05T15:08:51.681-0500 I CONTROL  [initandlisten] git version: 3e3ab85bfb98875af3bc6e74eeb945b0719f69c8
-2019-03-05T15:08:51.684-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.0i  14 Aug 2018
-2019-03-05T15:08:51.685-0500 I CONTROL  [initandlisten] allocator: system
-2019-03-05T15:08:51.686-0500 I CONTROL  [initandlisten] modules: none
-2019-03-05T15:08:51.688-0500 I CONTROL  [initandlisten] build environment:
-2019-03-05T15:08:51.689-0500 I CONTROL  [initandlisten]     distarch: x86_64
-2019-03-05T15:08:51.690-0500 I CONTROL  [initandlisten]     target_arch: x86_64
-2019-03-05T15:08:51.691-0500 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 27017 }, processManagement: { fork: true }, storage: { dbPath: "data" }, systemLog: { destination: "file", path: "log/mongod.log" } }
-2019-03-05T15:08:51.692-0500 I -        [initandlisten] Detected data files in /Users/ryne/SSW695_DuckHome/duck_base/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
-2019-03-05T15:08:51.698-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3584M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
-2019-03-05T15:08:52.652-0500 I STORAGE  [initandlisten] WiredTiger message [1551816532:652509][64436:0x114f945c0], txn-recover: Main recovery loop: starting at 2/158592
-2019-03-05T15:08:52.748-0500 I STORAGE  [initandlisten] WiredTiger message [1551816532:748081][64436:0x114f945c0], txn-recover: Recovering log 2 through 3
-2019-03-05T15:08:52.820-0500 I STORAGE  [initandlisten] WiredTiger message [1551816532:820070][64436:0x114f945c0], txn-recover: Recovering log 3 through 3
-2019-03-05T15:08:52.870-0500 I STORAGE  [initandlisten] WiredTiger message [1551816532:870001][64436:0x114f945c0], txn-recover: Set global recovery timestamp: 0
-2019-03-05T15:08:52.953-0500 I CONTROL  [initandlisten] 
-2019-03-05T15:08:52.955-0500 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
-2019-03-05T15:08:52.957-0500 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
-2019-03-05T15:08:52.959-0500 I CONTROL  [initandlisten] 
-2019-03-05T15:08:52.960-0500 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
-2019-03-05T15:08:52.961-0500 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
-2019-03-05T15:08:52.962-0500 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
-2019-03-05T15:08:52.963-0500 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
-2019-03-05T15:08:52.964-0500 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
-2019-03-05T15:08:52.965-0500 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
-2019-03-05T15:08:52.965-0500 I CONTROL  [initandlisten] 
-2019-03-05T15:08:52.966-0500 I CONTROL  [initandlisten] 
-2019-03-05T15:08:52.967-0500 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
-2019-03-05T15:08:53.085-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/Users/ryne/SSW695_DuckHome/duck_base/data/diagnostic.data'
-2019-03-05T15:08:53.092-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
-2019-03-05T15:12:04.814-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:60812 #1 (1 connection now open)
-2019-03-05T15:12:04.825-0500 I STORAGE  [conn1] createCollection: duckbase.users with generated UUID: 58207351-1e6e-43c9-bca1-dd35eaff5a40
-2019-03-05T15:12:04.860-0500 I NETWORK  [conn1] end connection 127.0.0.1:60812 (0 connections now open)
-2019-03-05T15:16:32.274-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:60849 #2 (1 connection now open)
-2019-03-05T15:16:32.276-0500 I NETWORK  [conn2] received client metadata from 127.0.0.1:60849 conn2: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.6.10" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "18.2.0" } }
-2019-03-05T15:20:27.582-0500 I COMMAND  [conn2] CMD: drop duckbase.apartment_list
-2019-03-05T15:20:27.583-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.apartment_list (065547a7-0544-46ef-a82a-b3c208b2dec8).
-2019-03-05T15:39:16.933-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:61006 #3 (2 connections now open)
-2019-03-05T15:39:16.973-0500 I STORAGE  [conn3] createCollection: duckbase.apartment_info with generated UUID: 4be4a74a-2aa7-4190-8524-ad966c20df85
-2019-03-05T15:39:17.011-0500 I NETWORK  [conn3] end connection 127.0.0.1:61006 (1 connection now open)
-2019-03-05T15:39:46.457-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:61010 #4 (2 connections now open)
-2019-03-05T15:39:46.468-0500 I STORAGE  [conn4] createCollection: duckbase.img_info with generated UUID: 52d952b0-d001-47ba-850c-c5b4137482e7
-2019-03-05T15:39:46.495-0500 I NETWORK  [conn4] end connection 127.0.0.1:61010 (1 connection now open)
-2019-03-05T17:31:16.908-0500 I COMMAND  [conn2] CMD: drop duckbase.img_info
-2019-03-05T17:31:16.914-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.img_info (52d952b0-d001-47ba-850c-c5b4137482e7).
-2019-03-05T17:45:15.246-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62601 #5 (2 connections now open)
-2019-03-05T17:45:15.295-0500 I STORAGE  [conn5] createCollection: duckbase.img_url with generated UUID: eaac7493-b276-4e7f-b464-83d24947728d
-2019-03-05T17:45:15.381-0500 I NETWORK  [conn5] end connection 127.0.0.1:62601 (1 connection now open)
-2019-03-05T18:07:10.053-0500 I COMMAND  [conn2] CMD: drop duckbase.img_url
-2019-03-05T18:07:10.057-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.img_url (eaac7493-b276-4e7f-b464-83d24947728d).
-2019-03-05T18:10:18.801-0500 I STORAGE  [conn2] createCollection: duckbase.imgs with generated UUID: a535bbe4-ebf9-4861-a454-22913c3c35a3
-2019-03-05T18:10:51.947-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62807 #6 (2 connections now open)
-2019-03-05T18:10:51.949-0500 I NETWORK  [conn6] received client metadata from 127.0.0.1:62807 conn6: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:10:52.743-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62809 #7 (3 connections now open)
-2019-03-05T18:10:52.744-0500 I NETWORK  [conn7] received client metadata from 127.0.0.1:62809 conn7: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:10:52.754-0500 I STORAGE  [conn7] createCollection: duckbase.imgs.files with generated UUID: ba73a1aa-15e1-42ec-9b31-594a2c432000
-2019-03-05T18:10:52.829-0500 I INDEX    [conn7] build index on: duckbase.imgs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "duckbase.imgs.files" }
-2019-03-05T18:10:52.831-0500 I INDEX    [conn7] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
-2019-03-05T18:10:52.862-0500 I INDEX    [conn7] build index done.  scanned 0 total records. 0 secs
-2019-03-05T18:10:52.864-0500 I COMMAND  [conn7] command duckbase.$cmd command: createIndexes { createIndexes: "imgs.files", indexes: [ { key: { filename: 1, uploadDate: 1 }, unique: false, name: "filename_1_uploadDate_1" } ], lsid: { id: UUID("01cb5924-efcb-441b-bdad-ea35d101310e") }, $db: "duckbase", $readPreference: { mode: "primary" } } numYields:0 reslen:98 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 2, W: 1 } }, Collection: { acquireCount: { w: 2 } } } protocol:op_msg 109ms
-2019-03-05T18:10:52.869-0500 I STORAGE  [conn7] createCollection: duckbase.imgs.chunks with generated UUID: 16fe1728-0948-4a36-8606-18fb0ebc1d88
-2019-03-05T18:10:52.911-0500 I INDEX    [conn7] build index on: duckbase.imgs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "duckbase.imgs.chunks" }
-2019-03-05T18:10:52.913-0500 I INDEX    [conn7] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
-2019-03-05T18:10:52.921-0500 I INDEX    [conn7] build index done.  scanned 0 total records. 0 secs
-2019-03-05T18:11:21.650-0500 I NETWORK  [conn7] end connection 127.0.0.1:62809 (2 connections now open)
-2019-03-05T18:11:21.650-0500 I NETWORK  [conn6] end connection 127.0.0.1:62807 (1 connection now open)
-2019-03-05T18:15:56.013-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62890 #8 (2 connections now open)
-2019-03-05T18:15:56.015-0500 I NETWORK  [conn8] received client metadata from 127.0.0.1:62890 conn8: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:15:56.368-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:62892 #9 (3 connections now open)
-2019-03-05T18:15:56.370-0500 I NETWORK  [conn9] received client metadata from 127.0.0.1:62892 conn9: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:20:37.566-0500 I NETWORK  [conn9] end connection 127.0.0.1:62892 (2 connections now open)
-2019-03-05T18:20:37.566-0500 I NETWORK  [conn8] end connection 127.0.0.1:62890 (1 connection now open)
-2019-03-05T18:22:20.959-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs
-2019-03-05T18:22:20.963-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs (a535bbe4-ebf9-4861-a454-22913c3c35a3).
-2019-03-05T18:22:36.585-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.chunks
-2019-03-05T18:22:36.587-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.chunks (16fe1728-0948-4a36-8606-18fb0ebc1d88).
-2019-03-05T18:22:46.169-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.files
-2019-03-05T18:22:46.172-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.files (ba73a1aa-15e1-42ec-9b31-594a2c432000).
-2019-03-05T18:23:42.076-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:63644 #10 (2 connections now open)
-2019-03-05T18:23:42.077-0500 I NETWORK  [conn10] received client metadata from 127.0.0.1:63644 conn10: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:23:43.862-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:63646 #11 (3 connections now open)
-2019-03-05T18:23:43.863-0500 I NETWORK  [conn11] received client metadata from 127.0.0.1:63646 conn11: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:23:43.868-0500 I STORAGE  [conn11] createCollection: duckbase.imgs.files with generated UUID: 1edd4c65-e5cf-4dc0-8918-587486f88df1
-2019-03-05T18:23:43.929-0500 I INDEX    [conn11] build index on: duckbase.imgs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "duckbase.imgs.files" }
-2019-03-05T18:23:43.932-0500 I INDEX    [conn11] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
-2019-03-05T18:23:43.938-0500 I INDEX    [conn11] build index done.  scanned 0 total records. 0 secs
-2019-03-05T18:23:43.943-0500 I STORAGE  [conn11] createCollection: duckbase.imgs.chunks with generated UUID: 14fb7710-be39-4889-a3fd-1dff269cbf59
-2019-03-05T18:23:43.987-0500 I INDEX    [conn11] build index on: duckbase.imgs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "duckbase.imgs.chunks" }
-2019-03-05T18:23:43.990-0500 I INDEX    [conn11] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
-2019-03-05T18:23:43.997-0500 I INDEX    [conn11] build index done.  scanned 0 total records. 0 secs
-2019-03-05T18:26:39.098-0500 I NETWORK  [conn11] end connection 127.0.0.1:63646 (2 connections now open)
-2019-03-05T18:26:39.098-0500 I NETWORK  [conn10] end connection 127.0.0.1:63644 (1 connection now open)
-2019-03-05T18:28:13.006-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs
-2019-03-05T18:28:45.889-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.files
-2019-03-05T18:28:45.893-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.files (1edd4c65-e5cf-4dc0-8918-587486f88df1).
-2019-03-05T18:28:50.043-0500 I COMMAND  [conn2] CMD: drop duckbase.imgs.chunks
-2019-03-05T18:28:50.045-0500 I STORAGE  [conn2] Finishing collection drop for duckbase.imgs.chunks (14fb7710-be39-4889-a3fd-1dff269cbf59).
-2019-03-05T18:28:58.097-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:64306 #12 (2 connections now open)
-2019-03-05T18:28:58.100-0500 I NETWORK  [conn12] received client metadata from 127.0.0.1:64306 conn12: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:28:58.305-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:64308 #13 (3 connections now open)
-2019-03-05T18:28:58.308-0500 I NETWORK  [conn13] received client metadata from 127.0.0.1:64308 conn13: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
-2019-03-05T18:28:58.314-0500 I STORAGE  [conn13] createCollection: duckbase.imgs.files with generated UUID: cab306c6-7948-4683-ad53-f80e704432e7
-2019-03-05T18:28:58.359-0500 I INDEX    [conn13] build index on: duckbase.imgs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "duckbase.imgs.files" }
-2019-03-05T18:28:58.363-0500 I INDEX    [conn13] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
-2019-03-05T18:28:58.372-0500 I INDEX    [conn13] build index done.  scanned 0 total records. 0 secs
-2019-03-05T18:28:58.376-0500 I STORAGE  [conn13] createCollection: duckbase.imgs.chunks with generated UUID: 58795a4b-bff7-478d-8246-2d3b2eb4b5f1
-2019-03-05T18:28:58.419-0500 I INDEX    [conn13] build index on: duckbase.imgs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "duckbase.imgs.chunks" }
-2019-03-05T18:28:58.421-0500 I INDEX    [conn13] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
-2019-03-05T18:28:58.429-0500 I INDEX    [conn13] build index done.  scanned 0 total records. 0 secs
-2019-03-05T18:32:48.806-0500 I NETWORK  [conn13] end connection 127.0.0.1:64308 (2 connections now open)
-2019-03-05T18:32:48.806-0500 I NETWORK  [conn12] end connection 127.0.0.1:64306 (1 connection now open)
-2019-03-05T18:50:54.865-0500 I COMMAND  [conn2] terminating, shutdown command received
-2019-03-05T18:50:54.869-0500 I NETWORK  [conn2] shutdown: going to close listening sockets...
-2019-03-05T18:50:54.870-0500 I NETWORK  [conn2] removing socket file: /tmp/mongodb-27017.sock
-2019-03-05T18:50:54.881-0500 I FTDC     [conn2] Shutting down full-time diagnostic data capture
-2019-03-05T18:50:54.885-0500 I STORAGE  [conn2] WiredTigerKVEngine shutting down
-2019-03-05T18:50:54.995-0500 I STORAGE  [conn2] shutdown: removing fs lock...
-2019-03-05T18:50:54.999-0500 I CONTROL  [conn2] now exiting
-2019-03-05T18:50:55.001-0500 I CONTROL  [conn2] shutting down with code:0
+2019-03-06T15:09:59.537-0500 I CONTROL  [initandlisten] MongoDB starting : pid=69962 port=27017 dbpath=/Users/ryne/SSW695_DuckHome/duck_base/data 64-bit host=RyneMBP.local
+2019-03-06T15:09:59.538-0500 I CONTROL  [initandlisten] db version v3.6.10
+2019-03-06T15:09:59.538-0500 I CONTROL  [initandlisten] git version: 3e3ab85bfb98875af3bc6e74eeb945b0719f69c8
+2019-03-06T15:09:59.539-0500 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.1.0i  14 Aug 2018
+2019-03-06T15:09:59.540-0500 I CONTROL  [initandlisten] allocator: system
+2019-03-06T15:09:59.540-0500 I CONTROL  [initandlisten] modules: none
+2019-03-06T15:09:59.541-0500 I CONTROL  [initandlisten] build environment:
+2019-03-06T15:09:59.542-0500 I CONTROL  [initandlisten]     distarch: x86_64
+2019-03-06T15:09:59.543-0500 I CONTROL  [initandlisten]     target_arch: x86_64
+2019-03-06T15:09:59.543-0500 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 27017 }, processManagement: { fork: true }, storage: { dbPath: "data" }, systemLog: { destination: "file", path: "log/mongod.log" } }
+2019-03-06T15:09:59.545-0500 I -        [initandlisten] Detected data files in /Users/ryne/SSW695_DuckHome/duck_base/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2019-03-06T15:09:59.546-0500 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=3584M,session_max=20000,eviction=(threads_min=4,threads_max=4),config_base=false,statistics=(fast),compatibility=(release="3.0",require_max="3.0"),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),statistics_log=(wait=0),verbose=(recovery_progress),
+2019-03-06T15:10:00.222-0500 I STORAGE  [initandlisten] WiredTiger message [1551903000:222522][69962:0x114f865c0], txn-recover: Main recovery loop: starting at 5/38513408
+2019-03-06T15:10:00.307-0500 I STORAGE  [initandlisten] WiredTiger message [1551903000:307853][69962:0x114f865c0], txn-recover: Recovering log 5 through 6
+2019-03-06T15:10:00.352-0500 I STORAGE  [initandlisten] WiredTiger message [1551903000:352363][69962:0x114f865c0], txn-recover: Recovering log 6 through 6
+2019-03-06T15:10:00.403-0500 I STORAGE  [initandlisten] WiredTiger message [1551903000:403084][69962:0x114f865c0], txn-recover: Set global recovery timestamp: 0
+2019-03-06T15:10:00.510-0500 I CONTROL  [initandlisten] 
+2019-03-06T15:10:00.511-0500 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2019-03-06T15:10:00.512-0500 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2019-03-06T15:10:00.513-0500 I CONTROL  [initandlisten] 
+2019-03-06T15:10:00.514-0500 I CONTROL  [initandlisten] ** WARNING: This server is bound to localhost.
+2019-03-06T15:10:00.515-0500 I CONTROL  [initandlisten] **          Remote systems will be unable to connect to this server. 
+2019-03-06T15:10:00.516-0500 I CONTROL  [initandlisten] **          Start the server with --bind_ip <address> to specify which IP 
+2019-03-06T15:10:00.516-0500 I CONTROL  [initandlisten] **          addresses it should serve responses from, or with --bind_ip_all to
+2019-03-06T15:10:00.517-0500 I CONTROL  [initandlisten] **          bind to all interfaces. If this behavior is desired, start the
+2019-03-06T15:10:00.518-0500 I CONTROL  [initandlisten] **          server with --bind_ip 127.0.0.1 to disable this warning.
+2019-03-06T15:10:00.519-0500 I CONTROL  [initandlisten] 
+2019-03-06T15:10:00.520-0500 I CONTROL  [initandlisten] 
+2019-03-06T15:10:00.521-0500 I CONTROL  [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2019-03-06T15:10:00.592-0500 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/Users/ryne/SSW695_DuckHome/duck_base/data/diagnostic.data'
+2019-03-06T15:10:00.593-0500 I NETWORK  [initandlisten] waiting for connections on port 27017
+2019-03-06T15:47:43.337-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57063 #1 (1 connection now open)
+2019-03-06T15:47:43.355-0500 I NETWORK  [conn1] received client metadata from 127.0.0.1:57063 conn1: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:47:43.449-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57064 #2 (2 connections now open)
+2019-03-06T15:47:43.452-0500 I NETWORK  [conn2] received client metadata from 127.0.0.1:57064 conn2: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:47:43.485-0500 I NETWORK  [conn2] end connection 127.0.0.1:57064 (1 connection now open)
+2019-03-06T15:47:43.485-0500 I NETWORK  [conn1] end connection 127.0.0.1:57063 (0 connections now open)
+2019-03-06T15:48:55.869-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57068 #3 (1 connection now open)
+2019-03-06T15:48:55.871-0500 I NETWORK  [conn3] received client metadata from 127.0.0.1:57068 conn3: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:48:55.876-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57069 #4 (2 connections now open)
+2019-03-06T15:48:55.878-0500 I NETWORK  [conn4] received client metadata from 127.0.0.1:57069 conn4: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:48:55.882-0500 I NETWORK  [conn4] end connection 127.0.0.1:57069 (1 connection now open)
+2019-03-06T15:48:55.883-0500 I NETWORK  [conn3] end connection 127.0.0.1:57068 (0 connections now open)
+2019-03-06T15:49:31.750-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57073 #5 (1 connection now open)
+2019-03-06T15:49:31.752-0500 I NETWORK  [conn5] received client metadata from 127.0.0.1:57073 conn5: { application: { name: "MongoDB Shell" }, driver: { name: "MongoDB Internal Client", version: "3.6.10" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "18.2.0" } }
+2019-03-06T15:50:05.729-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57077 #6 (2 connections now open)
+2019-03-06T15:50:05.730-0500 I NETWORK  [conn6] received client metadata from 127.0.0.1:57077 conn6: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:05.747-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57078 #7 (3 connections now open)
+2019-03-06T15:50:05.747-0500 I NETWORK  [conn7] received client metadata from 127.0.0.1:57078 conn7: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:05.769-0500 I NETWORK  [conn7] end connection 127.0.0.1:57078 (2 connections now open)
+2019-03-06T15:50:05.769-0500 I NETWORK  [conn6] end connection 127.0.0.1:57077 (1 connection now open)
+2019-03-06T15:50:32.402-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57080 #8 (2 connections now open)
+2019-03-06T15:50:32.405-0500 I NETWORK  [conn8] received client metadata from 127.0.0.1:57080 conn8: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:32.414-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57081 #9 (3 connections now open)
+2019-03-06T15:50:32.416-0500 I NETWORK  [conn9] received client metadata from 127.0.0.1:57081 conn9: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:32.442-0500 I NETWORK  [conn9] end connection 127.0.0.1:57081 (2 connections now open)
+2019-03-06T15:50:32.442-0500 I NETWORK  [conn8] end connection 127.0.0.1:57080 (1 connection now open)
+2019-03-06T15:50:34.692-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57082 #10 (2 connections now open)
+2019-03-06T15:50:34.694-0500 I NETWORK  [conn10] received client metadata from 127.0.0.1:57082 conn10: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:34.716-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57083 #11 (3 connections now open)
+2019-03-06T15:50:34.720-0500 I NETWORK  [conn11] received client metadata from 127.0.0.1:57083 conn11: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:34.776-0500 I NETWORK  [conn11] end connection 127.0.0.1:57083 (2 connections now open)
+2019-03-06T15:50:34.779-0500 I NETWORK  [conn10] end connection 127.0.0.1:57082 (1 connection now open)
+2019-03-06T15:50:48.786-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57084 #12 (2 connections now open)
+2019-03-06T15:50:48.789-0500 I NETWORK  [conn12] received client metadata from 127.0.0.1:57084 conn12: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:48.794-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57085 #13 (3 connections now open)
+2019-03-06T15:50:48.796-0500 I NETWORK  [conn13] received client metadata from 127.0.0.1:57085 conn13: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:48.808-0500 I NETWORK  [conn13] end connection 127.0.0.1:57085 (2 connections now open)
+2019-03-06T15:50:48.808-0500 I NETWORK  [conn12] end connection 127.0.0.1:57084 (1 connection now open)
+2019-03-06T15:50:49.763-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57086 #14 (2 connections now open)
+2019-03-06T15:50:49.765-0500 I NETWORK  [conn14] received client metadata from 127.0.0.1:57086 conn14: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:49.776-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57087 #15 (3 connections now open)
+2019-03-06T15:50:49.779-0500 I NETWORK  [conn15] received client metadata from 127.0.0.1:57087 conn15: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:49.980-0500 I NETWORK  [conn15] end connection 127.0.0.1:57087 (2 connections now open)
+2019-03-06T15:50:49.980-0500 I NETWORK  [conn14] end connection 127.0.0.1:57086 (1 connection now open)
+2019-03-06T15:50:54.826-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57088 #16 (2 connections now open)
+2019-03-06T15:50:54.828-0500 I NETWORK  [conn16] received client metadata from 127.0.0.1:57088 conn16: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:54.834-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57089 #17 (3 connections now open)
+2019-03-06T15:50:54.836-0500 I NETWORK  [conn17] received client metadata from 127.0.0.1:57089 conn17: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:54.853-0500 I NETWORK  [conn17] end connection 127.0.0.1:57089 (2 connections now open)
+2019-03-06T15:50:54.853-0500 I NETWORK  [conn16] end connection 127.0.0.1:57088 (1 connection now open)
+2019-03-06T15:50:55.131-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57090 #18 (2 connections now open)
+2019-03-06T15:50:55.133-0500 I NETWORK  [conn18] received client metadata from 127.0.0.1:57090 conn18: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:55.140-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57091 #19 (3 connections now open)
+2019-03-06T15:50:55.144-0500 I NETWORK  [conn19] received client metadata from 127.0.0.1:57091 conn19: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:50:55.156-0500 I NETWORK  [conn19] end connection 127.0.0.1:57091 (2 connections now open)
+2019-03-06T15:50:55.160-0500 I NETWORK  [conn18] end connection 127.0.0.1:57090 (1 connection now open)
+2019-03-06T15:51:53.718-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57095 #20 (2 connections now open)
+2019-03-06T15:51:53.720-0500 I NETWORK  [conn20] received client metadata from 127.0.0.1:57095 conn20: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:53.730-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57096 #21 (3 connections now open)
+2019-03-06T15:51:53.735-0500 I NETWORK  [conn21] received client metadata from 127.0.0.1:57096 conn21: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:53.741-0500 I NETWORK  [conn21] end connection 127.0.0.1:57096 (2 connections now open)
+2019-03-06T15:51:53.741-0500 I NETWORK  [conn20] end connection 127.0.0.1:57095 (1 connection now open)
+2019-03-06T15:51:53.743-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57097 #22 (2 connections now open)
+2019-03-06T15:51:53.744-0500 I NETWORK  [conn22] received client metadata from 127.0.0.1:57097 conn22: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:53.748-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57098 #23 (3 connections now open)
+2019-03-06T15:51:53.749-0500 I NETWORK  [conn23] received client metadata from 127.0.0.1:57098 conn23: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:53.752-0500 I NETWORK  [conn23] end connection 127.0.0.1:57098 (2 connections now open)
+2019-03-06T15:51:53.752-0500 I NETWORK  [conn22] end connection 127.0.0.1:57097 (1 connection now open)
+2019-03-06T15:51:58.202-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57100 #24 (2 connections now open)
+2019-03-06T15:51:58.205-0500 I NETWORK  [conn24] received client metadata from 127.0.0.1:57100 conn24: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:58.211-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57101 #25 (3 connections now open)
+2019-03-06T15:51:58.214-0500 I NETWORK  [conn25] received client metadata from 127.0.0.1:57101 conn25: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:58.224-0500 I NETWORK  [conn25] end connection 127.0.0.1:57101 (2 connections now open)
+2019-03-06T15:51:58.224-0500 I NETWORK  [conn24] end connection 127.0.0.1:57100 (1 connection now open)
+2019-03-06T15:51:58.629-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57102 #26 (2 connections now open)
+2019-03-06T15:51:58.631-0500 I NETWORK  [conn26] received client metadata from 127.0.0.1:57102 conn26: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:58.637-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57103 #27 (3 connections now open)
+2019-03-06T15:51:58.639-0500 I NETWORK  [conn27] received client metadata from 127.0.0.1:57103 conn27: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T15:51:58.648-0500 I NETWORK  [conn27] end connection 127.0.0.1:57103 (2 connections now open)
+2019-03-06T15:51:58.651-0500 I NETWORK  [conn26] end connection 127.0.0.1:57102 (1 connection now open)
+2019-03-06T16:00:14.092-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57181 #28 (2 connections now open)
+2019-03-06T16:00:14.093-0500 I NETWORK  [conn28] received client metadata from 127.0.0.1:57181 conn28: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:00:14.097-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57182 #29 (3 connections now open)
+2019-03-06T16:00:14.098-0500 I NETWORK  [conn29] received client metadata from 127.0.0.1:57182 conn29: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:00:14.103-0500 I NETWORK  [conn29] end connection 127.0.0.1:57182 (2 connections now open)
+2019-03-06T16:00:14.103-0500 I NETWORK  [conn28] end connection 127.0.0.1:57181 (1 connection now open)
+2019-03-06T16:00:16.423-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57183 #30 (2 connections now open)
+2019-03-06T16:00:16.427-0500 I NETWORK  [conn30] received client metadata from 127.0.0.1:57183 conn30: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:00:16.430-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57184 #31 (3 connections now open)
+2019-03-06T16:00:16.431-0500 I NETWORK  [conn31] received client metadata from 127.0.0.1:57184 conn31: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:00:16.437-0500 I NETWORK  [conn31] end connection 127.0.0.1:57184 (2 connections now open)
+2019-03-06T16:00:16.437-0500 I NETWORK  [conn30] end connection 127.0.0.1:57183 (1 connection now open)
+2019-03-06T16:00:16.771-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57185 #32 (2 connections now open)
+2019-03-06T16:00:16.773-0500 I NETWORK  [conn32] received client metadata from 127.0.0.1:57185 conn32: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:00:16.779-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57186 #33 (3 connections now open)
+2019-03-06T16:00:16.781-0500 I NETWORK  [conn33] received client metadata from 127.0.0.1:57186 conn33: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:00:16.800-0500 I NETWORK  [conn33] end connection 127.0.0.1:57186 (2 connections now open)
+2019-03-06T16:00:16.802-0500 I NETWORK  [conn32] end connection 127.0.0.1:57185 (1 connection now open)
+2019-03-06T16:02:57.258-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57196 #34 (2 connections now open)
+2019-03-06T16:02:57.261-0500 I NETWORK  [conn34] received client metadata from 127.0.0.1:57196 conn34: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:02:57.266-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57197 #35 (3 connections now open)
+2019-03-06T16:02:57.269-0500 I NETWORK  [conn35] received client metadata from 127.0.0.1:57197 conn35: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:02:57.274-0500 I NETWORK  [conn35] end connection 127.0.0.1:57197 (2 connections now open)
+2019-03-06T16:02:57.276-0500 I NETWORK  [conn34] end connection 127.0.0.1:57196 (1 connection now open)
+2019-03-06T16:02:57.879-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57198 #36 (2 connections now open)
+2019-03-06T16:02:57.880-0500 I NETWORK  [conn36] received client metadata from 127.0.0.1:57198 conn36: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:02:57.884-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57199 #37 (3 connections now open)
+2019-03-06T16:02:57.885-0500 I NETWORK  [conn37] received client metadata from 127.0.0.1:57199 conn37: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:02:57.890-0500 I NETWORK  [conn37] end connection 127.0.0.1:57199 (2 connections now open)
+2019-03-06T16:02:57.890-0500 I NETWORK  [conn36] end connection 127.0.0.1:57198 (1 connection now open)
+2019-03-06T16:05:13.456-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57206 #38 (2 connections now open)
+2019-03-06T16:05:13.458-0500 I NETWORK  [conn38] received client metadata from 127.0.0.1:57206 conn38: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:05:13.461-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57207 #39 (3 connections now open)
+2019-03-06T16:05:13.462-0500 I NETWORK  [conn39] received client metadata from 127.0.0.1:57207 conn39: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:05:13.467-0500 I NETWORK  [conn39] end connection 127.0.0.1:57207 (2 connections now open)
+2019-03-06T16:05:13.467-0500 I NETWORK  [conn38] end connection 127.0.0.1:57206 (1 connection now open)
+2019-03-06T16:05:13.773-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57208 #40 (2 connections now open)
+2019-03-06T16:05:13.774-0500 I NETWORK  [conn40] received client metadata from 127.0.0.1:57208 conn40: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:05:13.779-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57209 #41 (3 connections now open)
+2019-03-06T16:05:13.780-0500 I NETWORK  [conn41] received client metadata from 127.0.0.1:57209 conn41: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:05:13.794-0500 I NETWORK  [conn41] end connection 127.0.0.1:57209 (2 connections now open)
+2019-03-06T16:05:13.794-0500 I NETWORK  [conn40] end connection 127.0.0.1:57208 (1 connection now open)
+2019-03-06T16:08:11.849-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57219 #42 (2 connections now open)
+2019-03-06T16:08:11.850-0500 I NETWORK  [conn42] received client metadata from 127.0.0.1:57219 conn42: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:08:12.369-0500 I NETWORK  [conn42] end connection 127.0.0.1:57219 (1 connection now open)
+2019-03-06T16:09:35.932-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57224 #43 (2 connections now open)
+2019-03-06T16:09:35.934-0500 I NETWORK  [conn43] received client metadata from 127.0.0.1:57224 conn43: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:09:36.454-0500 I NETWORK  [conn43] end connection 127.0.0.1:57224 (1 connection now open)
+2019-03-06T16:10:32.495-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57225 #44 (2 connections now open)
+2019-03-06T16:10:32.496-0500 I NETWORK  [conn44] received client metadata from 127.0.0.1:57225 conn44: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:10:33.022-0500 I NETWORK  [conn44] end connection 127.0.0.1:57225 (1 connection now open)
+2019-03-06T16:10:42.723-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57226 #45 (2 connections now open)
+2019-03-06T16:10:42.725-0500 I NETWORK  [conn45] received client metadata from 127.0.0.1:57226 conn45: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:10:43.258-0500 I NETWORK  [conn45] end connection 127.0.0.1:57226 (1 connection now open)
+2019-03-06T16:10:58.956-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57227 #46 (2 connections now open)
+2019-03-06T16:10:58.957-0500 I NETWORK  [conn46] received client metadata from 127.0.0.1:57227 conn46: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:10:58.959-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57228 #47 (3 connections now open)
+2019-03-06T16:10:58.960-0500 I NETWORK  [conn47] received client metadata from 127.0.0.1:57228 conn47: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:10:59.483-0500 I NETWORK  [conn47] end connection 127.0.0.1:57228 (2 connections now open)
+2019-03-06T16:10:59.483-0500 I NETWORK  [conn46] end connection 127.0.0.1:57227 (1 connection now open)
+2019-03-06T16:11:10.088-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57229 #48 (2 connections now open)
+2019-03-06T16:11:10.088-0500 I NETWORK  [conn48] received client metadata from 127.0.0.1:57229 conn48: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:11:10.090-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57230 #49 (3 connections now open)
+2019-03-06T16:11:10.091-0500 I NETWORK  [conn49] received client metadata from 127.0.0.1:57230 conn49: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T16:11:10.609-0500 I NETWORK  [conn48] end connection 127.0.0.1:57229 (2 connections now open)
+2019-03-06T16:11:10.609-0500 I NETWORK  [conn49] end connection 127.0.0.1:57230 (1 connection now open)
+2019-03-06T16:46:46.453-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57440 #50 (2 connections now open)
+2019-03-06T16:46:46.455-0500 I NETWORK  [conn50] received client metadata from 127.0.0.1:57440 conn50: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:46.459-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57441 #51 (3 connections now open)
+2019-03-06T16:46:46.460-0500 I NETWORK  [conn51] received client metadata from 127.0.0.1:57441 conn51: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:46.466-0500 I NETWORK  [conn51] end connection 127.0.0.1:57441 (2 connections now open)
+2019-03-06T16:46:46.467-0500 I NETWORK  [conn50] end connection 127.0.0.1:57440 (1 connection now open)
+2019-03-06T16:46:50.540-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57445 #52 (2 connections now open)
+2019-03-06T16:46:50.542-0500 I NETWORK  [conn52] received client metadata from 127.0.0.1:57445 conn52: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:50.550-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57446 #53 (3 connections now open)
+2019-03-06T16:46:50.552-0500 I NETWORK  [conn53] received client metadata from 127.0.0.1:57446 conn53: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:50.565-0500 I NETWORK  [conn53] end connection 127.0.0.1:57446 (2 connections now open)
+2019-03-06T16:46:50.569-0500 I NETWORK  [conn52] end connection 127.0.0.1:57445 (1 connection now open)
+2019-03-06T16:46:53.027-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57449 #54 (2 connections now open)
+2019-03-06T16:46:53.029-0500 I NETWORK  [conn54] received client metadata from 127.0.0.1:57449 conn54: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:53.034-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57450 #55 (3 connections now open)
+2019-03-06T16:46:53.035-0500 I NETWORK  [conn55] received client metadata from 127.0.0.1:57450 conn55: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:53.040-0500 I NETWORK  [conn55] end connection 127.0.0.1:57450 (2 connections now open)
+2019-03-06T16:46:53.040-0500 I NETWORK  [conn54] end connection 127.0.0.1:57449 (1 connection now open)
+2019-03-06T16:46:54.514-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57451 #56 (2 connections now open)
+2019-03-06T16:46:54.516-0500 I NETWORK  [conn56] received client metadata from 127.0.0.1:57451 conn56: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:54.521-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57452 #57 (3 connections now open)
+2019-03-06T16:46:54.523-0500 I NETWORK  [conn57] received client metadata from 127.0.0.1:57452 conn57: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:46:54.529-0500 I NETWORK  [conn57] end connection 127.0.0.1:57452 (2 connections now open)
+2019-03-06T16:46:54.529-0500 I NETWORK  [conn56] end connection 127.0.0.1:57451 (1 connection now open)
+2019-03-06T16:47:41.816-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57465 #58 (2 connections now open)
+2019-03-06T16:47:41.819-0500 I NETWORK  [conn58] received client metadata from 127.0.0.1:57465 conn58: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:41.827-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57466 #59 (3 connections now open)
+2019-03-06T16:47:41.828-0500 I NETWORK  [conn59] received client metadata from 127.0.0.1:57466 conn59: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:41.837-0500 I NETWORK  [conn59] end connection 127.0.0.1:57466 (2 connections now open)
+2019-03-06T16:47:41.837-0500 I NETWORK  [conn58] end connection 127.0.0.1:57465 (1 connection now open)
+2019-03-06T16:47:42.469-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57467 #60 (2 connections now open)
+2019-03-06T16:47:42.471-0500 I NETWORK  [conn60] received client metadata from 127.0.0.1:57467 conn60: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:42.476-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57468 #61 (3 connections now open)
+2019-03-06T16:47:42.478-0500 I NETWORK  [conn61] received client metadata from 127.0.0.1:57468 conn61: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:42.487-0500 I NETWORK  [conn61] end connection 127.0.0.1:57468 (2 connections now open)
+2019-03-06T16:47:42.488-0500 I NETWORK  [conn60] end connection 127.0.0.1:57467 (1 connection now open)
+2019-03-06T16:47:44.328-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57469 #62 (2 connections now open)
+2019-03-06T16:47:44.330-0500 I NETWORK  [conn62] received client metadata from 127.0.0.1:57469 conn62: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:44.335-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57470 #63 (3 connections now open)
+2019-03-06T16:47:44.338-0500 I NETWORK  [conn63] received client metadata from 127.0.0.1:57470 conn63: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:44.346-0500 I NETWORK  [conn63] end connection 127.0.0.1:57470 (2 connections now open)
+2019-03-06T16:47:44.347-0500 I NETWORK  [conn62] end connection 127.0.0.1:57469 (1 connection now open)
+2019-03-06T16:47:44.893-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57471 #64 (2 connections now open)
+2019-03-06T16:47:44.894-0500 I NETWORK  [conn64] received client metadata from 127.0.0.1:57471 conn64: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:44.898-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57472 #65 (3 connections now open)
+2019-03-06T16:47:44.899-0500 I NETWORK  [conn65] received client metadata from 127.0.0.1:57472 conn65: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:47:44.906-0500 I NETWORK  [conn65] end connection 127.0.0.1:57472 (2 connections now open)
+2019-03-06T16:47:44.906-0500 I NETWORK  [conn64] end connection 127.0.0.1:57471 (1 connection now open)
+2019-03-06T16:48:42.638-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57478 #66 (2 connections now open)
+2019-03-06T16:48:42.640-0500 I NETWORK  [conn66] received client metadata from 127.0.0.1:57478 conn66: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:48:42.649-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57479 #67 (3 connections now open)
+2019-03-06T16:48:42.652-0500 I NETWORK  [conn67] received client metadata from 127.0.0.1:57479 conn67: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:48:42.662-0500 I NETWORK  [conn67] end connection 127.0.0.1:57479 (2 connections now open)
+2019-03-06T16:48:42.662-0500 I NETWORK  [conn66] end connection 127.0.0.1:57478 (1 connection now open)
+2019-03-06T16:48:45.998-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57480 #68 (2 connections now open)
+2019-03-06T16:48:46.000-0500 I NETWORK  [conn68] received client metadata from 127.0.0.1:57480 conn68: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:48:46.004-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57481 #69 (3 connections now open)
+2019-03-06T16:48:46.005-0500 I NETWORK  [conn69] received client metadata from 127.0.0.1:57481 conn69: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:48:46.012-0500 I NETWORK  [conn69] end connection 127.0.0.1:57481 (2 connections now open)
+2019-03-06T16:48:46.014-0500 I NETWORK  [conn68] end connection 127.0.0.1:57480 (1 connection now open)
+2019-03-06T16:48:50.662-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57482 #70 (2 connections now open)
+2019-03-06T16:48:50.664-0500 I NETWORK  [conn70] received client metadata from 127.0.0.1:57482 conn70: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:48:50.667-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57483 #71 (3 connections now open)
+2019-03-06T16:48:50.669-0500 I NETWORK  [conn71] received client metadata from 127.0.0.1:57483 conn71: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T16:48:50.841-0500 I NETWORK  [conn70] end connection 127.0.0.1:57482 (2 connections now open)
+2019-03-06T16:48:50.841-0500 I NETWORK  [conn71] end connection 127.0.0.1:57483 (1 connection now open)
+2019-03-06T17:06:34.321-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57605 #72 (2 connections now open)
+2019-03-06T17:06:34.322-0500 I NETWORK  [conn72] received client metadata from 127.0.0.1:57605 conn72: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:06:34.324-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57606 #73 (3 connections now open)
+2019-03-06T17:06:34.325-0500 I NETWORK  [conn73] received client metadata from 127.0.0.1:57606 conn73: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:06:34.844-0500 I NETWORK  [conn72] end connection 127.0.0.1:57605 (2 connections now open)
+2019-03-06T17:06:34.844-0500 I NETWORK  [conn73] end connection 127.0.0.1:57606 (1 connection now open)
+2019-03-06T17:08:16.010-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57611 #74 (2 connections now open)
+2019-03-06T17:08:16.014-0500 I NETWORK  [conn74] received client metadata from 127.0.0.1:57611 conn74: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:08:16.015-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57612 #75 (3 connections now open)
+2019-03-06T17:08:16.016-0500 I NETWORK  [conn75] received client metadata from 127.0.0.1:57612 conn75: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:08:16.535-0500 I NETWORK  [conn74] end connection 127.0.0.1:57611 (2 connections now open)
+2019-03-06T17:08:16.535-0500 I NETWORK  [conn75] end connection 127.0.0.1:57612 (1 connection now open)
+2019-03-06T17:08:42.584-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57615 #76 (2 connections now open)
+2019-03-06T17:08:42.585-0500 I NETWORK  [conn76] received client metadata from 127.0.0.1:57615 conn76: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:08:42.586-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57616 #77 (3 connections now open)
+2019-03-06T17:08:42.588-0500 I NETWORK  [conn77] received client metadata from 127.0.0.1:57616 conn77: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:08:43.109-0500 I NETWORK  [conn76] end connection 127.0.0.1:57615 (2 connections now open)
+2019-03-06T17:08:43.109-0500 I NETWORK  [conn77] end connection 127.0.0.1:57616 (1 connection now open)
+2019-03-06T17:09:11.463-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57623 #78 (2 connections now open)
+2019-03-06T17:09:11.464-0500 I NETWORK  [conn78] received client metadata from 127.0.0.1:57623 conn78: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:09:11.468-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57624 #79 (3 connections now open)
+2019-03-06T17:09:11.469-0500 I NETWORK  [conn79] received client metadata from 127.0.0.1:57624 conn79: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:09:40.435-0500 I NETWORK  [conn79] end connection 127.0.0.1:57624 (2 connections now open)
+2019-03-06T17:09:40.435-0500 I NETWORK  [conn78] end connection 127.0.0.1:57623 (1 connection now open)
+2019-03-06T17:10:16.345-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57631 #80 (2 connections now open)
+2019-03-06T17:10:16.349-0500 I NETWORK  [conn80] received client metadata from 127.0.0.1:57631 conn80: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:10:16.355-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57632 #81 (3 connections now open)
+2019-03-06T17:10:16.357-0500 I NETWORK  [conn81] received client metadata from 127.0.0.1:57632 conn81: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:16:38.198-0500 I NETWORK  [conn80] end connection 127.0.0.1:57631 (1 connection now open)
+2019-03-06T17:16:38.198-0500 I NETWORK  [conn81] end connection 127.0.0.1:57632 (2 connections now open)
+2019-03-06T17:16:52.041-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57697 #82 (2 connections now open)
+2019-03-06T17:16:52.043-0500 I NETWORK  [conn82] received client metadata from 127.0.0.1:57697 conn82: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:16:52.053-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57698 #83 (3 connections now open)
+2019-03-06T17:16:52.055-0500 I NETWORK  [conn83] received client metadata from 127.0.0.1:57698 conn83: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:16:53.591-0500 I NETWORK  [conn83] end connection 127.0.0.1:57698 (2 connections now open)
+2019-03-06T17:16:53.592-0500 I NETWORK  [conn82] end connection 127.0.0.1:57697 (1 connection now open)
+2019-03-06T17:17:08.501-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57699 #84 (2 connections now open)
+2019-03-06T17:17:08.503-0500 I NETWORK  [conn84] received client metadata from 127.0.0.1:57699 conn84: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:17:08.508-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57700 #85 (3 connections now open)
+2019-03-06T17:17:08.510-0500 I NETWORK  [conn85] received client metadata from 127.0.0.1:57700 conn85: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:17:08.515-0500 I NETWORK  [conn85] end connection 127.0.0.1:57700 (2 connections now open)
+2019-03-06T17:17:08.515-0500 I NETWORK  [conn84] end connection 127.0.0.1:57699 (1 connection now open)
+2019-03-06T17:17:08.784-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57701 #86 (2 connections now open)
+2019-03-06T17:17:08.786-0500 I NETWORK  [conn86] received client metadata from 127.0.0.1:57701 conn86: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:17:08.792-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57702 #87 (3 connections now open)
+2019-03-06T17:17:08.794-0500 I NETWORK  [conn87] received client metadata from 127.0.0.1:57702 conn87: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:17:08.800-0500 I NETWORK  [conn86] end connection 127.0.0.1:57701 (2 connections now open)
+2019-03-06T17:17:08.801-0500 I NETWORK  [conn87] end connection 127.0.0.1:57702 (1 connection now open)
+2019-03-06T17:17:37.641-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57705 #88 (2 connections now open)
+2019-03-06T17:17:37.643-0500 I NETWORK  [conn88] received client metadata from 127.0.0.1:57705 conn88: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:17:37.645-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57706 #89 (3 connections now open)
+2019-03-06T17:17:37.646-0500 I NETWORK  [conn89] received client metadata from 127.0.0.1:57706 conn89: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:17:37.650-0500 I NETWORK  [conn88] end connection 127.0.0.1:57705 (2 connections now open)
+2019-03-06T17:17:37.650-0500 I NETWORK  [conn89] end connection 127.0.0.1:57706 (1 connection now open)
+2019-03-06T17:24:59.603-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57828 #90 (2 connections now open)
+2019-03-06T17:24:59.605-0500 I NETWORK  [conn90] received client metadata from 127.0.0.1:57828 conn90: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:24:59.606-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57829 #91 (3 connections now open)
+2019-03-06T17:24:59.607-0500 I NETWORK  [conn91] received client metadata from 127.0.0.1:57829 conn91: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:25:00.132-0500 I NETWORK  [conn90] end connection 127.0.0.1:57828 (1 connection now open)
+2019-03-06T17:25:00.132-0500 I NETWORK  [conn91] end connection 127.0.0.1:57829 (2 connections now open)
+2019-03-06T17:25:35.420-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57830 #92 (2 connections now open)
+2019-03-06T17:25:35.421-0500 I NETWORK  [conn92] received client metadata from 127.0.0.1:57830 conn92: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:25:35.422-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57831 #93 (3 connections now open)
+2019-03-06T17:25:35.423-0500 I NETWORK  [conn93] received client metadata from 127.0.0.1:57831 conn93: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:25:35.946-0500 I NETWORK  [conn92] end connection 127.0.0.1:57830 (2 connections now open)
+2019-03-06T17:25:35.946-0500 I NETWORK  [conn93] end connection 127.0.0.1:57831 (1 connection now open)
+2019-03-06T17:26:42.357-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57835 #94 (2 connections now open)
+2019-03-06T17:26:42.358-0500 I NETWORK  [conn94] received client metadata from 127.0.0.1:57835 conn94: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:26:42.360-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57836 #95 (3 connections now open)
+2019-03-06T17:26:42.361-0500 I NETWORK  [conn95] received client metadata from 127.0.0.1:57836 conn95: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:26:42.885-0500 I NETWORK  [conn95] end connection 127.0.0.1:57836 (2 connections now open)
+2019-03-06T17:26:42.885-0500 I NETWORK  [conn94] end connection 127.0.0.1:57835 (1 connection now open)
+2019-03-06T17:27:02.598-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57840 #96 (2 connections now open)
+2019-03-06T17:27:02.599-0500 I NETWORK  [conn96] received client metadata from 127.0.0.1:57840 conn96: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:27:02.600-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57841 #97 (3 connections now open)
+2019-03-06T17:27:02.601-0500 I NETWORK  [conn97] received client metadata from 127.0.0.1:57841 conn97: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:27:03.123-0500 I NETWORK  [conn97] end connection 127.0.0.1:57841 (2 connections now open)
+2019-03-06T17:27:03.123-0500 I NETWORK  [conn96] end connection 127.0.0.1:57840 (1 connection now open)
+2019-03-06T17:27:34.904-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57842 #98 (2 connections now open)
+2019-03-06T17:27:34.907-0500 I NETWORK  [conn98] received client metadata from 127.0.0.1:57842 conn98: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:27:34.910-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57843 #99 (3 connections now open)
+2019-03-06T17:27:34.911-0500 I NETWORK  [conn99] received client metadata from 127.0.0.1:57843 conn99: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:27:34.916-0500 I NETWORK  [conn99] end connection 127.0.0.1:57843 (2 connections now open)
+2019-03-06T17:27:34.916-0500 I NETWORK  [conn98] end connection 127.0.0.1:57842 (1 connection now open)
+2019-03-06T17:27:35.229-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57844 #100 (2 connections now open)
+2019-03-06T17:27:35.233-0500 I NETWORK  [conn100] received client metadata from 127.0.0.1:57844 conn100: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:27:35.241-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57845 #101 (3 connections now open)
+2019-03-06T17:27:35.245-0500 I NETWORK  [conn101] received client metadata from 127.0.0.1:57845 conn101: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:27:35.266-0500 I NETWORK  [conn101] end connection 127.0.0.1:57845 (2 connections now open)
+2019-03-06T17:27:35.270-0500 I NETWORK  [conn100] end connection 127.0.0.1:57844 (1 connection now open)
+2019-03-06T17:28:00.452-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57849 #102 (2 connections now open)
+2019-03-06T17:28:00.454-0500 I NETWORK  [conn102] received client metadata from 127.0.0.1:57849 conn102: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:28:00.459-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57850 #103 (3 connections now open)
+2019-03-06T17:28:00.461-0500 I NETWORK  [conn103] received client metadata from 127.0.0.1:57850 conn103: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:28:00.470-0500 I NETWORK  [conn103] end connection 127.0.0.1:57850 (2 connections now open)
+2019-03-06T17:28:00.470-0500 I NETWORK  [conn102] end connection 127.0.0.1:57849 (1 connection now open)
+2019-03-06T17:28:01.638-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57851 #104 (2 connections now open)
+2019-03-06T17:28:01.643-0500 I NETWORK  [conn104] received client metadata from 127.0.0.1:57851 conn104: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:28:01.647-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57852 #105 (3 connections now open)
+2019-03-06T17:28:01.648-0500 I NETWORK  [conn105] received client metadata from 127.0.0.1:57852 conn105: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T17:28:01.654-0500 I NETWORK  [conn105] end connection 127.0.0.1:57852 (2 connections now open)
+2019-03-06T17:28:01.654-0500 I NETWORK  [conn104] end connection 127.0.0.1:57851 (1 connection now open)
+2019-03-06T17:29:36.778-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57860 #106 (2 connections now open)
+2019-03-06T17:29:36.781-0500 I NETWORK  [conn106] received client metadata from 127.0.0.1:57860 conn106: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:29:36.784-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57861 #107 (3 connections now open)
+2019-03-06T17:29:36.786-0500 I NETWORK  [conn107] received client metadata from 127.0.0.1:57861 conn107: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:29:37.308-0500 I NETWORK  [conn106] end connection 127.0.0.1:57860 (1 connection now open)
+2019-03-06T17:29:37.308-0500 I NETWORK  [conn107] end connection 127.0.0.1:57861 (2 connections now open)
+2019-03-06T17:30:04.413-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57862 #108 (2 connections now open)
+2019-03-06T17:30:04.414-0500 I NETWORK  [conn108] received client metadata from 127.0.0.1:57862 conn108: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:30:04.415-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57863 #109 (3 connections now open)
+2019-03-06T17:30:04.416-0500 I NETWORK  [conn109] received client metadata from 127.0.0.1:57863 conn109: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:30:04.938-0500 I NETWORK  [conn108] end connection 127.0.0.1:57862 (2 connections now open)
+2019-03-06T17:30:04.938-0500 I NETWORK  [conn109] end connection 127.0.0.1:57863 (1 connection now open)
+2019-03-06T17:31:11.107-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57872 #110 (2 connections now open)
+2019-03-06T17:31:11.108-0500 I NETWORK  [conn110] received client metadata from 127.0.0.1:57872 conn110: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:31:11.111-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57873 #111 (3 connections now open)
+2019-03-06T17:31:11.112-0500 I NETWORK  [conn111] received client metadata from 127.0.0.1:57873 conn111: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:31:28.560-0500 I NETWORK  [conn111] end connection 127.0.0.1:57873 (2 connections now open)
+2019-03-06T17:31:28.561-0500 I NETWORK  [conn110] end connection 127.0.0.1:57872 (1 connection now open)
+2019-03-06T17:32:22.917-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57876 #112 (2 connections now open)
+2019-03-06T17:32:22.918-0500 I NETWORK  [conn112] received client metadata from 127.0.0.1:57876 conn112: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:32:22.921-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57877 #113 (3 connections now open)
+2019-03-06T17:32:22.922-0500 I NETWORK  [conn113] received client metadata from 127.0.0.1:57877 conn113: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:32:23.452-0500 I NETWORK  [conn113] end connection 127.0.0.1:57877 (2 connections now open)
+2019-03-06T17:32:23.452-0500 I NETWORK  [conn112] end connection 127.0.0.1:57876 (1 connection now open)
+2019-03-06T17:34:04.230-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57883 #114 (2 connections now open)
+2019-03-06T17:34:04.233-0500 I NETWORK  [conn114] received client metadata from 127.0.0.1:57883 conn114: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:34:04.234-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57884 #115 (3 connections now open)
+2019-03-06T17:34:04.235-0500 I NETWORK  [conn115] received client metadata from 127.0.0.1:57884 conn115: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:34:04.761-0500 I NETWORK  [conn114] end connection 127.0.0.1:57883 (2 connections now open)
+2019-03-06T17:34:04.761-0500 I NETWORK  [conn115] end connection 127.0.0.1:57884 (1 connection now open)
+2019-03-06T17:39:57.950-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57972 #116 (2 connections now open)
+2019-03-06T17:39:57.952-0500 I NETWORK  [conn116] received client metadata from 127.0.0.1:57972 conn116: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:39:57.956-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57973 #117 (3 connections now open)
+2019-03-06T17:39:57.957-0500 I NETWORK  [conn117] received client metadata from 127.0.0.1:57973 conn117: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:39:58.481-0500 I NETWORK  [conn117] end connection 127.0.0.1:57973 (2 connections now open)
+2019-03-06T17:39:58.481-0500 I NETWORK  [conn116] end connection 127.0.0.1:57972 (1 connection now open)
+2019-03-06T17:43:11.311-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57979 #118 (2 connections now open)
+2019-03-06T17:43:11.313-0500 I NETWORK  [conn118] received client metadata from 127.0.0.1:57979 conn118: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:43:11.317-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57980 #119 (3 connections now open)
+2019-03-06T17:43:11.319-0500 I NETWORK  [conn119] received client metadata from 127.0.0.1:57980 conn119: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:43:11.838-0500 I NETWORK  [conn118] end connection 127.0.0.1:57979 (2 connections now open)
+2019-03-06T17:43:11.838-0500 I NETWORK  [conn119] end connection 127.0.0.1:57980 (1 connection now open)
+2019-03-06T17:43:33.731-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57981 #120 (2 connections now open)
+2019-03-06T17:43:33.731-0500 I NETWORK  [conn120] received client metadata from 127.0.0.1:57981 conn120: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:43:33.733-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57982 #121 (3 connections now open)
+2019-03-06T17:43:33.733-0500 I NETWORK  [conn121] received client metadata from 127.0.0.1:57982 conn121: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:43:34.262-0500 I NETWORK  [conn121] end connection 127.0.0.1:57982 (2 connections now open)
+2019-03-06T17:43:34.262-0500 I NETWORK  [conn120] end connection 127.0.0.1:57981 (1 connection now open)
+2019-03-06T17:48:15.488-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:57999 #122 (2 connections now open)
+2019-03-06T17:48:15.490-0500 I NETWORK  [conn122] received client metadata from 127.0.0.1:57999 conn122: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:48:15.491-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58000 #123 (3 connections now open)
+2019-03-06T17:48:15.492-0500 I NETWORK  [conn123] received client metadata from 127.0.0.1:58000 conn123: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T17:48:16.016-0500 I NETWORK  [conn122] end connection 127.0.0.1:57999 (2 connections now open)
+2019-03-06T17:48:16.016-0500 I NETWORK  [conn123] end connection 127.0.0.1:58000 (1 connection now open)
+2019-03-06T18:24:26.084-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58229 #124 (2 connections now open)
+2019-03-06T18:24:26.086-0500 I NETWORK  [conn124] received client metadata from 127.0.0.1:58229 conn124: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:24:26.090-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58230 #125 (3 connections now open)
+2019-03-06T18:24:26.091-0500 I NETWORK  [conn125] received client metadata from 127.0.0.1:58230 conn125: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:24:26.096-0500 I NETWORK  [conn125] end connection 127.0.0.1:58230 (2 connections now open)
+2019-03-06T18:24:26.096-0500 I NETWORK  [conn124] end connection 127.0.0.1:58229 (1 connection now open)
+2019-03-06T18:24:26.484-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58231 #126 (2 connections now open)
+2019-03-06T18:24:26.485-0500 I NETWORK  [conn126] received client metadata from 127.0.0.1:58231 conn126: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:24:26.489-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58232 #127 (3 connections now open)
+2019-03-06T18:24:26.490-0500 I NETWORK  [conn127] received client metadata from 127.0.0.1:58232 conn127: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:24:26.518-0500 I NETWORK  [conn127] end connection 127.0.0.1:58232 (2 connections now open)
+2019-03-06T18:24:26.518-0500 I NETWORK  [conn126] end connection 127.0.0.1:58231 (1 connection now open)
+2019-03-06T18:28:23.986-0500 I COMMAND  [conn5] CMD: drop duckbase.apartment_info
+2019-03-06T18:28:23.989-0500 I STORAGE  [conn5] Finishing collection drop for duckbase.apartment_info (4be4a74a-2aa7-4190-8524-ad966c20df85).
+2019-03-06T18:28:34.554-0500 I COMMAND  [conn5] CMD: drop duckbase.chunks
+2019-03-06T18:28:46.884-0500 I COMMAND  [conn5] CMD: drop duckbase.imgs.chunks
+2019-03-06T18:28:46.886-0500 I STORAGE  [conn5] Finishing collection drop for duckbase.imgs.chunks (58795a4b-bff7-478d-8246-2d3b2eb4b5f1).
+2019-03-06T18:28:54.857-0500 I COMMAND  [conn5] CMD: drop duckbase.imgs.files
+2019-03-06T18:28:54.859-0500 I STORAGE  [conn5] Finishing collection drop for duckbase.imgs.files (cab306c6-7948-4683-ad53-f80e704432e7).
+2019-03-06T18:43:13.655-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58372 #128 (2 connections now open)
+2019-03-06T18:43:13.657-0500 I NETWORK  [conn128] received client metadata from 127.0.0.1:58372 conn128: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:13.660-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58373 #129 (3 connections now open)
+2019-03-06T18:43:13.661-0500 I NETWORK  [conn129] received client metadata from 127.0.0.1:58373 conn129: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:13.664-0500 I NETWORK  [conn129] end connection 127.0.0.1:58373 (2 connections now open)
+2019-03-06T18:43:13.665-0500 I NETWORK  [conn128] end connection 127.0.0.1:58372 (1 connection now open)
+2019-03-06T18:43:13.667-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58374 #130 (2 connections now open)
+2019-03-06T18:43:13.668-0500 I NETWORK  [conn130] received client metadata from 127.0.0.1:58374 conn130: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:13.671-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58375 #131 (3 connections now open)
+2019-03-06T18:43:13.672-0500 I NETWORK  [conn131] received client metadata from 127.0.0.1:58375 conn131: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:13.674-0500 I NETWORK  [conn131] end connection 127.0.0.1:58375 (2 connections now open)
+2019-03-06T18:43:13.674-0500 I NETWORK  [conn130] end connection 127.0.0.1:58374 (1 connection now open)
+2019-03-06T18:43:23.020-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58376 #132 (2 connections now open)
+2019-03-06T18:43:23.021-0500 I NETWORK  [conn132] received client metadata from 127.0.0.1:58376 conn132: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:23.024-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58377 #133 (3 connections now open)
+2019-03-06T18:43:23.025-0500 I NETWORK  [conn133] received client metadata from 127.0.0.1:58377 conn133: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:23.059-0500 I NETWORK  [conn133] end connection 127.0.0.1:58377 (2 connections now open)
+2019-03-06T18:43:23.059-0500 I NETWORK  [conn132] end connection 127.0.0.1:58376 (1 connection now open)
+2019-03-06T18:43:39.872-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58381 #134 (2 connections now open)
+2019-03-06T18:43:39.875-0500 I NETWORK  [conn134] received client metadata from 127.0.0.1:58381 conn134: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:39.881-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58382 #135 (3 connections now open)
+2019-03-06T18:43:39.883-0500 I NETWORK  [conn135] received client metadata from 127.0.0.1:58382 conn135: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:39.893-0500 I NETWORK  [conn135] end connection 127.0.0.1:58382 (2 connections now open)
+2019-03-06T18:43:39.893-0500 I NETWORK  [conn134] end connection 127.0.0.1:58381 (1 connection now open)
+2019-03-06T18:43:44.496-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58385 #136 (2 connections now open)
+2019-03-06T18:43:44.498-0500 I NETWORK  [conn136] received client metadata from 127.0.0.1:58385 conn136: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:44.503-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58386 #137 (3 connections now open)
+2019-03-06T18:43:44.504-0500 I NETWORK  [conn137] received client metadata from 127.0.0.1:58386 conn137: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:43:44.512-0500 I NETWORK  [conn137] end connection 127.0.0.1:58386 (2 connections now open)
+2019-03-06T18:43:44.512-0500 I NETWORK  [conn136] end connection 127.0.0.1:58385 (1 connection now open)
+2019-03-06T18:44:22.157-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58387 #138 (2 connections now open)
+2019-03-06T18:44:22.160-0500 I NETWORK  [conn138] received client metadata from 127.0.0.1:58387 conn138: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:44:22.163-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58388 #139 (3 connections now open)
+2019-03-06T18:44:22.165-0500 I NETWORK  [conn139] received client metadata from 127.0.0.1:58388 conn139: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:44:22.170-0500 I NETWORK  [conn139] end connection 127.0.0.1:58388 (2 connections now open)
+2019-03-06T18:44:22.170-0500 I NETWORK  [conn138] end connection 127.0.0.1:58387 (1 connection now open)
+2019-03-06T18:45:53.357-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58409 #140 (2 connections now open)
+2019-03-06T18:45:53.364-0500 I NETWORK  [conn140] received client metadata from 127.0.0.1:58409 conn140: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:45:53.374-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58410 #141 (3 connections now open)
+2019-03-06T18:45:53.378-0500 I NETWORK  [conn141] received client metadata from 127.0.0.1:58410 conn141: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:45:53.381-0500 I NETWORK  [conn141] end connection 127.0.0.1:58410 (2 connections now open)
+2019-03-06T18:45:53.382-0500 I NETWORK  [conn140] end connection 127.0.0.1:58409 (1 connection now open)
+2019-03-06T18:45:53.386-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58411 #142 (2 connections now open)
+2019-03-06T18:45:53.389-0500 I NETWORK  [conn142] received client metadata from 127.0.0.1:58411 conn142: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:45:53.394-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58412 #143 (3 connections now open)
+2019-03-06T18:45:53.395-0500 I NETWORK  [conn143] received client metadata from 127.0.0.1:58412 conn143: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:45:53.399-0500 I NETWORK  [conn143] end connection 127.0.0.1:58412 (2 connections now open)
+2019-03-06T18:45:53.400-0500 I NETWORK  [conn142] end connection 127.0.0.1:58411 (1 connection now open)
+2019-03-06T18:55:27.034-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58610 #144 (2 connections now open)
+2019-03-06T18:55:27.037-0500 I NETWORK  [conn144] received client metadata from 127.0.0.1:58610 conn144: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T18:55:27.461-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:58612 #145 (3 connections now open)
+2019-03-06T18:55:27.462-0500 I NETWORK  [conn145] received client metadata from 127.0.0.1:58612 conn145: { driver: { name: "PyMongo", version: "3.7.2" }, os: { type: "Darwin", name: "Darwin", architecture: "x86_64", version: "10.14.3" }, platform: "CPython 3.6.2.final.0" }
+2019-03-06T18:55:27.476-0500 I STORAGE  [conn145] createCollection: duckbase.imgs.files with generated UUID: 6c46b23b-7ab8-40cb-a9cb-f143d054f5ac
+2019-03-06T18:55:27.538-0500 I INDEX    [conn145] build index on: duckbase.imgs.files properties: { v: 2, key: { filename: 1, uploadDate: 1 }, name: "filename_1_uploadDate_1", ns: "duckbase.imgs.files" }
+2019-03-06T18:55:27.541-0500 I INDEX    [conn145] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-06T18:55:27.551-0500 I INDEX    [conn145] build index done.  scanned 0 total records. 0 secs
+2019-03-06T18:55:27.556-0500 I STORAGE  [conn145] createCollection: duckbase.imgs.chunks with generated UUID: c5bcb086-4d52-4515-938e-f147057618fa
+2019-03-06T18:55:27.602-0500 I INDEX    [conn145] build index on: duckbase.imgs.chunks properties: { v: 2, unique: true, key: { files_id: 1, n: 1 }, name: "files_id_1_n_1", ns: "duckbase.imgs.chunks" }
+2019-03-06T18:55:27.604-0500 I INDEX    [conn145] 	 building index using bulk method; build may temporarily use up to 500 megabytes of RAM
+2019-03-06T18:55:27.611-0500 I INDEX    [conn145] build index done.  scanned 0 total records. 0 secs
+2019-03-06T18:57:41.809-0500 I NETWORK  [conn144] end connection 127.0.0.1:58610 (1 connection now open)
+2019-03-06T18:57:41.809-0500 I NETWORK  [conn145] end connection 127.0.0.1:58612 (2 connections now open)
+2019-03-06T18:58:24.570-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59706 #146 (2 connections now open)
+2019-03-06T18:58:24.573-0500 I NETWORK  [conn146] received client metadata from 127.0.0.1:59706 conn146: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:58:24.576-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59707 #147 (3 connections now open)
+2019-03-06T18:58:24.577-0500 I NETWORK  [conn147] received client metadata from 127.0.0.1:59707 conn147: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T18:58:24.581-0500 I NETWORK  [conn147] end connection 127.0.0.1:59707 (2 connections now open)
+2019-03-06T18:58:24.581-0500 I NETWORK  [conn146] end connection 127.0.0.1:59706 (1 connection now open)
+2019-03-06T19:02:43.551-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59826 #148 (2 connections now open)
+2019-03-06T19:02:43.583-0500 I STORAGE  [conn148] createCollection: duckbase.apartment_list with generated UUID: 9ff08ce2-dd7c-4cee-8bdb-4021029dc224
+2019-03-06T19:02:43.675-0500 I NETWORK  [conn148] end connection 127.0.0.1:59826 (1 connection now open)
+2019-03-06T19:02:56.397-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59827 #149 (2 connections now open)
+2019-03-06T19:02:56.399-0500 I NETWORK  [conn149] received client metadata from 127.0.0.1:59827 conn149: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:02:56.403-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59828 #150 (3 connections now open)
+2019-03-06T19:02:56.404-0500 I NETWORK  [conn150] received client metadata from 127.0.0.1:59828 conn150: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:02:56.410-0500 I NETWORK  [conn150] end connection 127.0.0.1:59828 (2 connections now open)
+2019-03-06T19:02:56.410-0500 I NETWORK  [conn149] end connection 127.0.0.1:59827 (1 connection now open)
+2019-03-06T19:02:58.277-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59829 #151 (2 connections now open)
+2019-03-06T19:02:58.279-0500 I NETWORK  [conn151] received client metadata from 127.0.0.1:59829 conn151: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:02:58.285-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59830 #152 (3 connections now open)
+2019-03-06T19:02:58.286-0500 I NETWORK  [conn152] received client metadata from 127.0.0.1:59830 conn152: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:02:58.291-0500 I NETWORK  [conn152] end connection 127.0.0.1:59830 (2 connections now open)
+2019-03-06T19:02:58.291-0500 I NETWORK  [conn151] end connection 127.0.0.1:59829 (1 connection now open)
+2019-03-06T19:03:00.643-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59831 #153 (2 connections now open)
+2019-03-06T19:03:00.645-0500 I NETWORK  [conn153] received client metadata from 127.0.0.1:59831 conn153: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:00.651-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59832 #154 (3 connections now open)
+2019-03-06T19:03:00.653-0500 I NETWORK  [conn154] received client metadata from 127.0.0.1:59832 conn154: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:00.659-0500 I NETWORK  [conn154] end connection 127.0.0.1:59832 (2 connections now open)
+2019-03-06T19:03:00.660-0500 I NETWORK  [conn153] end connection 127.0.0.1:59831 (1 connection now open)
+2019-03-06T19:03:00.983-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59833 #155 (2 connections now open)
+2019-03-06T19:03:00.986-0500 I NETWORK  [conn155] received client metadata from 127.0.0.1:59833 conn155: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:00.994-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59834 #156 (3 connections now open)
+2019-03-06T19:03:00.995-0500 I NETWORK  [conn156] received client metadata from 127.0.0.1:59834 conn156: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:01.016-0500 I NETWORK  [conn156] end connection 127.0.0.1:59834 (2 connections now open)
+2019-03-06T19:03:01.016-0500 I NETWORK  [conn155] end connection 127.0.0.1:59833 (1 connection now open)
+2019-03-06T19:03:30.908-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59840 #157 (2 connections now open)
+2019-03-06T19:03:30.918-0500 I NETWORK  [conn157] received client metadata from 127.0.0.1:59840 conn157: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:30.926-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59841 #158 (3 connections now open)
+2019-03-06T19:03:30.927-0500 I NETWORK  [conn158] received client metadata from 127.0.0.1:59841 conn158: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:30.930-0500 I NETWORK  [conn158] end connection 127.0.0.1:59841 (2 connections now open)
+2019-03-06T19:03:30.930-0500 I NETWORK  [conn157] end connection 127.0.0.1:59840 (1 connection now open)
+2019-03-06T19:03:30.936-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59842 #159 (2 connections now open)
+2019-03-06T19:03:30.938-0500 I NETWORK  [conn159] received client metadata from 127.0.0.1:59842 conn159: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:30.941-0500 I NETWORK  [listener] connection accepted from 127.0.0.1:59843 #160 (3 connections now open)
+2019-03-06T19:03:30.942-0500 I NETWORK  [conn160] received client metadata from 127.0.0.1:59843 conn160: { driver: { name: "mongo-java-driver", version: "unknown" }, os: { type: "Darwin", name: "Mac OS X", architecture: "x86_64", version: "10.14.3" }, platform: "Java/JetBrains s.r.o/1.8.0_152-release-1343-b28" }
+2019-03-06T19:03:30.944-0500 I NETWORK  [conn160] end connection 127.0.0.1:59843 (2 connections now open)
+2019-03-06T19:03:30.944-0500 I NETWORK  [conn159] end connection 127.0.0.1:59842 (1 connection now open)
