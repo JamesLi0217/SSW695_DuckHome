@@ -1,9 +1,12 @@
 from pymongo import MongoClient
+from gridfs import *
 
 # Connect mongodb
 client = MongoClient('127.0.0.1', 27017)
 # Connect database
 db = client.duckbase
+
+
 # Connect collection
 
 def filter_apartments(filters):
@@ -15,11 +18,11 @@ def filter_apartments(filters):
     min_sqft, max_sqft = filters['min_sqft'], filters['max_sqft']
     result = db.apartment_list.find(
         {'city': city,
-        'info.price': {'$gte': min_price, '$lte': max_price},
-        'info.bed': bed,
-        'info.bath': bath,
-        'info.sqft': {'$gte': min_sqft, '$lte': max_sqft}
-        }
+         'info.price': {'$gte': min_price, '$lte': max_price},
+         'info.bed': bed,
+         'info.bath': bath,
+         'info.sqft': {'$gte': min_sqft, '$lte': max_sqft}
+         }
     )
     res_list = list(result)
 
@@ -27,6 +30,37 @@ def filter_apartments(filters):
         return {'success': False, 'desc': "can't find any apartment as filters in database"}
     else:
         return {'success': True, 'data': res_list}
+
+
+# Get apartment list from homepage city filter
+def get_list_city(city):
+    """
+    Finds and returns apartment list by city.
+    Returns a list of dictionaries, each dictionary contains apartment info except  _id.
+    Apartment info contains
+    """
+    try:
+        result_city = list(db.apartment_list.find({"city": city}, {"_id": 0}).limit(2))
+
+        if len(result_city) == 0:
+            return {'success': False, 'desc': "can't find any apartment as filters in database"}
+        else:
+            return {'success': True, 'data': result_city}
+
+    except Exception as e:
+        return e
+
+
+# Get image binary data by zpid
+def get_img(zpid):
+    fs = GridFS(db, collection="imgs")
+    for grid_out in fs.find({'zpid': str(zpid)}, no_cursor_timeout=True):
+        img_data = grid_out.read()
+        if len(img_data) == 0:
+            return {'success': False, 'desc': "can't find any images by this zpid in database"}
+        else:
+            return {'success': True, 'data': img_data}
+
 
 if __name__ == '__main__':
     filters = {
@@ -39,8 +73,23 @@ if __name__ == '__main__':
         'max_sqft': 1500
     }
     res = filter_apartments(filters)
-    if res['success'] == True:
+    if res['success'] is True:
         for item in res['data']:
             print(item['address'])
     else:
         print(res['desc'])
+
+    # test function get_list_city()
+    result_city = get_list_city('Hoboken')
+    if result_city['success'] is True:
+        for i in result_city['data']:
+            print(i['zpid'])
+
+    # test function get_img(zpid)
+    for i in result_city['data']:
+        zpid = i['zpid']
+        img_data = get_img(zpid)
+        if img_data['success'] is True:
+            img = open(str(zpid) + '.jpg', 'wb')
+            img.write(img_data['data'])
+            img.close()
