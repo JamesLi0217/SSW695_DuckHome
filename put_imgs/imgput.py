@@ -10,7 +10,7 @@ db = client.duckbase
 fs = GridFS(db, collection="imgs")
 
 # Get image urls
-f = open("img_url.csv", 'r')
+f = open("img.csv", 'r')
 for line in f.readlines():
     line_list = line.replace('\n', '').split(',')
     zpid = line_list[0]
