@@ -7,8 +7,6 @@ client = MongoClient('127.0.0.1', 27017)
 db = client.duckbase
 
 
-# Connect collection
-
 def filter_apartments(filters):
     # filter include: city, min_price, max_price, beds, baths, min_sqft, max_sqft
     # filter the price of the apartments in the list
@@ -69,7 +67,7 @@ def get_list_city(city):
     Apartment info contains
     """
     try:
-        result_city = list(db.apartment_list.find({"city": city}, {"_id": 0}).limit(2))
+        result_city = list(db.apartment_list.find({"city": city}, {"_id": 0}).limit(1))
 
         if len(result_city) == 0:
             return {'success': False, 'desc': "can't find any apartment as filters in database"}
@@ -83,12 +81,27 @@ def get_list_city(city):
 # Get image binary data by zpid
 def get_img(zpid):
     fs = GridFS(db, collection="imgs")
-    for grid_out in fs.find({'zpid': str(zpid)}, no_cursor_timeout=True):
+    for grid_out in fs.find({'zpid': zpid}, no_cursor_timeout=True):
         img_data = grid_out.read()
         if len(img_data) == 0:
             return {'success': False, 'desc': "can't find any images by this zpid in database"}
         else:
             return {'success': True, 'data': img_data}
+
+
+def add_user(user_info):
+    name = user_info['name']
+    email = user_info['email']
+    pwd = user_info['password']
+    mobile = user_info['mobile']
+    gender = user_info['gender']
+    tag = user_info['tag']
+
+    # Connect to the collection users
+    users = db.users
+
+    # Add a new user to the collection
+    users.insert_one(user_info)
 
 
 if __name__ == '__main__':
@@ -114,11 +127,19 @@ if __name__ == '__main__':
         for i in result_city['data']:
             print(i['zpid'])
 
-    # test function get_img(zpid)
+    # # test function get_img(zpid)
     for i in result_city['data']:
         zpid = i['zpid']
+        print(type(zpid))
         img_data = get_img(zpid)
         if img_data['success'] is True:
             img = open(str(zpid) + '.jpg', 'wb')
             img.write(img_data['data'])
             img.close()
+
+
+    # for i in db.apartment_list.find().limit(2):
+    #     print(type(i))
+    #     print(i)
+    #
+    #     db.apartment_list.update({'_id': i['_id']}, {'$set': {'user_id': 'xxxxxxx'}})
