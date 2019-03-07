@@ -95,10 +95,10 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                         p = re.compile(r'(\d+)')
                         price = p.findall(price)[0]
                         info_dict = {
-                            "bed": bed,
-                            'price': price,
-                            'bath': str(1),
-                            'sqft': str(1095)
+                            "bed": float(bed),
+                            'price': float(price),
+                            'bath': 1,
+                            'sqft': 1095
                         }
                         info_list.append(info_dict)
                 else: #format of info is like 3 bds  1 ba  1300 sqft
@@ -113,10 +113,10 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     p = re.compile(r'(\d+)')
                     price = p.findall(price)[0]
                     info_dict = {
-                        "bed": bed,
-                        'price': price,
-                        'bath': bath,
-                        'sqft': sqft
+                        "bed": float(bed),
+                        'price': float(price),
+                        'bath': float(bath) if bath != '--' else 1.5,
+                        'sqft': float(sqft) if sqft != '--' else random.randint(600, 1100)
                     }
                     info_list.append(info_dict)
 
