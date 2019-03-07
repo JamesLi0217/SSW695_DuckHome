@@ -18,7 +18,7 @@ def filter_apartments(filters):
     min_sqft, max_sqft = filters['min_sqft'], filters['max_sqft']
     cond = {}
     if city:
-        cond['city'] =city
+        cond['city'] = city
 
     if min_price:
         if 'info.price' in cond.keys():
@@ -43,6 +43,7 @@ def filter_apartments(filters):
             cond['info.sqft']['$gte'] = min_sqft
         else:
             cond['info.sqft'] = {'$gte': min_sqft}
+
     if max_price:
         if 'info,sqft' in cond.keys():
             cond['info.sqft']['$lte'] = max_sqft
@@ -103,7 +104,7 @@ if __name__ == '__main__':
     res = filter_apartments(filters)
     if res['success'] is True:
         for item in res['data']:
-            print(item['address'])
+            print(item['location'])
     else:
         print(res['desc'])
 
