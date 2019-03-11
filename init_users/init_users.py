@@ -33,12 +33,12 @@ def make_users():
 def main():
     df = pd.DataFrame(columns=['name', 'email', 'password', 'gender', 'mobile', 'tag'])
 
-    for i in range(20):
+    for i in range(100):
         dic = make_users()
         series = pd.Series(dic)
         df = df.append(series, ignore_index=True)
 
-    df.to_csv('init_users.csv')
+    df.to_csv('init_users.csv', index=False)
 
 
 if __name__ == '__main__':
