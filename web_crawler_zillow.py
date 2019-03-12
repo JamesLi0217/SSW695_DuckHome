@@ -7,6 +7,7 @@ import csv
 from api_key import google_keys
 from api import get_coordinate
 from pymongo import MongoClient
+import json
 city_dict = {'Hoboken': 'Hoboken-NJ/rentals', 'Jersey city': 'Jersey-city-NJ/rentals', 'Union city': 'Union-city-NJ/rentals'}
 #city_dict = {'Jersey city': 'Jersey-city-NJ_rb'}
 pre_url = 'https://www.zillow.com/'
@@ -22,11 +23,12 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
     # Connect database
     db = client.duckbase
     collection = db.apartment_list
+
     #csvfile1 = open(file1, 'w', newline='') #open a csv file and ready to pull data
-    csvfile2 = open(file2, 'w', newline='')
+    #csvfile2 = open(file2, 'w', newline='')
 
     #writer1 = csv.writer(csvfile1)
-    writer2 = csv.writer(csvfile2)
+    #writer2 = csv.writer(csvfile2)
 
     for city, suffix in city_dict.items(): # go through the city list
         cur_page = 1
@@ -60,6 +62,16 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                 raw_location = properties.xpath(".//span[@class='zsg-photo-card-address']//text()")
                 load_pic = properties.xpath(".//div[@class='zsg-photo-card-img']/img[contains(@src, 'https:')]/@src")
                 raw_pic = properties.xpath(".//div[@class='zsg-photo-card-img']/img/@data-src")
+                raw_json = properties.xpath(".//div[@class='minibubble template hide']/comment()")[0].text
+                #print(raw_json)
+                raw_json = re.sub(r"(\\\\)", "", raw_json)
+                try:
+                    formed_json = json.loads(raw_json)
+                except:
+                    str = re.sub(r"(\\)-", "", raw_json)
+                    formed_json = json.loads(str)
+                print(formed_json)
+
                 # reg = 'src="(.+?\.jpg)" alt='
                 # imgre = re.compile(reg)
                 # imglist = re.findall(imgre, properties)
@@ -75,14 +87,14 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     pic = 'None'
 
                 zpid = raw_zpid[0] if raw_zpid else int(time.time())
-                print(zpid)
+                #print(zpid)
                 address = ' '.join(' '.join(raw_address).split()).replace(',', '') if raw_address else 'None'
                 city = ''.join(raw_city).strip().replace(',', '') if raw_city else 'None'
                 state = ''.join(raw_state).strip().replace(',', '') if raw_state else 'None'
                 postal_code = ''.join(raw_postal_code).strip().replace(',', '') if raw_postal_code else 'None'
 
                 # replace dot with comma
-                info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '').replace(',','')
+                info = ' '.join(' '.join(raw_info).split()).replace(u"\xb7", '').replace(',', '')
                 info_list = []
                 if not raw_price: #format of info is like 0 $2425+ 1 $2910+ 2 $4000+
                     pattern = re.compile(r'(\d \$[0-9]+)')
@@ -153,18 +165,18 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                         'lng': lng
                     }
                 }
-                print(apartment_info)
-                db.apartment_list.insert(apartment_info)
+                #print(apartment_info)
+                db.apartment_list.update({'zpid': zpid}, {'$set': {'factors': formed_json}})
 
                 #print(info)
                 img = [zpid, pic]
                 #print(img)
                 #writer1.writerow(info)
-                writer2.writerow(img)
+                #writer2.writerow(img)
             url = next_url
             time.sleep(random.randint(1, 3))
     #csvfile1.close()
-    csvfile2.close()
+    #csvfile2.close()
 
 def add_coordinate(file): #apartmentlist, target_file
     f1 = open(file, 'r+')
