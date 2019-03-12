@@ -203,7 +203,6 @@ def add_coordinate(file): #apartmentlist, target_file
     f2.close()
     print('Done!')
 
-
 if __name__ == '__main__':
     #go first then run add_coordinate()
     get_data(city_dict, 'completed_info.csv', 'img.csv')
