@@ -22,13 +22,12 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
     client = MongoClient('127.0.0.1', 27017)
     # Connect database
     db = client.duckbase
-    collection = db.apartment_list
 
     #csvfile1 = open(file1, 'w', newline='') #open a csv file and ready to pull data
-    #csvfile2 = open(file2, 'w', newline='')
+    csvfile2 = open(file2, 'w', newline='')
 
     #writer1 = csv.writer(csvfile1)
-    #writer2 = csv.writer(csvfile2)
+    writer2 = csv.writer(csvfile2)
 
     for city, suffix in city_dict.items(): # go through the city list
         cur_page = 1
@@ -71,7 +70,7 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     str = re.sub(r"(\\)-", "", raw_json)
                     formed_json = json.loads(str)
 
-                print(formed_json)
+                #print(formed_json)
 
                 # reg = 'src="(.+?\.jpg)" alt='
                 # imgre = re.compile(reg)
@@ -164,16 +163,17 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     'coordinates': {
                         'lat': lat,
                         'lng': lng
-                    }
+                    },
+                    'factors': formed_json
                 }
                 #print(apartment_info)
-                db.apartment_list.update({'zpid': zpid}, {'$set': {'factors': formed_json}})
+                db.apartment_list.insert(apartment_info)
 
                 #print(info)
                 img = [zpid, pic]
                 #print(img)
                 #writer1.writerow(info)
-                #writer2.writerow(img)
+                writer2.writerow(img)
             url = next_url
             time.sleep(random.randint(1, 3))
     #csvfile1.close()
