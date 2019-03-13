@@ -203,13 +203,13 @@ if __name__ == '__main__':
     else:
         print(res['desc'])
 
-    # test function get_list_city()
+    # pre_data function get_list_city()
     result_city = get_list_city('Hoboken')
     if result_city['success'] is True:
         for i in result_city['data']:
             print(i['zpid'])
 
-    # # test function get_img(zpid)
+    # pre_data function get_img(zpid)
     for i in result_city['data']:
         zpid = i['zpid']
         print(type(zpid))

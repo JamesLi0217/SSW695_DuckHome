@@ -17,13 +17,22 @@ with codecs.open('raw_data.csv', 'w', 'utf-8') as csvfile:
     writer = csv.writer(csvfile)
 
     # Write column_names
-    writer.writerow(['bed', 'bath', 'square', 'city', 'price', 'year_built', 'home_type'])
+    writer.writerow(['bed', 'bath', 'square', 'city', 'year_built', 'home_type', 'price'])
 
     # Write raw data
     for data in cursor:
-        city = data['city']
+
+        # Get city info
+        if data['city'] != 'None':
+            city = data['city']
+        else:
+            for ct in ['Hoboken', 'Jersey City', 'Union City']:
+                if ct in data['location']:
+                    city = ct
+
         factors = data.get('factors')
 
+        # Get bed, bath, square, price info
         for i in data['info']:
             bed = i['bed']
             bath = i['bath']
@@ -33,10 +42,14 @@ with codecs.open('raw_data.csv', 'w', 'utf-8') as csvfile:
             if factors:
                 home_info = factors.get('homeInfo')
                 if home_info:
+                    # Get yearBuilt homeType info
                     year_built = home_info.get('yearBuilt')
                     home_type = home_info.get('homeType')
 
-                    writer.writerow([bed, bath, square, city, price, year_built, home_type])
+                    # Write all info
+                    writer.writerow([bed, bath, square, city, year_built, home_type, price])
 
+                else:
+                    writer.writerow([bed, bath, square, city, None, None, price])
             else:
-                writer.writerow([bed, bath, square, city, price, None, None])
+                writer.writerow([bed, bath, square, city, None, None, price])
