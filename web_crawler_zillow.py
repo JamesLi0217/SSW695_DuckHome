@@ -70,6 +70,7 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                 except:
                     str = re.sub(r"(\\)-", "", raw_json)
                     formed_json = json.loads(str)
+
                 print(formed_json)
 
                 # reg = 'src="(.+?\.jpg)" alt='
