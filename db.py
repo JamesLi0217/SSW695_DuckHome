@@ -1,6 +1,9 @@
 from pymongo import MongoClient
 from gridfs import *
-
+import time
+from api_key import google_keys
+from api import get_coordinate
+import random
 # Connect mongodb
 client = MongoClient('127.0.0.1', 27017)
 # Connect database
@@ -103,6 +106,86 @@ def add_user(user_info):
     # Add a new user to the collection
     users.insert_one(user_info)
 
+# apartment_info: address, city, state, postal_code, bed, bath, sqft, price, title
+def add_apartment(apartment_info, user_id):
+    for key, value in apartment_info.items():
+        if not value:
+            return {'success': False, 'desc': f'The key of {key} is empty'}
+
+    if not db.users.find_one({'_id': user_id}):
+        return {'success': False, 'desc': f"Didn't find the user_id {user_id}in users Database"}
+
+    address, city, state = apartment_info['address'], apartment_info['city'], apartment_info['state']
+    postal_code, bed, bath = apartment_info['postal_code'], apartment_info['bed'], apartment_info['bath']
+    sqft, price, title = apartment_info['sqft'], apartment_info['price'], apartment_info['title']
+    location = ' '.join([address, city, state, postal_code])
+    apartment = db.apartment_list.find({'location': location})
+
+    try:
+        info_dict = {
+            "bed": float(bed),
+            'price': float(price),
+            'bath': float(bath),
+            'sqft': float(sqft)
+        }
+    except ValueError:
+        return {'success': False, 'desc': 'bed, price, bath, sqft should be numeral values'}
+
+    if apartment: #have this location in tht database
+        for info in apartment['info']: # check the info list
+            if info_dict.__eq__(info): # already has this type of feature
+                return {'success': False, 'desc': f'Already has this type of features under the location:{location}'}
+        else:
+            info_list = apartment['info']
+            info_list.append(info_dict)
+            result = db.apartment_list.update_one({'location': location}, {'$set': {'info': info_list}})
+            if result.nUpserted == 1:
+                return {'success': True, 'desc': f'Updated one new info under the location of {location}'}
+            else:
+                return {'success': False, 'desc': "Didn't update anything"}
+    else: # a new apartment address added
+        api_pool = google_keys()
+        key = random.choice(api_pool)
+        lat, lng = get_coordinate(address, key)
+
+        apartment_info = {
+            'zpid': time.time(),
+            'address': address,
+            'city': city,
+            'state': state,
+            'postal_code': postal_code,
+            'info': [info_dict],
+            'location': location,
+            'property_url': '',
+            'title': title,
+            'coordinates': {
+                'lat': lat,
+                'lng': lng
+            },
+            'user_id': user_id
+        }
+
+
+def add_img_by_zpid(img, zpid):
+    fs = GridFS(db, collection="imgs")
+    dic = {
+        'zpid': zpid,
+        'url': 'Local data'
+    }
+    if not fs.find_one({"zpid": zpid}):
+        fs.put(img, **dic)
+        return {'success': True, 'desc': 'Image added successfully'}
+    else:
+        return {'success': False, 'desc': f'Already have an images under the zpid of {zpid}'}
+
+def delete_img_by_zpid(zpid):
+    fs = GridFS(db, collection='imgs')
+    img = fs.find_one({"zpid": zpid})
+    if not img:
+        return {'success': False, 'desc': f"Didn't find zpid of {zpid} in the Database"}
+    file_id = img['_id']
+    fs.delete(file_id)
+    return {'success': True, 'desc': f'Delete the image under the zpid of {zpid} successfully'}
 
 if __name__ == '__main__':
     filters = {

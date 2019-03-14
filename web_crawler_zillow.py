@@ -22,13 +22,12 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
     client = MongoClient('127.0.0.1', 27017)
     # Connect database
     db = client.duckbase
-    collection = db.apartment_list
 
     #csvfile1 = open(file1, 'w', newline='') #open a csv file and ready to pull data
-    #csvfile2 = open(file2, 'w', newline='')
+    csvfile2 = open(file2, 'w', newline='')
 
     #writer1 = csv.writer(csvfile1)
-    #writer2 = csv.writer(csvfile2)
+    writer2 = csv.writer(csvfile2)
 
     for city, suffix in city_dict.items(): # go through the city list
         cur_page = 1
@@ -71,7 +70,7 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     str = re.sub(r"(\\)-", "", raw_json)
                     formed_json = json.loads(str)
 
-                print(formed_json)
+                #print(formed_json)
 
                 # reg = 'src="(.+?\.jpg)" alt='
                 # imgre = re.compile(reg)
@@ -110,26 +109,33 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                         info_dict = {
                             "bed": float(bed),
                             'price': float(price),
-                            'bath': 1,
-                            'sqft': 1095
+                            'bath': None,
+                            'sqft': None
                         }
                         info_list.append(info_dict)
                 else: #format of info is like 3 bds  1 ba  1300 sqft
-                    pattern = re.compile(r'(.+)\sbd[s]?\s\s(.+)\sba\s\s(.+)\ssqft')
+                    # if it's a studio
+                    if info.startswith('Studio'):
+                        pattern = re.compile(r'(Studio)\s\s(.+)\sba\s\s(.+)\ssqft')
+                    else:
+                        pattern = re.compile(r'(.+)\sbd[s]?\s\s(.+)\sba\s\s(.+)\ssqft')
                     info_arr = pattern.findall(info)
+                    #print(info_arr)
                     #print(info_arr)
                     if not info_arr:
                         continue
+
                     info_arr = info_arr[0]
-                    bed, bath, sqft = info_arr[0], info_arr[1], info_arr[2]
+                    bed = info_arr[0] if info_arr[0] != 'Studio' else 0
+                    bath, sqft = info_arr[1], info_arr[2]
                     price = ''.join(raw_price).strip().replace(',', '')
                     p = re.compile(r'(\d+)')
                     price = p.findall(price)[0]
                     info_dict = {
                         "bed": float(bed),
                         'price': float(price),
-                        'bath': float(bath) if bath != '--' else 1.5,
-                        'sqft': float(sqft) if sqft != '--' else random.randint(600, 1100)
+                        'bath': float(bath) if bath != '--' else None,
+                        'sqft': float(sqft) if sqft != '--' else None
                     }
                     info_list.append(info_dict)
 
@@ -149,8 +155,8 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                 else:
                     lat_str, lng_str = raw_lat[0], raw_lng[0]
                     lat, lng = f"{lat_str[:2]}.{lat_str[2:]}", f"{lng_str[:3]}.{lng_str[3:]}"
-
                 #info = [zpid, address, city, state, postal_code, info_list, location, property_url, title, lat, lng]
+                print(info_list)
                 apartment_info = {
                     'zpid': zpid,
                     'address': address,
@@ -164,16 +170,17 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                     'coordinates': {
                         'lat': lat,
                         'lng': lng
-                    }
+                    },
+                    'factors': formed_json
                 }
                 #print(apartment_info)
-                db.apartment_list.update({'zpid': zpid}, {'$set': {'factors': formed_json}})
+                db.apartment_list.insert(apartment_info)
 
                 #print(info)
                 img = [zpid, pic]
                 #print(img)
                 #writer1.writerow(info)
-                #writer2.writerow(img)
+                writer2.writerow(img)
             url = next_url
             time.sleep(random.randint(1, 3))
     #csvfile1.close()
