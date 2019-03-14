@@ -161,7 +161,8 @@ def add_apartment(apartment_info, user_id):
             'coordinates': {
                 'lat': lat,
                 'lng': lng
-            }
+            },
+            'user_id': user_id
         }
 
 

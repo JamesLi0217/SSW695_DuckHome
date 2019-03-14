@@ -109,26 +109,33 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                         info_dict = {
                             "bed": float(bed),
                             'price': float(price),
-                            'bath': 1,
-                            'sqft': 1095
+                            'bath': None,
+                            'sqft': None
                         }
                         info_list.append(info_dict)
                 else: #format of info is like 3 bds  1 ba  1300 sqft
-                    pattern = re.compile(r'(.+)\sbd[s]?\s\s(.+)\sba\s\s(.+)\ssqft')
+                    # if it's a studio
+                    if info.startswith('Studio'):
+                        pattern = re.compile(r'(Studio)\s\s(.+)\sba\s\s(.+)\ssqft')
+                    else:
+                        pattern = re.compile(r'(.+)\sbd[s]?\s\s(.+)\sba\s\s(.+)\ssqft')
                     info_arr = pattern.findall(info)
+                    #print(info_arr)
                     #print(info_arr)
                     if not info_arr:
                         continue
+
                     info_arr = info_arr[0]
-                    bed, bath, sqft = info_arr[0], info_arr[1], info_arr[2]
+                    bed = info_arr[0] if info_arr[0] != 'Studio' else 0
+                    bath, sqft = info_arr[1], info_arr[2]
                     price = ''.join(raw_price).strip().replace(',', '')
                     p = re.compile(r'(\d+)')
                     price = p.findall(price)[0]
                     info_dict = {
                         "bed": float(bed),
                         'price': float(price),
-                        'bath': float(bath) if bath != '--' else 1.5,
-                        'sqft': float(sqft) if sqft != '--' else random.randint(600, 1100)
+                        'bath': float(bath) if bath != '--' else None,
+                        'sqft': float(sqft) if sqft != '--' else None
                     }
                     info_list.append(info_dict)
 
@@ -148,8 +155,8 @@ def get_data(city_dict, file1, file2): #get data from zillow for rent part, url 
                 else:
                     lat_str, lng_str = raw_lat[0], raw_lng[0]
                     lat, lng = f"{lat_str[:2]}.{lat_str[2:]}", f"{lng_str[:3]}.{lng_str[3:]}"
-
                 #info = [zpid, address, city, state, postal_code, info_list, location, property_url, title, lat, lng]
+                print(info_list)
                 apartment_info = {
                     'zpid': zpid,
                     'address': address,
