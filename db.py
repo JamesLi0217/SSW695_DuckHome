@@ -107,43 +107,51 @@ def add_user(user_info):
     users.insert_one(user_info)
 
 # apartment_info: address, city, state, postal_code, bed, bath, sqft, price, title
-def add_apartment(apartment_info, user_id):
+def add_apartment_by_userID(apartment_info, user_id):
     for key, value in apartment_info.items():
         if not value:
             return {'success': False, 'desc': f'The key of {key} is empty'}
 
-    if not db.users.find_one({'_id': user_id}):
-        return {'success': False, 'desc': f"Didn't find the user_id {user_id}in users Database"}
+    if not db.users.find({'_id': user_id}):
+        return {'success': False, 'desc': f"Didn't find the user_id {user_id} in users Database"}
 
     address, city, state = apartment_info['address'], apartment_info['city'], apartment_info['state']
     postal_code, bed, bath = apartment_info['postal_code'], apartment_info['bed'], apartment_info['bath']
     sqft, price, title = apartment_info['sqft'], apartment_info['price'], apartment_info['title']
     location = ' '.join([address, city, state, postal_code])
-    apartment = db.apartment_list.find({'location': location})
-
+    #print(location)
+    apartments = db.apartment_list.find({'location': location})
+    #print(apartments)
     try:
         info_dict = {
             "bed": float(bed),
             'price': float(price),
             'bath': float(bath),
-            'sqft': float(sqft)
+            'sqft': float(sqft),
+            'user_id': user_id
         }
     except ValueError:
         return {'success': False, 'desc': 'bed, price, bath, sqft should be numeral values'}
-
-    if apartment: #have this location in tht database
-        for info in apartment['info']: # check the info list
-            if info_dict.__eq__(info): # already has this type of feature
-                return {'success': False, 'desc': f'Already has this type of features under the location:{location}'}
-        else:
-            info_list = apartment['info']
-            info_list.append(info_dict)
-            result = db.apartment_list.update_one({'location': location}, {'$set': {'info': info_list}})
-            if result.nUpserted == 1:
-                return {'success': True, 'desc': f'Updated one new info under the location of {location}'}
+    apart_list = apartments
+    if apart_list: #have this location in tht database
+        print('go inside the apartments')
+        for apartment in apart_list: # check the info list
+            print(apartment)
+            for info in apartment['info']:
+                if info_dict.__eq__(info): # already has this type of feature
+                    print('already have a same one')
+                    return {'success': False, 'desc': f'Already has this type of features under the location:{location}'}
             else:
-                return {'success': False, 'desc': "Didn't update anything"}
+                info_list = apartment['info']
+                info_list.append(info_dict)
+                result = db.apartment_list.update_one({'location': location}, {'$set': {'info': info_list}})
+                if result.nUpserted == 1:
+                    return {'success': True, 'desc': f'Updated one new info under the location of {location}'}
+                else:
+                    return {'success': False, 'desc': "Didn't update anything"}
+
     else: # a new apartment address added
+        print('add a new set in database')
         api_pool = google_keys()
         key = random.choice(api_pool)
         lat, lng = get_coordinate(address, key)
@@ -161,9 +169,42 @@ def add_apartment(apartment_info, user_id):
             'coordinates': {
                 'lat': lat,
                 'lng': lng
-            },
-            'user_id': user_id
+            }
         }
+        print(apartment_info)
+        result = db.apartment_list.insert_one(apartment_info)
+        new_id = result.inserted_id
+        new_apart = db.apartment_list.find_one({'_id': new_id})
+        if not new_apart:
+            return {'success': False, 'desc': "Can't insert for some reason."}
+        else:
+            return {'success': True, 'data': new_apart}
+
+def get_apartment_by_userid(user_id):
+    if not user_id:
+        return {'success': False, 'desc': 'The user ID is empty'}
+
+    apartments = db.apartment_list.find()
+    apart_list = list(apartments)
+    res = []
+
+    for apart in apart_list:
+        user_apart = apart
+        apart_info = apart['info'][:]
+        user_apart['info'] = []
+
+        for info in apart_info:
+            if str(info['user_id']) == user_id:
+                user_apart['info'].append(info)
+
+        if len(user_apart['info']) > 0:
+            res.append(user_apart)
+
+    print(res)
+    if len(res) == 0:
+        return {'success': False, 'desc': f"Didn't find the matched apartment with the user id: {user_id}"}
+    else:
+        return {'success': True, 'data': res}
 
 
 def add_img_by_zpid(img, zpid):
@@ -188,41 +229,19 @@ def delete_img_by_zpid(zpid):
     return {'success': True, 'desc': f'Delete the image under the zpid of {zpid} successfully'}
 
 if __name__ == '__main__':
-    filters = {
-        'city': 'Hoboken',
-        'min_price': 0,
-        'max_price': 2000,
-        'bed': 1,
-        'bath': 1,
-        'min_sqft': 0,
-        'max_sqft': 1500
+    apartment_info = {
+        'address': '20 River Ct',
+        'city': 'Jersey city',
+        'state': 'NJ',
+        'postal_code': '07310',
+        'bed': 2,
+        'bath': 2,
+        'sqft': 1200,
+        'price': 3900,
+        'title': 'Apartment for rent'
     }
-    res = filter_apartments(filters)
-    if res['success'] is True:
-        for item in res['data']:
-            print(item['location'])
-    else:
-        print(res['desc'])
-
-    # pre_data function get_list_city()
-    result_city = get_list_city('Hoboken')
-    if result_city['success'] is True:
-        for i in result_city['data']:
-            print(i['zpid'])
-
-    # pre_data function get_img(zpid)
-    for i in result_city['data']:
-        zpid = i['zpid']
-        print(type(zpid))
-        img_data = get_img(zpid)
-        if img_data['success'] is True:
-            img = open(str(zpid) + '.jpg', 'wb')
-            img.write(img_data['data'])
-            img.close()
-
-
-    # for i in db.apartment_list.find().limit(2):
-    #     print(type(i))
-    #     print(i)
-    #
-    #     db.apartment_list.update({'_id': i['_id']}, {'$set': {'user_id': 'xxxxxxx'}})
+    user_id = '5c8aac31039e613043c59a19'
+    #new_apart = add_apartment_by_userID(apartment_info, user_id)
+    #print(new_apart)
+    apart = get_apartment_by_userid("5c86bace0840c437cf3d697d")
+    print(len(apart['data']))
