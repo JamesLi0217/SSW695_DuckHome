@@ -4,6 +4,7 @@ import time
 from api_key import google_keys
 from api import get_coordinate
 import random
+from bson import ObjectId
 # Connect mongodb
 client = MongoClient('127.0.0.1', 27017)
 # Connect database
@@ -112,7 +113,9 @@ def add_apartment_by_userID(apartment_info, user_id):
         if not value:
             return {'success': False, 'desc': f'The key of {key} is empty'}
 
-    if not db.users.find({'_id': user_id}):
+    #print(db.users.find_one({'_id': ObjectId('5c86bace0840c437cf3d6938')}))
+
+    if not db.users.find_one({'_id': ObjectId(user_id)}):
         return {'success': False, 'desc': f"Didn't find the user_id {user_id} in users Database"}
 
     address, city, state = apartment_info['address'], apartment_info['city'], apartment_info['state']
@@ -132,7 +135,7 @@ def add_apartment_by_userID(apartment_info, user_id):
         }
     except ValueError:
         return {'success': False, 'desc': 'bed, price, bath, sqft should be numeral values'}
-    apart_list = apartments
+    apart_list = list(apartments)
     if apart_list: #have this location in tht database
         print('go inside the apartments')
         for apartment in apart_list: # check the info list
@@ -180,7 +183,7 @@ def add_apartment_by_userID(apartment_info, user_id):
         else:
             return {'success': True, 'data': new_apart}
 
-def get_apartment_by_userid(user_id):
+def get_apartment_by_userID(user_id):
     if not user_id:
         return {'success': False, 'desc': 'The user ID is empty'}
 
@@ -206,6 +209,60 @@ def get_apartment_by_userid(user_id):
     else:
         return {'success': True, 'data': res}
 
+def delete_apart_by_userid(apartment_info, user_id):
+    for key, value in apartment_info.items():
+        if not value:
+            return {'success': False, 'desc': f'The key of {key} is empty'}
+
+    if not db.users.find_one({'_id': ObjectId(user_id)}):
+        return {'success': False, 'desc': f"Didn't find the user_id {user_id} in users Database"}
+
+    address, city, state = apartment_info['address'], apartment_info['city'], apartment_info['state']
+    postal_code, bed, bath = apartment_info['postal_code'], apartment_info['bed'], apartment_info['bath']
+    sqft, price, title = apartment_info['sqft'], apartment_info['price'], apartment_info['title']
+    location = ' '.join([address, city, state, postal_code])
+
+    apartments = db.apartment_list.find({'location': location})
+
+    try:
+        info_dict = {
+            "bed": float(bed),
+            'price': float(price),
+            'bath': float(bath),
+            'sqft': float(sqft),
+            'user_id': user_id
+        }
+    except ValueError:
+        return {'success': False, 'desc': 'bed, price, bath, sqft should be numeral values'}
+    apart_list = list(apartments)
+
+    if apart_list: #find this location in database
+        for i, apartment in enumerate(apart_list):
+            #print(apartment)
+            _id = apartment['_id']
+            if len(apartment['info']) == 1 and info_dict.__eq__(apartment['info'][0]): #if len of info == 1 and match the delete item. Remove it
+                apart_list.pop(i)
+                print('Delete whole list:')
+                res = db.apartment_list.delete_one({'_id': _id})
+                if res.deleted_count == 1:
+                    return {'success': True, 'desc': f'Delete an apartment info:{_id} successfully'}
+                else:
+                    return {'success': False, 'desc': "Didn't delete successfully"}
+            else:
+                for j, info in enumerate(apartment['info']):
+                    if info_dict.__eq__(info): #if find the matched info in the apartment
+                        info.pop(j)
+                        print('Delete one item:')
+                        res = db.apartment_list.update_one({'_id': _id}, {'$set': {'info': info}})
+                        if res.modified_count == 1:
+                            return {'success': True, 'desc': f'Delete an item in apartment:{_id} successfully'}
+                        else:
+                            return {'success': False, 'desc': "Didn't delete successfully"}
+
+        return {'success': False, 'desc': "Didn't find the matched info in the database"}
+
+    else:
+        return {'success': False, 'desc': "Did't find this address of apartment in database"}
 
 def add_img_by_zpid(img, zpid):
     fs = GridFS(db, collection="imgs")
@@ -240,8 +297,10 @@ if __name__ == '__main__':
         'price': 3900,
         'title': 'Apartment for rent'
     }
-    user_id = '5c8aac31039e613043c59a19'
+    user_id = "5c86bace0840c437cf3d6938"
     #new_apart = add_apartment_by_userID(apartment_info, user_id)
     #print(new_apart)
-    apart = get_apartment_by_userid("5c86bace0840c437cf3d697d")
-    print(len(apart['data']))
+    #apart = get_apartment_by_userID("5c86bace0840c437cf3d697d")
+    #print(len(apart['data']))
+    res = delete_apart_by_userid(apartment_info, user_id)
+    print(res)
