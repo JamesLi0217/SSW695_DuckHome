@@ -5,6 +5,10 @@ from api_key import google_keys
 from api import get_coordinate
 import random
 from bson import ObjectId
+import numpy as np
+from sklearn.externals import joblib
+
+
 # Connect mongodb
 client = MongoClient('127.0.0.1', 27017)
 # Connect database
@@ -285,6 +289,31 @@ def delete_img_by_zpid(zpid):
     fs.delete(file_id)
     return {'success': True, 'desc': f'Delete the image under the zpid of {zpid} successfully'}
 
+def predict_post_price(info, pkl_path):
+    try:
+        bed, bath, sqft, city = info['bed'], info['bath'], info['sqft'], info['city'].lower()
+        min, max = 180, 5000
+        sqft = (sqft - min) / (max - min)
+        dict = {
+            'bed': bed,
+            'bath': bath,
+            'hoboken': 0,
+            'jersey city': 0,
+            'union city': 0,
+            'sqft': sqft
+        }
+        dict[city] = 1
+        # print(dict)
+        res = [dict['bed'], dict['bath'], dict['hoboken'], dict['jersey city'], dict['union city'], dict['sqft']]
+        a = np.array(res)
+        # print(a)
+        model = joblib.load(pkl_path)
+        pred_price = model.predict([a])
+        pred_price = np.round(pred_price[0], 0)
+        return {'success': True, 'data': pred_price}
+    except Exception as e:
+        return {'success': False, 'desc': e}
+
 if __name__ == '__main__':
     apartment_info = {
         'address': '20 River Ct',
@@ -302,5 +331,7 @@ if __name__ == '__main__':
     #print(new_apart)
     #apart = get_apartment_by_userID("5c86bace0840c437cf3d697d")
     #print(len(apart['data']))
-    res = delete_apart_by_userid(apartment_info, user_id)
-    print(res)
+    #res = delete_apart_by_userid(apartment_info, user_id)
+    #print(res)
+    a = predict_post_price(apartment_info, '/Users/franklin/SSW695/SSW695_DuckHome/build_model/SGDRegression_model.pkl')
+    print(a)

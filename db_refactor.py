@@ -1,6 +1,7 @@
 from pymongo import MongoClient
 import random
-
+import numpy as np
+from sklearn.externals import joblib
 # Connect mongodb
 client = MongoClient('127.0.0.1', 27017)
 # Connect database
@@ -99,7 +100,51 @@ def refactor_desc():
                f"front door."
         print(_id)
         apartment_list.update_one({'_id': _id}, {'$set': {'desc': desc}})
+
+def refactor_tag():
+    apart_list = list(apartment_list.find())
+    for apart in apart_list:
+        _id = apart['_id']
+
+        for ct in ['hoboken', 'jersey city', 'union city']:
+            if ct in apart['location'].lower():
+                city = ct
+
+        print(city)
+        for info in apart['info']:
+            bed, bath, sqft = info['bed'], info['bath'], info['sqft']
+            min, max = 180, 5000
+            sqft = (sqft - min)/(max - min)
+            dict = {
+                'bed': bed,
+                'bath': bath,
+                'hoboken': 0,
+                'jersey city': 0,
+                'union city': 0,
+                'sqft': sqft
+            }
+            dict[city] = 1
+            #print(dict)
+            res = [dict['bed'], dict['bath'], dict['hoboken'], dict['jersey city'], dict['union city'], dict['sqft']]
+            a = np.array(res)
+            #print(a)
+            model = joblib.load('/Users/franklin/SSW695/SSW695_DuckHome/build_model/SGDRegression_model.pkl')
+            pred_price = model.predict([a])
+            pred_price = np.round(pred_price[0], 0)
+            print(pred_price)
+            price = info['price']
+
+            if price <= pred_price:
+                recommend = True
+            else:
+                recommend = False
+
+            info['recommend'] = recommend
+        apartment_list.update_one({'_id': _id}, {'$set': {'info': apart['info']}})
+
+
 #refactor_bath_sqft()
 #refactor_user()
 #refactor_desc()
-refactor_comment()
+#refactor_comment()
+refactor_tag()
