@@ -1,0 +1,1414 @@
+bed,bath,square,city,year_built,home_type,price
+2,1.0,827,Hoboken,0,None,3200
+1,1.0,733,Hoboken,0,None,3350
+2,1.5,1006,Hoboken,0,None,4500
+3,1.5,1423,Hoboken,0,None,6300
+2,2.0,1006,Hoboken,0,None,2900
+1,1.0,500,Hoboken,0,None,1800
+1,1.0,733,Hoboken,0,None,2000
+2,1.0,1006,Hoboken,0,None,1850
+0,1.0,640,Hoboken,0,None,2711
+1,1.0,733,Hoboken,0,None,3023
+2,1.5,1006,Hoboken,0,None,3801
+3,1.5,1423,Hoboken,0,None,5324
+1,1.0,500,Hoboken,0,None,1800
+0,1.0,640,Hoboken,0,None,2790
+1,1.0,733,Hoboken,0,None,3270
+2,1.5,1006,Hoboken,0,None,3920
+1,1.0,733,Hoboken,0,None,2899
+2,1.5,1006,Hoboken,0,None,3350
+1,1.0,733,Hoboken,0,None,2704
+2,1.5,1006,Hoboken,0,None,4523
+3,1.5,1423,Hoboken,0,None,5536
+2,2.0,1000,Hoboken,0,None,2900
+0,1.0,500,Hoboken,0,None,1800
+2,1.0,1049,Hoboken,0,None,2500
+1,1.0,653,Hoboken,0,None,2500
+2,2.0,1050,Hoboken,0,None,3100
+2,2.0,1050,Hoboken,0,None,3100
+1,1.0,654,Hoboken,0,None,2369
+2,1.5,1006,Hoboken,0,None,3295
+3,2.0,1475,Hoboken,0,None,4875
+1,1.0,733,Hoboken,0,None,2920
+3,1.5,1423,Hoboken,0,None,4550
+1,1.0,875,Hoboken,0,None,2975
+2,1.5,1006,Hoboken,0,None,3455
+1,1.0,733,Hoboken,0,None,2933
+2,1.5,1006,Hoboken,0,None,3506
+3,1.5,1423,Hoboken,0,None,4793
+1,1.0,733,Hoboken,0,None,2939
+2,1.5,1006,Hoboken,0,None,3973
+1,1.0,733,Hoboken,0,None,2900
+2,1.5,1006,Hoboken,0,None,3850
+2,1.5,1006,Hoboken,0,None,3575
+1,1.0,733,Hoboken,0,None,3269
+2,1.5,1006,Hoboken,0,None,4059
+3,1.5,1423,Hoboken,0,None,5800
+2,1.0,900,Hoboken,1,CONDO,2750
+1,1.0,733,Hoboken,0,None,3100
+2,1.5,1006,Hoboken,0,None,4500
+2,1.5,1006,Hoboken,0,None,3525
+1,1.0,733,Hoboken,1,APARTMENT,2100
+2,2.0,988,Hoboken,1901,APARTMENT,3000
+2,1.5,1006,Hoboken,0,None,3965
+1,1.0,733,Hoboken,0,None,3205
+2,1.5,1006,Hoboken,0,None,4020
+0,1.0,640,Jersey City,0,None,3615
+1,1.0,733,Jersey City,0,None,2979
+2,1.5,1006,Jersey City,0,None,3500
+3,1.5,1423,Jersey City,0,None,5266
+1,1.0,733,Hoboken,0,None,2300
+1,1.0,733,Hoboken,0,None,2705
+2,1.5,1006,Hoboken,0,None,3490
+3,1.5,1423,Hoboken,0,None,4800
+2,1.0,950,Hoboken,1,CONDO,2650
+1,1.0,733,Hoboken,0,None,2860
+2,1.5,1006,Hoboken,0,None,4280
+0,1.0,600,Hoboken,2010,APARTMENT,1850
+1,1.0,733,Hoboken,0,None,2200
+2,1.5,1006,Hoboken,0,None,2700
+2,1.0,1060,Hoboken,1,APARTMENT,3600
+3,1.5,1423,Hoboken,0,None,2900
+1,1.0,733,Hoboken,0,None,2000
+3,1.0,850,Hoboken,1,APARTMENT,2150
+2,1.5,1006,Hoboken,0,None,2850
+1,1.0,733,Hoboken,0,None,3000
+2,1.5,1006,Hoboken,0,None,4550
+1,1.0,750,Hoboken,1,APARTMENT,1895
+2,1.5,1006,Hoboken,0,None,2600
+2,1.5,1006,Hoboken,0,None,2500
+2,2.0,1175,Hoboken,1,APARTMENT,3750
+2,2.0,1050,Hoboken,1,APARTMENT,2900
+3,1.0,1100,Hoboken,1,APARTMENT,2100
+2,1.5,1006,Hoboken,0,None,4125
+1,1.0,733,Hoboken,0,None,3210
+3,1.5,1423,Hoboken,0,None,6020
+1,1.0,733,Hoboken,0,None,2900
+2,1.5,1006,Hoboken,0,None,4340
+1,1.0,600,Hoboken,1,APARTMENT,1700
+2,2.0,1000,Hoboken,1,CONDO,3000
+2,1.0,1300,Hoboken,1,APARTMENT,2850
+3,1.0,1100,Hoboken,1,APARTMENT,2695
+1,1.0,733,Hoboken,0,None,3158
+2,1.5,1006,Hoboken,0,None,3593
+3,1.5,1423,Hoboken,0,None,4867
+2,1.0,1200,Hoboken,1,APARTMENT,2450
+2,2.0,916,Hoboken,2002,APARTMENT,3150
+0,1.0,575,Hoboken,1,APARTMENT,2350
+1,1.0,775,Hoboken,1,APARTMENT,2950
+4,2.0,1400,Hoboken,1,APARTMENT,3950
+3,1.0,1423,Hoboken,1,APARTMENT,2900
+1,1.0,733,Hoboken,1,APARTMENT,2000
+1,1.0,733,Hoboken,1,APARTMENT,1550
+1,1.0,600,Hoboken,1,MULTI_FAMILY,2250
+1,1.0,733,Hoboken,0,None,1550
+2,1.5,1006,Hoboken,0,None,1750
+1,1.0,733,Hoboken,1,APARTMENT,2175
+2,1.5,1100,Hoboken,1889,APARTMENT,3000
+1,1.0,860,Hoboken,1901,APARTMENT,2750
+2,1.0,1006,Hoboken,0,None,2700
+2,1.0,1006,Hoboken,0,None,2600
+1,2.0,1080,Hoboken,0,None,3750
+1,1.0,733,Hoboken,0,None,2600
+3,1.0,1423,Hoboken,0,None,3300
+2,1.5,950,Hoboken,0,None,3195
+2,2.0,1200,Hoboken,0,None,3250
+2,1.0,1006,Hoboken,0,None,2750
+2,1.5,1006,Hoboken,0,None,3975
+3,1.5,1423,Hoboken,0,None,4950
+4,2.0,1500,Hoboken,0,None,4000
+2,2.0,1006,Hoboken,0,None,2800
+1,1.0,733,Hoboken,0,None,2150
+2,2.0,1006,Hoboken,0,None,2550
+2,2.0,1116,Hoboken,0,None,3300
+2,1.5,1060,Hoboken,0,None,3600
+2,1.0,850,Hoboken,0,None,2900
+1,1.0,600,Hoboken,0,None,2200
+1,1.0,733,Hoboken,0,None,3064
+2,1.5,1006,Hoboken,0,None,3621
+3,1.5,1423,Hoboken,0,None,5048
+1,1.0,670,Hoboken,0,None,2200
+2,1.5,1006,Hoboken,0,None,2600
+2,1.0,850,Hoboken,0,None,2275
+3,1.0,1200,Hoboken,0,None,2790
+2,1.0,1020,Hoboken,0,None,3500
+2,1.5,1006,Hoboken,0,None,2650
+3,1.5,1423,Hoboken,0,None,4950
+2,1.0,850,Hoboken,0,None,2650
+2,2.0,1548,Hoboken,0,None,4583
+2,1.0,700,Hoboken,0,None,2800
+1,1.0,514,Hoboken,0,None,2235
+2,1.0,1250,Jersey City,0,None,3300
+0,1.0,570,Hoboken,0,None,2190
+1,1.0,800,Hoboken,0,None,2890
+3,2.0,1500,Hoboken,0,None,4890
+4,2.0,1654,Hoboken,0,None,4200
+2,2.0,1200,Hoboken,0,None,3590
+3,1.5,1423,Hoboken,0,None,2600
+2,2.0,900,Hoboken,0,None,2900
+2,2.0,1200,Hoboken,0,None,3790
+1,1.0,733,Hoboken,0,None,1650
+1,1.0,1012,Jersey City,0,None,3000
+2,1.0,880,Hoboken,0,None,2550
+1,1.0,733,Hoboken,0,None,2200
+2,1.5,1006,Hoboken,0,None,2700
+1,1.0,550,Hoboken,0,None,2150
+1,1.0,560,Hoboken,0,None,2200
+1,1.0,733,Hoboken,0,None,1400
+0,1.0,640,Hoboken,0,None,2600
+1,1.0,733,Hoboken,0,None,3000
+1,1.0,733,Hoboken,0,None,2000
+1,1.0,733,Hoboken,0,None,2100
+1,1.0,700,Hoboken,0,None,1975
+2,2.0,1006,Hoboken,0,None,2550
+1,1.0,733,Hoboken,0,None,3300
+2,2.0,1006,Hoboken,1,APARTMENT,3100
+2,2.0,1103,Hoboken,1,MULTI_FAMILY,3450
+2,2.0,1103,Hoboken,1900,APARTMENT,3450
+2,2.0,1150,Hoboken,1,APARTMENT,3700
+2,1.0,900,Hoboken,1,APARTMENT,2000
+1,1.0,600,Hoboken,1,APARTMENT,1750
+1,1.0,827,Hoboken,1,APARTMENT,2700
+1,1.0,2805,Hoboken,1901,APARTMENT,1750
+1,1.0,750,Hoboken,1,APARTMENT,2799
+2,1.5,1006,Hoboken,0,None,2600
+1,1.0,733,Hoboken,0,None,1975
+1,1.0,680,Hoboken,1,APARTMENT,1875
+3,1.0,1000,Hoboken,1,APARTMENT,2850
+1,1.5,895,Hoboken,2008,APARTMENT,3400
+2,1.0,875,Hoboken,1,MULTI_FAMILY,3075
+2,2.0,1150,Hoboken,1,APARTMENT,3799
+1,1.0,850,Hoboken,1,APARTMENT,2999
+2,2.0,1150,Hoboken,1,APARTMENT,3499
+1,1.0,733,Hoboken,0,None,1700
+1,1.0,750,Hoboken,1,APARTMENT,1800
+3,2.0,1550,Hoboken,1,APARTMENT,4799
+1,2.0,1250,Hoboken,1,APARTMENT,2695
+0,1.0,640,Hoboken,1,APARTMENT,2200
+1,1.0,800,Hoboken,1,APARTMENT,2300
+3,2.0,1423,Hoboken,1,APARTMENT,5600
+4,4.0,2050,Hoboken,1,APARTMENT,7499
+1,1.0,733,Hoboken,0,None,1925
+0,1.0,640,Hoboken,1,APARTMENT,2299
+1,1.0,650,Hoboken,1950,APARTMENT,1800
+2,1.0,750,Hoboken,1,APARTMENT,2650
+2,1.5,1006,Hoboken,0,None,3195
+3,1.0,1423,Hoboken,1,APARTMENT,3200
+2,1.0,750,Hoboken,1930,APARTMENT,2700
+1,1.0,733,Hoboken,0,None,1850
+3,1.0,1423,Hoboken,1,APARTMENT,2850
+1,1.0,611,Hoboken,1920,APARTMENT,2300
+2,1.5,1006,Hoboken,0,None,2100
+3,1.0,1200,Hoboken,1901,APARTMENT,2790
+4,2.0,1450,Hoboken,2015,APARTMENT,4950
+3,2.0,1980,Hoboken,2015,CONDO,10000
+1,1.0,733,Hoboken,1,APARTMENT,2300
+1,1.0,733,Hoboken,1,APARTMENT,2400
+1,1.0,540,Hoboken,1,APARTMENT,2150
+3,2.0,1200,Hoboken,1,APARTMENT,4000
+1,1.0,733,Hoboken,1,APARTMENT,2700
+1,1.0,733,Hoboken,1,APARTMENT,1925
+1,1.0,700,Jersey City,1908,CONDO,1900
+1,1.0,733,Hoboken,1,APARTMENT,2150
+1,1.0,621,Hoboken,1901,CONDO,2500
+2,1.0,1000,Hoboken,1,APARTMENT,2500
+2,1.0,1100,Hoboken,1,APARTMENT,3200
+3,1.5,1212,Hoboken,1,APARTMENT,3300
+2,2.0,1000,Hoboken,2000,APARTMENT,3100
+1,1.0,729,Hoboken,1901,APARTMENT,2395
+1,1.0,775,Hoboken,1,APARTMENT,2600
+1,1.0,733,Hoboken,1,CONDO,2600
+2,2.0,900,Hoboken,2008,CONDO,2850
+1,1.0,733,Hoboken,1,APARTMENT,2000
+1,1.0,618,Hoboken,2005,APARTMENT,2195
+0,1.0,200,Hoboken,1900,APARTMENT,1595
+2,2.0,1120,Hoboken,1,CONDO,3600
+1,1.0,733,Hoboken,0,None,2195
+2,1.5,1006,Hoboken,0,None,2195
+2,2.0,1260,Hoboken,1,APARTMENT,4400
+3,2.0,1400,Hoboken,2001,APARTMENT,4050
+1,1.0,780,Hoboken,1,APARTMENT,2800
+2,1.5,1100,Hoboken,1,APARTMENT,4500
+1,1.0,733,Hoboken,0,None,2050
+2,1.5,815,Hoboken,1901,APARTMENT,2600
+3,1.0,1100,Hoboken,1921,APARTMENT,3500
+2,1.0,1000,Hoboken,1,CONDO,2800
+2,1.0,650,Hoboken,1,MULTI_FAMILY,1975
+1,1.0,600,Hoboken,1,APARTMENT,1850
+3,2.0,1773,Hoboken,2008,APARTMENT,5600
+1,1.0,900,Hoboken,1,APARTMENT,2575
+2,1.5,1006,Hoboken,0,None,2750
+0,1.0,640,Hoboken,1,APARTMENT,1900
+1,1.0,530,Hoboken,1920,APARTMENT,2499
+1,1.0,733,Hoboken,0,None,2400
+1,1.0,2625,Hoboken,1901,APARTMENT,2250
+2,2.0,1389,Hoboken,1,APARTMENT,3800
+2,1.0,1100,Hoboken,2009,APARTMENT,3200
+2,2.0,797,Hoboken,1901,APARTMENT,2650
+3,2.0,1260,Hoboken,2002,APARTMENT,4000
+0,1.0,640,Hoboken,1,MULTI_FAMILY,2200
+1,1.0,800,Hoboken,1,APARTMENT,2200
+2,1.5,1006,Hoboken,0,None,4150
+2,1.0,1100,Hoboken,1,APARTMENT,3000
+1,1.0,520,Hoboken,1,APARTMENT,2150
+4,4.0,2500,Hoboken,1,APARTMENT,7500
+4,4.0,1654,Hoboken,1,APARTMENT,7000
+1,2.0,1250,Hoboken,1,APARTMENT,2695
+1,1.0,800,Hoboken,1,APARTMENT,2900
+3,2.0,1423,Hoboken,1,APARTMENT,4700
+2,1.0,1015,Hoboken,1901,APARTMENT,3500
+1,1.5,733,Hoboken,1,APARTMENT,2550
+1,1.0,800,Hoboken,1,MULTI_FAMILY,2700
+2,1.0,1006,Hoboken,1,APARTMENT,1900
+1,1.0,500,Hoboken,1,MULTI_FAMILY,2400
+3,2.0,1423,Hoboken,1,APARTMENT,4800
+2,1.0,1006,Hoboken,1,MULTI_FAMILY,2650
+0,1.0,800,Hoboken,0,None,1950
+2,2.0,1002,Hoboken,0,None,3670
+2,2.0,975,Hoboken,0,None,3635
+2,2.0,935,Hoboken,0,None,3585
+2,2.0,909,Hoboken,0,None,3575
+2,2.0,900,Hoboken,0,None,3560
+2,2.0,1210,Hoboken,0,None,4350
+2,2.0,1167,Hoboken,0,None,4125
+2,2.0,1124,Hoboken,0,None,4400
+2,2.0,1174,Hoboken,0,None,3600
+2,1.0,750,Hoboken,0,None,2700
+2,2.0,974,Hoboken,0,None,2850
+4,2.0,1300,Hoboken,0,None,4000
+2,2.0,1261,Hoboken,0,None,4325
+2,1.0,1006,Hoboken,0,None,2400
+1,1.0,600,Hoboken,0,None,1550
+0,1.0,550,Hoboken,0,None,1650
+2,1.0,1006,Hoboken,0,None,2700
+2,2.0,875,Hoboken,0,None,3525
+2,1.0,1006,Hoboken,0,None,2300
+2,1.0,800,Hoboken,0,None,2600
+2,1.0,1006,Hoboken,0,None,2750
+1,1.0,733,Hoboken,0,None,2100
+2,1.0,546,Hoboken,0,None,2200
+2,2.0,1300,Hoboken,0,None,3400
+4,2.0,1654,Hoboken,0,None,6995
+2,2.0,1006,Hoboken,1,APARTMENT,3700
+1,1.0,700,Hoboken,1,APARTMENT,1850
+1,1.0,953,Hoboken,1,APARTMENT,2369
+2,1.0,1006,Hoboken,1,APARTMENT,2650
+2,1.0,1006,Hoboken,1,APARTMENT,2650
+2,1.0,585,Hoboken,1901,APARTMENT,2200
+1,1.0,600,Hoboken,1,APARTMENT,2150
+1,1.0,400,Hoboken,1,MULTI_FAMILY,2275
+1,1.0,760,Hoboken,2017,APARTMENT,2600
+2,2.0,1285,Hoboken,2011,CONDO,3750
+2,1.0,1006,Hoboken,1,APARTMENT,2100
+1,1.0,600,Hoboken,1920,APARTMENT,2150
+0,1.0,575,Hoboken,1901,CONDO,2395
+3,2.0,1310,Hoboken,2000,APARTMENT,4500
+2,1.0,1006,Hoboken,1,APARTMENT,1990
+1,1.0,733,Hoboken,1,APARTMENT,2200
+2,1.0,1006,Hoboken,1,APARTMENT,1750
+1,1.0,630,Hoboken,1900,APARTMENT,2369
+2,1.0,635,Hoboken,1901,APARTMENT,2200
+2,1.0,1000,Hoboken,1,APARTMENT,3100
+1,1.0,550,Hoboken,1,APARTMENT,2050
+1,1.0,800,Hoboken,1,APARTMENT,2800
+2,1.0,980,Hoboken,1901,APARTMENT,2000
+0,1.0,640,Hoboken,1,APARTMENT,2300
+1,1.5,925,Hoboken,2014,CONDO,4200
+3,2.0,1550,Hoboken,1,APARTMENT,5700
+1,1.0,589,Hoboken,1,APARTMENT,1850
+1,1.0,932,Hoboken,1,CONDO,3600
+2,1.0,800,Hoboken,1,APARTMENT,1900
+2,2.0,1555,Hoboken,1,APARTMENT,6100
+2,2.0,1051,Hoboken,1,APARTMENT,3596
+3,2.0,1585,Hoboken,1,APARTMENT,4999
+2,1.0,1006,Hoboken,1,APARTMENT,2050
+1,1.0,733,Hoboken,1,APARTMENT,2775
+1,1.0,780,Hoboken,1,APARTMENT,2600
+3,2.0,1550,Hoboken,1,APARTMENT,5600
+1,1.0,733,Hoboken,1,APARTMENT,2700
+2,2.0,1150,Hoboken,1,APARTMENT,3800
+1,1.0,625,Hoboken,1901,APARTMENT,2700
+2,1.0,1006,Hoboken,1,MULTI_FAMILY,2000
+1,1.0,600,Hoboken,1921,APARTMENT,1800
+4,2.0,1200,Hoboken,1,APARTMENT,4000
+2,1.0,700,Hoboken,1,APARTMENT,2000
+2,1.0,1006,Hoboken,1,APARTMENT,1650
+2,1.5,1006,Hoboken,0,None,1995
+1,1.0,850,Hoboken,1921,APARTMENT,1950
+1,1.0,733,Hoboken,1,APARTMENT,2200
+2,1.0,850,Hoboken,1,APARTMENT,2850
+1,1.0,500,Hoboken,1901,APARTMENT,1950
+2,1.5,1006,Hoboken,0,None,3000
+1,1.0,500,Hoboken,1901,APARTMENT,1950
+2,2.0,1200,Hoboken,1,APARTMENT,3600
+1,1.0,700,Hoboken,1,APARTMENT,1795
+2,1.5,1006,Hoboken,0,None,2800
+1,1.0,500,Hoboken,1,APARTMENT,1750
+2,2.0,1100,Hoboken,1,APARTMENT,4000
+2,2.0,1132,Hoboken,1,APARTMENT,2750
+1,1.0,780,Hoboken,1,APARTMENT,2800
+3,2.0,1150,Hoboken,1932,APARTMENT,3990
+1,1.0,551,Hoboken,2009,APARTMENT,2100
+1,1.0,790,Hoboken,1900,CONDO,2150
+2,1.0,650,Hoboken,1999,MULTI_FAMILY,2500
+2,1.0,1006,Hoboken,1,APARTMENT,2050
+2,1.0,681,Hoboken,1901,APARTMENT,2600
+2,2.0,1400,Hoboken,1,CONDO,3500
+1,1.0,500,Hoboken,1,CONDO,2050
+1,1.0,600,Hoboken,1,APARTMENT,1750
+1,1.0,529,Hoboken,1,CONDO,2600
+1,1.0,700,Hoboken,1973,APARTMENT,1750
+3,1.0,1000,Hoboken,1,APARTMENT,2100
+2,1.0,850,Hoboken,1910,APARTMENT,2850
+1,1.0,600,Hoboken,1,MULTI_FAMILY,2600
+1,1.5,966,Hoboken,2006,CONDO,4400
+2,1.0,850,Hoboken,1,APARTMENT,2895
+1,1.0,733,Hoboken,1,APARTMENT,1700
+2,1.0,1006,Hoboken,1,APARTMENT,2700
+2,1.0,1006,Hoboken,1,APARTMENT,2750
+2,2.0,1006,Hoboken,1,APARTMENT,2600
+1,1.0,600,Hoboken,1,APARTMENT,1700
+1,1.0,733,Hoboken,0,None,2443
+3,1.5,1423,Hoboken,0,None,3428
+2,1.0,1006,Hoboken,1,APARTMENT,2700
+2,1.0,1006,Hoboken,1,APARTMENT,2600
+3,1.0,1423,Hoboken,1900,APARTMENT,2900
+2,1.0,1006,Hoboken,1,APARTMENT,2650
+1,1.0,500,Hoboken,1901,APARTMENT,1750
+2,2.0,825,Hoboken,1,APARTMENT,3130
+1,1.0,733,Hoboken,1,APARTMENT,3000
+1,1.0,900,Hoboken,1901,APARTMENT,1800
+0,1.0,640,Hoboken,1,APARTMENT,2600
+3,2.0,1423,Hoboken,1,APARTMENT,5800
+2,1.0,700,Hoboken,1,APARTMENT,2500
+2,2.0,1006,Hoboken,1,APARTMENT,3350
+1,1.0,550,Hoboken,1901,APARTMENT,1550
+1,1.0,733,Hoboken,1901,APARTMENT,2550
+1,1.0,750,Hoboken,1889,APARTMENT,2100
+2,1.5,1024,Hoboken,1920,CONDO,3345
+3,1.0,750,Hoboken,1,APARTMENT,2800
+1,1.0,550,Hoboken,1901,APARTMENT,1950
+4,3.5,2800,Hoboken,1901,TOWNHOUSE,7495
+1,1.0,475,Hoboken,1901,APARTMENT,2250
+2,1.0,1006,Hoboken,1,APARTMENT,1950
+2,1.0,910,Hoboken,1,APARTMENT,2700
+2,1.5,1006,Hoboken,0,None,3100
+3,1.5,1423,Hoboken,0,None,4350
+2,1.0,803,Hoboken,1901,APARTMENT,2150
+2,2.0,1064,Hoboken,2013,APARTMENT,2900
+1,1.0,600,Hoboken,1,APARTMENT,1645
+0,1.0,640,Hoboken,1,APARTMENT,1800
+2,1.0,910,Hoboken,1,APARTMENT,2700
+2,2.0,1100,Hoboken,1,APARTMENT,2800
+2,2.0,1298,Hoboken,1,APARTMENT,3700
+2,1.5,1006,Hoboken,0,None,1795
+1,1.0,600,Hoboken,1,APARTMENT,2300
+2,2.0,1155,Hoboken,2000,CONDO,3900
+1,1.0,600,Hoboken,1,CONDO,2050
+2,2.0,1120,Hoboken,1985,APARTMENT,3400
+1,1.0,660,Hoboken,1905,CONDO,2200
+1,1.0,700,Hoboken,1,APARTMENT,1800
+1,1.0,800,Hoboken,1,APARTMENT,2900
+2,2.0,1006,Hoboken,1,APARTMENT,4000
+3,1.0,1123,Hoboken,1,APARTMENT,3300
+3,1.0,1400,Hoboken,1,APARTMENT,2900
+3,1.0,1300,Hoboken,1,APARTMENT,3200
+1,1.0,576,Hoboken,1901,APARTMENT,2550
+0,1.0,600,Hoboken,1,APARTMENT,2400
+2,1.0,1006,Hoboken,1,APARTMENT,2100
+2,2.0,1000,Hoboken,2005,APARTMENT,3500
+1,1.0,550,Hoboken,1,APARTMENT,2150
+1,1.0,735,Hoboken,1916,APARTMENT,2695
+1,1.0,600,Hoboken,1,APARTMENT,2150
+2,1.0,850,Hoboken,2006,APARTMENT,2000
+1,1.0,733,Hoboken,2000,APARTMENT,2150
+1,1.0,600,Hoboken,1901,APARTMENT,2000
+1,1.0,733,Hoboken,1,MULTI_FAMILY,2300
+1,1.0,733,Hoboken,0,None,2100
+2,1.5,1006,Hoboken,0,None,2175
+1,1.0,654,Hoboken,1910,APARTMENT,2200
+3,1.0,600,Hoboken,1,APARTMENT,2790
+3,2.0,1423,Hoboken,1,APARTMENT,4700
+0,1.0,500,Hoboken,1,APARTMENT,1750
+2,1.0,800,Hoboken,1,APARTMENT,2300
+2,2.0,1150,Hoboken,1,APARTMENT,3400
+3,3.0,1750,Hoboken,1,APARTMENT,3950
+1,1.0,733,Hoboken,1,APARTMENT,2200
+1,1.0,554,Hoboken,1987,APARTMENT,2200
+2,2.0,1006,Hoboken,1,APARTMENT,2900
+1,1.0,733,Hoboken,0,None,1775
+2,1.0,815,Hoboken,1901,MULTI_FAMILY,2650
+0,1.0,640,Hoboken,0,None,2800
+2,1.5,1006,Hoboken,0,None,4150
+1,1.0,700,Hoboken,2002,APARTMENT,2650
+2,1.0,930,Hoboken,2004,MULTI_FAMILY,3200
+1,1.0,733,Hoboken,0,None,2200
+2,2.0,1050,Hoboken,0,None,3450
+2,1.0,1006,Hoboken,0,None,2850
+1,1.0,750,Hoboken,0,None,1850
+2,1.5,1006,Hoboken,0,None,7500
+3,1.5,1423,Hoboken,0,None,13000
+1,1.0,733,Hoboken,0,None,1850
+2,1.5,1006,Hoboken,0,None,2500
+2,1.0,1006,Hoboken,0,None,2400
+2,1.0,815,Hoboken,0,None,2600
+3,2.0,1800,Hoboken,0,None,4800
+2,1.0,1006,Hoboken,0,None,2450
+1,1.0,512,Hoboken,0,None,1750
+1,1.0,550,Hoboken,0,None,1950
+2,1.5,835,Hoboken,0,None,2800
+2,2.0,1400,Hoboken,0,None,3400
+4,2.0,1654,Hoboken,0,None,4950
+2,1.0,750,Hoboken,0,None,2300
+1,1.0,733,Hoboken,0,None,1950
+1,1.0,900,Hoboken,0,None,2400
+1,1.0,603,Hoboken,0,None,2050
+4,2.0,1350,Hoboken,0,None,3300
+2,2.0,1175,Hoboken,0,None,3575
+0,1.0,500,Hoboken,0,None,1800
+1,1.0,733,Hoboken,0,None,2400
+2,1.0,1100,Hoboken,1,APARTMENT,2175
+2,1.0,1000,Hoboken,1,APARTMENT,2700
+2,2.0,1100,Hoboken,2007,APARTMENT,3000
+2,1.0,1006,Hoboken,1,APARTMENT,2150
+4,1.5,1200,Hoboken,1,APARTMENT,3550
+1,1.0,733,Hoboken,1,APARTMENT,1900
+3,2.0,1423,Hoboken,1,APARTMENT,4400
+2,1.0,900,Hoboken,1901,MULTI_FAMILY,2200
+2,1.0,800,Hoboken,1,APARTMENT,1800
+1,1.0,625,Hoboken,1920,APARTMENT,2200
+2,1.5,1006,Hoboken,0,None,1800
+1,1.0,900,Hoboken,2013,APARTMENT,2800
+2,1.0,850,Hoboken,0,None,2000
+1,1.0,869,Hoboken,1900,APARTMENT,2550
+1,1.0,546,Hoboken,1910,APARTMENT,2100
+1,1.0,733,Hoboken,0,None,2100
+2,1.5,1006,Hoboken,0,None,2750
+1,1.0,600,Hoboken,1901,APARTMENT,1800
+1,1.0,733,Hoboken,0,None,1950
+2,1.5,1006,Hoboken,0,None,2400
+3,1.5,1423,Hoboken,0,None,2900
+4,2.0,1654,Hoboken,0,None,3600
+3,3.0,2341,Hoboken,2006,CONDO,6700
+1,1.0,550,Hoboken,1,APARTMENT,1975
+2,1.0,1006,Hoboken,1,APARTMENT,2650
+1,1.0,709,Hoboken,1,APARTMENT,3400
+3,1.5,2580,Hoboken,1967,APARTMENT,3500
+2,1.0,700,Hoboken,1,APARTMENT,2775
+2,2.0,1122,Hoboken,1,APARTMENT,4400
+3,2.0,1410,Hoboken,1,APARTMENT,5675
+3,2.0,1410,Hoboken,1,APARTMENT,5675
+1,1.0,850,Hoboken,2006,APARTMENT,2675
+1,1.0,454,Hoboken,1910,APARTMENT,2200
+2,1.0,1006,Hoboken,1,APARTMENT,2400
+2,1.0,1006,Hoboken,1,APARTMENT,2700
+2,2.0,1490,Hoboken,2001,APARTMENT,3495
+2,2.0,1200,Hoboken,1,APARTMENT,2900
+2,2.0,1200,Hoboken,1,APARTMENT,2800
+3,1.0,1600,Hoboken,1,APARTMENT,3200
+1,1.0,733,Hoboken,0,None,1920
+2,1.5,1006,Hoboken,0,None,2400
+3,1.5,1423,Hoboken,0,None,2950
+3,1.0,1150,Hoboken,1,APARTMENT,3300
+3,1.0,1100,Hoboken,1,APARTMENT,3000
+2,2.0,875,Hoboken,1,APARTMENT,3515
+2,2.0,1150,Hoboken,1,APARTMENT,3950
+1,1.0,733,Hoboken,0,None,2600
+2,1.5,1006,Hoboken,0,None,3175
+1,1.0,733,Hoboken,0,None,1920
+2,1.5,1006,Hoboken,0,None,2500
+3,1.5,1423,Hoboken,0,None,3100
+4,2.0,1654,Hoboken,0,None,3550
+2,2.0,1150,Hoboken,1,APARTMENT,3500
+2,2.0,1100,Hoboken,1,APARTMENT,3500
+1,1.0,500,Hoboken,1901,APARTMENT,1850
+3,1.0,900,Hoboken,1,APARTMENT,2800
+3,2.0,1675,Hoboken,1,APARTMENT,6150
+3,2.0,1800,Hoboken,1,APARTMENT,4600
+1,2.0,1037,Hoboken,2010,CONDO,3600
+1,1.0,733,Hoboken,0,None,1950
+2,1.5,1006,Hoboken,0,None,2500
+3,1.5,1423,Hoboken,0,None,3100
+4,2.0,1654,Hoboken,0,None,3600
+2,1.0,812,Hoboken,1910,CONDO,3000
+2,2.0,1006,Hoboken,1,APARTMENT,3400
+3,3.5,1990,Hoboken,1892,SINGLE_FAMILY,7250
+3,1.0,1423,Hoboken,1,APARTMENT,2900
+1,1.0,824,Hoboken,1,APARTMENT,3600
+3,2.0,1423,Hoboken,1,APARTMENT,4300
+1,1.0,553,Hoboken,1,APARTMENT,2150
+1,1.0,824,Hoboken,1,APARTMENT,3600
+2,2.0,875,Hoboken,1,APARTMENT,3505
+1,2.0,821,Hoboken,1901,APARTMENT,2600
+1,1.0,943,Hoboken,1920,MULTI_FAMILY,2750
+3,2.0,1700,Hoboken,1,APARTMENT,4995
+3,1.0,1423,Hoboken,1,APARTMENT,3000
+1,1.0,650,Hoboken,1,APARTMENT,2150
+2,2.0,875,Hoboken,1,APARTMENT,3505
+2,1.0,698,Hoboken,1,APARTMENT,2790
+2,2.0,1075,Hoboken,1,APARTMENT,3300
+2,2.0,1000,Hoboken,1,MULTI_FAMILY,2900
+1,1.0,733,Hoboken,1,APARTMENT,2800
+1,1.0,830,Hoboken,1920,CONDO,3000
+4,3.0,2222,Hoboken,1900,APARTMENT,8150
+3,1.0,1423,Hoboken,1,APARTMENT,2950
+2,1.0,1006,Hoboken,1,MULTI_FAMILY,2200
+3,2.0,700,Hoboken,1,APARTMENT,3150
+2,3.0,1500,Hoboken,1901,SINGLE_FAMILY,4000
+1,1.0,733,Jersey City,0,None,2150
+2,1.5,1006,Jersey City,0,None,2350
+1,1.0,700,Hoboken,1901,CONDO,2800
+3,1.5,1500,Jersey City,0,None,2299
+3,1.5,1500,Jersey City,0,None,2299
+3,1.5,1500,Jersey City,0,None,2299
+0,1.0,640,Jersey City,0,None,2415
+1,1.0,733,Jersey City,0,None,2503
+2,1.5,1006,Jersey City,0,None,2922
+3,1.5,1423,Jersey City,0,None,4677
+3,1.5,1500,Jersey City,0,None,2299
+3,1.5,1500,Jersey City,0,None,2299
+1,1.0,733,Jersey City,0,None,4100
+2,1.5,1006,Jersey City,0,None,4250
+3,1.0,1423,Jersey City,0,None,1600
+2,1.0,1006,Jersey City,0,None,1599
+2,1.0,1006,Jersey City,0,None,1599
+0,1.0,640,Jersey City,0,None,2220
+1,1.0,733,Jersey City,0,None,2550
+2,1.5,1006,Jersey City,0,None,3370
+2,1.0,1006,Jersey City,0,None,1599
+2,1.0,1006,Jersey City,0,None,1599
+2,1.0,1006,Jersey City,0,None,1599
+2,1.5,1006,Jersey City,0,None,1675
+3,1.5,1423,Jersey City,0,None,2299
+0,1.0,640,Jersey City,0,None,2425
+1,1.0,733,Jersey City,0,None,2695
+2,1.5,1006,Jersey City,0,None,3850
+1,1.0,733,Jersey City,0,None,2505
+2,1.5,1006,Jersey City,0,None,4114
+0,1.0,640,Jersey City,0,None,2675
+1,1.0,733,Jersey City,0,None,2828
+2,1.5,1006,Jersey City,0,None,3800
+2,2.0,1300,Jersey City,0,None,2900
+5,3.0,3723,Jersey City,0,None,2500
+1,1.0,516,Jersey City,0,None,2200
+3,3.0,1866,Jersey City,0,None,2995
+2,1.5,1006,Jersey City,0,None,2200
+1,1.0,626,Jersey City,0,None,2925
+1,1.0,733,Jersey City,0,None,2460
+2,1.5,1006,Jersey City,0,None,3766
+2,1.0,869,Jersey City,1,APARTMENT,3564
+1,1.0,733,Jersey City,0,None,1274
+1,1.0,733,Jersey City,0,None,1650
+3,1.5,1423,Jersey City,0,None,2600
+0,1.0,640,Jersey City,0,None,1850
+1,1.0,733,Jersey City,0,None,2000
+2,3.0,1673,Jersey City,1,APARTMENT,5000
+0,1.0,640,Jersey City,0,None,1195
+1,1.0,733,Jersey City,0,None,1295
+2,1.5,1006,Jersey City,0,None,1295
+3,1.5,1423,Jersey City,0,None,1695
+2,1.0,1000,Jersey City,1,APARTMENT,1750
+1,1.0,733,Jersey City,0,None,2631
+2,1.5,1006,Jersey City,0,None,3674
+4,1.5,1175,Jersey City,1,APARTMENT,1950
+0,1.0,640,Jersey City,0,None,2429
+1,1.0,733,Jersey City,0,None,2971
+2,1.5,1006,Jersey City,0,None,3998
+3,1.5,1423,Jersey City,0,None,5153
+1,1.0,766,Jersey City,2005,CONDO,1900
+2,1.0,1006,Jersey City,1,APARTMENT,1799
+1,1.0,792,Jersey City,2008,APARTMENT,2800
+0,1.0,640,Jersey City,0,None,2562
+1,1.0,733,Jersey City,0,None,2720
+2,1.5,1006,Jersey City,0,None,4099
+3,1.5,1423,Jersey City,0,None,5125
+0,1.0,640,Jersey City,0,None,1590
+1,1.0,733,Jersey City,0,None,2235
+2,1.5,1006,Jersey City,0,None,2910
+2,1.0,1006,Jersey City,1,APARTMENT,1650
+1,1.0,789,Jersey City,1,APARTMENT,2395
+2,1.0,900,Jersey City,1,APARTMENT,1750
+1,1.0,733,Jersey City,0,None,3147
+1,1.0,733,Jersey City,0,None,2800
+2,1.5,1006,Jersey City,0,None,3970
+0,1.0,640,Jersey City,0,None,2180
+1,1.0,733,Jersey City,0,None,2545
+2,1.5,1006,Jersey City,0,None,2690
+3,1.5,1423,Jersey City,0,None,4045
+3,1.0,900,Jersey City,1930,APARTMENT,2700
+1,1.0,733,Jersey City,0,None,2900
+3,1.5,1423,Jersey City,0,None,5254
+1,1.0,733,Jersey City,0,None,2445
+2,1.5,1006,Jersey City,0,None,3390
+3,1.5,1423,Jersey City,0,None,4695
+0,1.0,640,Jersey City,0,None,2335
+1,1.0,733,Jersey City,0,None,2630
+2,1.5,1006,Jersey City,0,None,4000
+2,1.5,1006,Jersey City,0,None,1695
+4,2.0,1654,Jersey City,0,None,2295
+0,1.0,640,Jersey City,0,None,2191
+1,1.0,733,Jersey City,0,None,2520
+3,1.5,1423,Jersey City,0,None,3915
+0,1.0,640,Jersey City,0,None,1495
+1,1.0,733,Jersey City,0,None,1633
+2,1.5,1006,Jersey City,0,None,2478
+0,1.0,640,Jersey City,0,None,2283
+1,1.0,733,Jersey City,0,None,2935
+2,1.5,1006,Jersey City,0,None,3624
+3,1.5,1423,Jersey City,0,None,5379
+0,1.0,640,Jersey City,0,None,1985
+1,1.0,733,Jersey City,0,None,2356
+2,1.5,1006,Jersey City,0,None,3317
+3,1.5,1423,Jersey City,0,None,4170
+0,1.0,640,Jersey City,0,None,2162
+1,1.0,733,Jersey City,0,None,2660
+2,1.5,1006,Jersey City,0,None,3432
+1,1.0,733,Jersey City,0,None,2370
+2,1.5,1006,Jersey City,0,None,2900
+1,1.0,733,Jersey City,0,None,2590
+2,1.5,1006,Jersey City,0,None,2935
+0,1.0,640,Jersey City,0,None,2550
+1,1.0,733,Jersey City,0,None,2845
+2,1.5,1006,Jersey City,0,None,4800
+3,1.5,1423,Jersey City,0,None,4425
+2,1.5,1006,Jersey City,0,None,3495
+3,1.5,1423,Jersey City,0,None,5295
+1,1.0,180,Jersey City,1,APARTMENT,800
+1,1.0,733,Jersey City,0,None,2842
+2,1.5,1006,Jersey City,0,None,4575
+3,1.0,1000,Jersey City,1,MULTI_FAMILY,1700
+0,1.0,640,Jersey City,0,None,2600
+1,1.0,733,Jersey City,0,None,3050
+2,1.5,1006,Jersey City,0,None,4000
+2,1.0,1200,Jersey City,1,APARTMENT,2800
+0,1.0,640,Jersey City,0,None,1950
+2,2.0,1092,Jersey City,1,APARTMENT,2995
+1,2.0,960,Jersey City,1,APARTMENT,2495
+1,2.0,990,Jersey City,1,APARTMENT,2395
+1,1.0,915,Jersey City,1,APARTMENT,2450
+0,1.0,640,Jersey City,0,None,2490
+1,1.0,733,Jersey City,0,None,2885
+2,1.5,1006,Jersey City,0,None,3862
+1,1.0,665,Jersey City,1,APARTMENT,2200
+0,1.0,589,Jersey City,1,APARTMENT,1895
+0,1.0,609,Jersey City,1,APARTMENT,1995
+3,1.0,1400,Jersey City,1,MULTI_FAMILY,3600
+0,1.0,640,Jersey City,0,None,2385
+1,1.0,733,Jersey City,0,None,3033
+2,1.5,1006,Jersey City,0,None,4195
+3,1.5,1423,Jersey City,0,None,6263
+3,2.0,1423,Jersey City,1,MULTI_FAMILY,1950
+1,1.0,733,Jersey City,0,None,2765
+2,1.5,1006,Jersey City,0,None,3925
+3,1.5,1423,Jersey City,0,None,5330
+1,1.0,733,Jersey City,0,None,2483
+2,1.5,1006,Jersey City,0,None,3129
+2,1.0,900,Jersey City,1,APARTMENT,1650
+2,2.0,1100,Jersey City,1,APARTMENT,3790
+1,1.0,600,Jersey City,1,APARTMENT,1300
+2,1.5,1200,Jersey City,1,APARTMENT,3400
+2,1.0,1006,Jersey City,1,APARTMENT,1650
+3,2.0,1100,Jersey City,1,APARTMENT,2000
+1,1.0,700,Jersey City,1,APARTMENT,1368
+1,1.0,733,Jersey City,0,None,2935
+2,1.5,1006,Jersey City,0,None,3890
+0,1.0,640,Jersey City,0,None,2250
+1,1.0,733,Jersey City,0,None,2875
+2,1.5,1006,Jersey City,0,None,4200
+0,1.0,640,Jersey City,0,None,2690
+1,1.0,733,Jersey City,0,None,2975
+2,1.5,1006,Jersey City,0,None,4015
+1,1.0,600,Jersey City,1,APARTMENT,1400
+1,1.0,733,Jersey City,0,None,1550
+2,1.5,1006,Jersey City,0,None,1550
+1,1.0,818,Jersey City,1,APARTMENT,2750
+0,1.0,640,Jersey City,0,None,1122
+1,1.0,733,Jersey City,0,None,2855
+2,1.5,1006,Jersey City,0,None,3695
+0,1.0,640,Jersey City,0,None,2750
+2,1.5,1006,Jersey City,0,None,4495
+0,1.0,640,Jersey City,0,None,2523
+1,1.0,733,Jersey City,0,None,3112
+2,1.5,1006,Jersey City,0,None,4015
+3,1.5,1423,Jersey City,0,None,6716
+2,1.0,1200,Jersey City,1928,APARTMENT,1995
+1,1.0,733,Jersey City,0,None,2000
+2,1.5,1006,Jersey City,0,None,2475
+3,1.5,1423,Jersey City,0,None,3300
+0,1.0,640,Jersey City,0,None,2295
+1,1.0,733,Jersey City,0,None,2620
+2,2.0,1000,Jersey City,1,APARTMENT,3400
+0,1.0,640,Jersey City,0,None,1195
+1,1.0,733,Jersey City,0,None,1195
+2,2.0,1150,Jersey City,0,None,3550
+2,1.0,1006,Jersey City,0,None,1650
+2,1.0,1006,Jersey City,0,None,1500
+0,1.0,640,Jersey City,0,None,1295
+1,1.0,733,Jersey City,0,None,1625
+3,1.5,1423,Jersey City,0,None,1775
+3,2.0,1600,Jersey City,0,None,4950
+0,1.0,640,Jersey City,0,None,1175
+2,1.0,920,Jersey City,0,None,2600
+2,1.0,1006,Jersey City,0,None,1700
+3,1.0,1200,Jersey City,0,None,2000
+0,1.0,640,Jersey City,0,None,2905
+1,1.0,733,Jersey City,0,None,2660
+2,1.5,1006,Jersey City,0,None,4295
+2,1.5,1006,Jersey City,0,None,3495
+1,1.0,626,Jersey City,0,None,2200
+1,1.0,733,Jersey City,0,None,2895
+2,1.5,1006,Jersey City,0,None,3850
+3,1.5,1423,Jersey City,0,None,4535
+3,1.0,1000,Jersey City,0,None,2000
+1,1.0,733,Jersey City,0,None,2870
+2,1.5,1006,Jersey City,0,None,3795
+1,1.0,675,Jersey City,0,None,1585
+0,1.0,640,Jersey City,0,None,2975
+1,1.0,733,Jersey City,0,None,2925
+2,1.5,1006,Jersey City,0,None,3845
+1,1.0,733,Jersey City,0,None,3350
+2,1.5,1006,Jersey City,0,None,3600
+1,1.0,733,Jersey City,0,None,2695
+2,1.5,1006,Jersey City,0,None,3831
+3,2.0,1200,Jersey City,0,None,1650
+4,1.0,1654,Jersey City,0,None,1850
+3,3.0,1529,Jersey City,0,None,5378
+1,1.0,733,Jersey City,0,None,1325
+0,1.0,640,Jersey City,0,None,2364
+1,1.0,733,Jersey City,0,None,2594
+2,1.5,1006,Jersey City,0,None,3824
+1,1.0,733,Jersey City,1,MULTI_FAMILY,1295
+1,1.0,733,Jersey City,0,None,2345
+2,1.5,1006,Jersey City,0,None,3348
+0,1.0,640,Jersey City,0,None,2475
+1,1.0,733,Jersey City,0,None,2370
+2,1.5,1006,Jersey City,0,None,3975
+2,1.0,1006,Jersey City,1,APARTMENT,2250
+2,2.0,1006,Jersey City,1,APARTMENT,2400
+2,1.0,800,Jersey City,1,APARTMENT,1525
+2,1.0,900,Jersey City,1,APARTMENT,1450
+0,1.0,640,Jersey City,0,None,1650
+1,1.0,733,Jersey City,0,None,1825
+2,2.0,1092,Jersey City,1,APARTMENT,2995
+2,2.0,958,Jersey City,1,APARTMENT,2795
+2,2.0,1015,Jersey City,1,APARTMENT,2895
+0,1.0,640,Jersey City,0,None,1250
+3,1.5,1423,Jersey City,0,None,1775
+0,1.0,640,Jersey City,0,None,2455
+1,1.0,733,Jersey City,0,None,2950
+2,1.5,1006,Jersey City,0,None,3835
+1,2.0,990,Jersey City,1,APARTMENT,2395
+3,2.0,1423,Jersey City,1,MULTI_FAMILY,2000
+1,2.0,960,Jersey City,1,APARTMENT,2495
+1,1.0,915,Jersey City,1,APARTMENT,2450
+1,1.0,838,Jersey City,1,APARTMENT,2250
+1,1.0,723,Jersey City,1,APARTMENT,2195
+0,1.0,609,Jersey City,1,APARTMENT,1995
+2,1.0,800,Jersey City,1920,APARTMENT,1795
+0,1.0,506,Jersey City,1,APARTMENT,1795
+1,1.0,733,Jersey City,0,None,1395
+3,1.5,1423,Jersey City,0,None,2300
+0,1.0,589,Jersey City,1,APARTMENT,1895
+2,2.0,958,Jersey City,1,APARTMENT,2795
+2,2.0,1015,Jersey City,1,APARTMENT,2895
+1,1.0,733,Jersey City,0,None,1395
+3,1.5,1423,Jersey City,0,None,2295
+1,1.0,838,Jersey City,1,APARTMENT,2250
+1,1.0,723,Jersey City,1,APARTMENT,2195
+0,1.0,506,Jersey City,1,APARTMENT,1850
+0,1.0,506,Jersey City,1,APARTMENT,1795
+0,1.0,450,Jersey City,1,MULTI_FAMILY,1450
+2,1.0,800,Jersey City,1,APARTMENT,1500
+0,1.0,506,Jersey City,1,APARTMENT,1850
+0,1.0,550,Jersey City,1,APARTMENT,1300
+0,1.0,550,Jersey City,1,APARTMENT,1154
+1,1.0,685,Jersey City,1,APARTMENT,3210
+0,1.0,725,Jersey City,1,APARTMENT,1300
+0,1.0,550,Jersey City,1,APARTMENT,1095
+1,1.0,733,Jersey City,0,None,3517
+1,1.0,733,Jersey City,1,APARTMENT,2800
+2,2.0,1015,Jersey City,1,APARTMENT,3895
+3,2.0,1423,Jersey City,1,APARTMENT,3600
+3,1.5,1423,Jersey City,0,None,2000
+2,2.5,1297,Jersey City,1,SINGLE_FAMILY,5500
+1,1.0,798,Jersey City,1,MULTI_FAMILY,2300
+1,1.0,733,Jersey City,0,None,1850
+2,1.5,1006,Jersey City,0,None,2250
+3,2.5,1460,Jersey City,1,APARTMENT,5295
+0,1.0,466,Jersey City,1,APARTMENT,1708
+3,1.0,870,Jersey City,1,APARTMENT,1395
+2,2.0,1430,Jersey City,1,APARTMENT,3000
+2,1.0,1006,Jersey City,1924,APARTMENT,1750
+1,1.0,650,Jersey City,1,APARTMENT,1397
+1,1.0,950,Jersey City,1,APARTMENT,1200
+2,2.0,725,Jersey City,1,APARTMENT,1995
+2,1.5,1006,Jersey City,0,None,1295
+0,1.0,640,Jersey City,0,None,1196
+1,1.0,733,Jersey City,0,None,1295
+2,2.0,921,Jersey City,1,APARTMENT,3755
+4,1.0,1844,Jersey City,1,APARTMENT,1895
+1,1.0,733,Jersey City,1,APARTMENT,1550
+2,1.5,1006,Jersey City,0,None,1795
+1,1.0,733,Jersey City,0,None,1850
+0,1.0,644,Jersey City,1,APARTMENT,1700
+0,1.0,640,Jersey City,0,None,998
+1,1.0,733,Jersey City,0,None,1343
+2,1.5,1006,Jersey City,0,None,1493
+1,1.0,733,Jersey City,0,None,1650
+3,1.0,1423,Jersey City,1,MULTI_FAMILY,1350
+3,1.0,1000,Jersey City,1,APARTMENT,1700
+1,1.0,766,Jersey City,2000,APARTMENT,2650
+2,3.0,1297,Jersey City,1,APARTMENT,5500
+2,1.0,725,Jersey City,1,APARTMENT,1445
+0,1.0,640,Jersey City,0,None,1650
+3,2.0,1300,Jersey City,2004,APARTMENT,2400
+2,1.0,877,Jersey City,1,APARTMENT,1700
+3,2.0,1423,Jersey City,1,MULTI_FAMILY,2475
+2,1.5,1006,Jersey City,0,None,2400
+3,1.0,2600,Jersey City,1890,APARTMENT,2100
+2,1.0,1006,Jersey City,1,APARTMENT,1450
+1,1.0,700,Jersey City,1,MULTI_FAMILY,1190
+2,1.5,1006,Jersey City,0,None,1695
+3,1.5,1423,Jersey City,0,None,1895
+2,1.0,1006,Jersey City,1,APARTMENT,1550
+4,2.0,1654,Jersey City,0,None,2000
+2,1.0,550,Jersey City,1,APARTMENT,1200
+2,1.0,1006,Jersey City,1,APARTMENT,1450
+1,1.0,600,Jersey City,1,APARTMENT,1050
+1,1.0,733,Jersey City,0,None,1395
+2,1.0,1000,Jersey City,1,MULTI_FAMILY,1800
+1,1.0,733,Jersey City,0,None,1295
+1,1.0,733,Jersey City,0,None,1500
+1,1.0,2800,Jersey City,1890,MULTI_FAMILY,1550
+1,1.0,733,Jersey City,0,None,2450
+2,1.5,1006,Jersey City,0,None,3150
+2,1.5,1006,Jersey City,0,None,1500
+1,1.0,400,Jersey City,1,APARTMENT,1900
+1,1.0,733,Jersey City,1,APARTMENT,1640
+2,1.0,1006,Jersey City,1,APARTMENT,1335
+3,1.0,1200,Jersey City,1,MULTI_FAMILY,2000
+2,1.5,1006,Jersey City,0,None,1295
+3,1.5,1423,Jersey City,0,None,1600
+3,1.0,1423,Jersey City,0,None,2199
+3,2.0,1423,Jersey City,0,None,2199
+2,1.5,1006,Jersey City,1,APARTMENT,2262
+1,1.0,733,Jersey City,0,None,2125
+2,1.0,1006,Jersey City,0,None,1757
+1,1.0,733,Jersey City,0,None,1295
+2,1.5,1006,Jersey City,0,None,1375
+0,1.0,640,Jersey City,0,None,2304
+1,1.0,733,Jersey City,0,None,2384
+2,1.5,1006,Jersey City,0,None,3153
+3,1.0,1080,Jersey City,0,None,2000
+2,1.0,1500,Jersey City,0,None,2600
+1,1.0,733,Jersey City,0,None,1195
+2,1.0,700,Jersey City,0,None,1800
+2,2.0,1211,Jersey City,0,None,3400
+2,1.5,1006,Jersey City,0,None,1525
+0,1.0,640,Jersey City,0,None,1047
+2,1.0,900,Jersey City,0,None,1500
+4,2.0,1654,Jersey City,0,None,2395
+1,1.0,650,Jersey City,0,None,1373
+0,1.0,640,Jersey City,0,None,1150
+1,1.0,733,Jersey City,0,None,1295
+3,1.5,1423,Jersey City,0,None,1795
+2,1.0,800,Jersey City,0,None,1444
+2,1.0,800,Jersey City,0,None,1895
+1,1.0,733,Jersey City,0,None,1475
+2,1.5,1006,Jersey City,0,None,1445
+0,1.0,640,Jersey City,0,None,1300
+2,1.5,1006,Jersey City,0,None,1950
+1,1.0,733,Jersey City,0,None,1249
+2,1.5,1006,Jersey City,0,None,1296
+3,1.5,1423,Jersey City,0,None,1550
+2,1.5,1006,Jersey City,0,None,1394
+3,3.0,1500,Jersey City,0,None,3000
+2,2.0,958,Jersey City,1,APARTMENT,2795
+0,1.0,403,Jersey City,1,APARTMENT,2044
+1,1.0,838,Jersey City,1,APARTMENT,2250
+2,1.0,1006,Jersey City,1,APARTMENT,2300
+1,1.0,733,Jersey City,1,MULTI_FAMILY,925
+3,1.5,1423,Jersey City,0,None,1900
+1,1.0,733,Jersey City,0,None,2300
+2,1.5,1006,Jersey City,0,None,2500
+0,1.0,640,Jersey City,0,None,1250
+1,1.0,733,Jersey City,0,None,1650
+3,1.0,1000,Jersey City,1,APARTMENT,1850
+2,2.0,958,Jersey City,1,APARTMENT,2795
+3,1.0,1423,Jersey City,1,MULTI_FAMILY,1900
+2,1.5,1006,Jersey City,0,None,3200
+2,2.0,1006,Jersey City,1,APARTMENT,2800
+2,1.5,1006,Jersey City,0,None,1875
+0,1.0,640,Jersey City,0,None,2000
+1,1.0,733,Jersey City,0,None,1945
+2,1.5,1006,Jersey City,0,None,2400
+2,2.0,1116,Jersey City,1,MULTI_FAMILY,3450
+0,1.0,640,Jersey City,0,None,1950
+2,1.5,1006,Jersey City,0,None,2400
+3,1.5,1423,Jersey City,0,None,3850
+1,1.0,625,Jersey City,1,APARTMENT,1650
+0,1.0,550,Jersey City,1,APARTMENT,1048
+0,1.0,640,Jersey City,0,None,1750
+1,1.0,733,Jersey City,0,None,1750
+0,1.0,550,Jersey City,1,APARTMENT,1122
+2,1.5,1006,Jersey City,0,None,1650
+2,1.0,825,Jersey City,0,None,1895
+1,1.0,550,Jersey City,1,APARTMENT,1595
+2,2.0,825,Jersey City,0,None,1950
+1,1.0,600,Jersey City,0,None,1375
+3,1.0,1500,Jersey City,0,None,1800
+2,1.0,725,Jersey City,0,None,1795
+2,1.0,739,Jersey City,0,None,3000
+3,1.0,450,Jersey City,0,None,1900
+3,1.0,1500,Jersey City,0,None,1800
+3,2.0,1423,Jersey City,0,None,2200
+1,1.0,733,Jersey City,0,None,1247
+1,1.0,733,Jersey City,0,None,1445
+2,1.5,1006,Jersey City,0,None,1585
+2,1.0,900,Jersey City,0,None,1900
+2,1.0,4225,Jersey City,0,None,1400
+3,1.0,1400,Jersey City,0,None,2300
+0,1.0,640,Jersey City,0,None,1900
+1,1.0,733,Jersey City,0,None,2600
+2,1.5,1006,Jersey City,0,None,5000
+1,1.0,550,Jersey City,1,APARTMENT,1595
+2,2.0,1000,Jersey City,0,None,1700
+2,2.0,1174,Jersey City,0,None,2600
+2,2.0,1000,Jersey City,0,None,1700
+3,2.0,1423,Jersey City,0,None,1800
+1,1.0,733,Jersey City,0,None,1375
+2,2.0,921,Jersey City,0,None,3830
+2,2.0,1078,Jersey City,0,None,4565
+1,1.0,1300,Jersey City,0,None,1800
+2,2.0,921,Jersey City,0,None,3755
+1,1.0,755,Jersey City,1,APARTMENT,3060
+0,1.0,628,Jersey City,1,APARTMENT,2675
+0,1.0,628,Jersey City,1,APARTMENT,2870
+2,1.5,1006,Jersey City,0,None,1438
+3,1.5,1423,Jersey City,0,None,1595
+0,1.0,628,Jersey City,1,APARTMENT,2715
+1,1.0,843,Jersey City,2006,APARTMENT,2700
+1,1.0,840,Jersey City,1,MULTI_FAMILY,2675
+3,1.0,1423,Jersey City,1,APARTMENT,1900
+0,1.0,640,Jersey City,1,MULTI_FAMILY,1000
+1,1.0,725,Jersey City,1,APARTMENT,1250
+3,2.0,1680,Jersey City,1900,APARTMENT,2150
+4,2.0,2800,Jersey City,1,TOWNHOUSE,7995
+1,1.0,739,Jersey City,1,APARTMENT,3140
+0,1.0,600,Jersey City,1,MULTI_FAMILY,1900
+3,2.0,1200,Jersey City,1,APARTMENT,2600
+1,1.0,733,Jersey City,1,APARTMENT,1700
+3,2.0,1500,Jersey City,1,TOWNHOUSE,2500
+2,1.0,1006,Jersey City,1,APARTMENT,1950
+1,1.0,733,Jersey City,0,None,1550
+1,1.0,1100,Jersey City,2007,MULTI_FAMILY,1900
+0,1.0,640,Jersey City,1,MULTI_FAMILY,1250
+2,2.0,1006,Jersey City,1,APARTMENT,2000
+1,1.0,733,Jersey City,0,None,1350
+3,1.5,1423,Jersey City,0,None,1695
+0,1.0,1000,Jersey City,1,TOWNHOUSE,2200
+2,1.0,1006,Jersey City,1,MULTI_FAMILY,1750
+1,1.0,733,Jersey City,0,None,1325
+2,1.5,1006,Jersey City,0,None,1493
+1,1.0,600,Jersey City,1,MULTI_FAMILY,2550
+0,1.0,640,Jersey City,0,None,1295
+1,1.0,733,Jersey City,0,None,1595
+1,1.0,760,Jersey City,1,APARTMENT,1250
+0,1.0,640,Jersey City,0,None,1795
+1,1.0,733,Jersey City,0,None,2195
+2,1.5,1006,Jersey City,0,None,2495
+0,1.0,640,Jersey City,1,APARTMENT,175
+2,2.0,958,Jersey City,2015,APARTMENT,2795
+1,1.0,600,Jersey City,1,APARTMENT,1700
+1,1.0,600,Jersey City,1900,APARTMENT,1400
+2,1.0,1200,Jersey City,1,APARTMENT,1750
+1,1.0,733,Jersey City,0,None,2446
+3,1.5,1423,Jersey City,0,None,4011
+2,1.5,1006,Jersey City,0,None,1395
+1,1.0,715,Jersey City,1,APARTMENT,2400
+2,2.0,1000,Jersey City,1,APARTMENT,2450
+0,1.0,640,Jersey City,0,None,1795
+1,1.0,733,Jersey City,0,None,2095
+2,1.5,1006,Jersey City,0,None,2795
+3,1.0,1423,Jersey City,1,APARTMENT,1649
+2,1.5,1006,Jersey City,0,None,1350
+2,1.0,700,Jersey City,1,APARTMENT,1592
+2,1.0,750,Jersey City,1,MULTI_FAMILY,1850
+1,1.0,733,Jersey City,0,None,1324
+2,1.5,1006,Jersey City,0,None,1395
+3,1.5,1423,Jersey City,0,None,1750
+1,1.0,733,Jersey City,0,None,3134
+2,1.5,1006,Jersey City,0,None,3595
+0,1.0,640,Jersey City,1,SINGLE_FAMILY,1060
+1,1.0,733,Jersey City,1,APARTMENT,1300
+5,2.5,5000,Jersey City,0,None,3850
+1,1.0,733,Jersey City,1,APARTMENT,1325
+2,1.0,714,Jersey City,0,None,1675
+1,1.0,628,Jersey City,1,APARTMENT,2478
+1,1.0,733,Jersey City,0,None,2750
+1,1.0,733,Jersey City,0,None,1500
+2,1.5,1006,Jersey City,0,None,2200
+1,1.0,700,Jersey City,0,None,1600
+3,1.0,1100,Jersey City,0,None,1850
+3,1.5,1423,Jersey City,0,None,1799
+3,1.0,1423,Jersey City,0,None,1799
+3,1.0,1423,Jersey City,0,None,1799
+3,1.0,850,Jersey City,0,None,1675
+1,1.0,792,Jersey City,0,None,2800
+3,1.0,1600,Jersey City,0,None,1750
+1,1.0,733,Jersey City,0,None,1325
+2,1.5,1006,Jersey City,0,None,1495
+3,1.0,1500,Jersey City,0,None,1800
+2,2.0,1151,Jersey City,0,None,2975
+3,1.0,1423,Jersey City,0,None,1799
+1,1.0,733,Jersey City,0,None,3050
+2,2.0,990,Jersey City,0,None,3795
+1,1.0,705,Jersey City,0,None,1295
+1,1.0,578,Jersey City,0,None,1700
+2,2.0,805,Jersey City,0,None,1650
+2,1.0,850,Jersey City,0,None,1500
+1,1.0,733,Jersey City,0,None,1225
+2,1.5,1006,Jersey City,0,None,1650
+3,1.5,1423,Jersey City,0,None,1800
+3,1.5,1423,Jersey City,0,None,1395
+3,1.5,1423,Jersey City,0,None,1595
+4,4.0,2000,Jersey City,0,None,7500
+1,1.0,733,Jersey City,0,None,1295
+4,1.0,1654,Jersey City,1,MULTI_FAMILY,2200
+1,1.0,733,Hoboken,1,APARTMENT,1975
+1,1.0,733,Jersey City,0,None,1450
+2,1.5,1006,Jersey City,0,None,1700
+2,1.0,1006,Jersey City,1,MULTI_FAMILY,1500
+2,2.0,1672,Jersey City,1,APARTMENT,4370
+0,1.0,640,Jersey City,0,None,2350
+1,1.0,733,Jersey City,0,None,2796
+1,1.0,750,Jersey City,1,APARTMENT,1850
+1,1.0,650,Jersey City,1,MULTI_FAMILY,2000
+3,1.0,1000,Jersey City,1,APARTMENT,1900
+1,1.0,733,Jersey City,1,APARTMENT,3000
+2,1.0,1006,Jersey City,1,MULTI_FAMILY,1675
+3,1.5,1423,Jersey City,0,None,1599
+0,1.0,640,Jersey City,0,None,1225
+1,1.0,733,Jersey City,0,None,1450
+3,2.0,2500,Jersey City,1990,APARTMENT,2000
+0,1.0,640,Jersey City,0,None,1099
+1,1.0,733,Jersey City,0,None,1295
+2,1.5,1006,Jersey City,0,None,1550
+2,1.5,1006,Jersey City,0,None,1323
+1,1.0,733,Jersey City,0,None,1375
+2,1.5,1006,Jersey City,0,None,1995
+3,1.5,1423,Jersey City,0,None,1497
+3,1.0,1423,Jersey City,0,None,1700
+1,1.0,733,Jersey City,0,None,1095
+4,2.0,1654,Jersey City,0,None,2300
+5,3.0,3723,Jersey City,0,None,2200
+1,1.0,733,Jersey City,0,None,2940
+2,1.5,1006,Jersey City,0,None,4000
+2,1.0,1006,Jersey City,0,None,1650
+4,3.0,1300,Jersey City,0,None,2350
+5,4.0,2445,Jersey City,0,None,7870
+0,1.0,626,Jersey City,0,None,2600
+1,1.0,1500,Jersey City,0,None,5850
+2,2.0,1045,Jersey City,0,None,1950
+3,2.0,1320,Jersey City,0,None,3700
+2,1.0,1200,Jersey City,0,None,2150
+1,1.0,733,Jersey City,0,None,1595
+1,1.0,800,Jersey City,0,None,1400
+1,1.0,600,Jersey City,1,APARTMENT,2000
+2,1.0,800,Jersey City,0,None,1575
+0,1.0,640,Jersey City,0,None,1175
+2,1.0,690,Jersey City,0,None,1450
+2,2.0,990,Jersey City,0,None,2495
+3,1.5,1423,Jersey City,0,None,2700
+4,2.0,1654,Jersey City,0,None,3000
+1,1.0,673,Jersey City,0,None,2205
+2,1.5,1006,Jersey City,0,None,1347
+3,1.0,1500,Jersey City,0,None,2150
+1,1.0,733,Jersey City,0,None,1450
+1,1.0,760,Jersey City,0,None,3085
+2,2.0,1200,Jersey City,0,None,2750
+4,2.5,980,Jersey City,0,None,3000
+1,1.0,733,Jersey City,1,MULTI_FAMILY,1250
+1,1.0,733,Jersey City,0,None,1275
+2,1.5,1006,Jersey City,0,None,1593
+1,1.0,733,Jersey City,1,APARTMENT,1900
+2,1.5,900,Jersey City,1,APARTMENT,2800
+1,1.0,600,Jersey City,1,APARTMENT,1800
+1,1.0,733,Jersey City,0,None,2600
+2,1.5,1006,Jersey City,0,None,4000
+1,1.0,800,Jersey City,1,APARTMENT,1750
+0,1.0,640,Jersey City,0,None,926
+4,1.5,1500,Jersey City,1,SINGLE_FAMILY,2300
+2,1.0,780,Jersey City,1,APARTMENT,1500
+0,1.0,600,Jersey City,1,APARTMENT,1750
+3,2.0,1300,Jersey City,2005,APARTMENT,2650
+2,2.0,650,Jersey City,1,APARTMENT,2850
+1,1.0,675,Jersey City,1,APARTMENT,1750
+1,1.0,733,Jersey City,0,None,2650
+2,1.5,1006,Jersey City,0,None,3450
+2,1.0,1006,Jersey City,1,APARTMENT,1600
+1,1.0,600,Jersey City,1,APARTMENT,2000
+1,1.0,733,Jersey City,0,None,1250
+2,1.5,1006,Jersey City,0,None,1525
+1,1.0,733,Jersey City,1,MULTI_FAMILY,1395
+2,2.0,1371,Jersey City,2010,APARTMENT,2100
+4,1.0,2260,Jersey City,1,APARTMENT,1950
+3,2.0,1110,Jersey City,1,APARTMENT,1850
+1,1.0,725,Jersey City,1,MULTI_FAMILY,2450
+0,1.0,640,Jersey City,1,APARTMENT,2695
+2,1.0,650,Jersey City,1925,CONDO,2500
+1,1.0,733,Jersey City,1,APARTMENT,2825
+4,2.0,1654,Jersey City,0,None,2200
+3,1.5,1423,Jersey City,0,None,2500
+1,1.0,733,Jersey City,0,None,1285
+2,1.5,1006,Jersey City,0,None,1298
+3,1.5,1423,Jersey City,0,None,1550
+1,1.0,700,Jersey City,1,APARTMENT,1375
+3,1.5,1423,Jersey City,0,None,3600
+1,1.0,650,Jersey City,1,MULTI_FAMILY,1350
+2,2.0,990,Jersey City,1,APARTMENT,4495
+2,2.0,990,Jersey City,1,APARTMENT,4795
+2,2.0,776,Jersey City,1,CONDO,2200
+3,1.0,1000,Jersey City,1,APARTMENT,1900
+2,2.0,1100,Jersey City,1,APARTMENT,4595
+2,1.0,725,Jersey City,1,APARTMENT,1525
+3,3.0,1800,Jersey City,1,APARTMENT,2700
+1,1.0,650,Jersey City,1,APARTMENT,1450
+1,1.0,733,Jersey City,0,None,1985
+2,1.5,1006,Jersey City,0,None,1985
+1,1.0,733,Jersey City,0,None,1400
+2,1.5,1006,Jersey City,0,None,1500
+0,1.0,739,Jersey City,1,APARTMENT,2675
+2,2.0,1100,Jersey City,1,APARTMENT,4845
+2,2.0,1182,Jersey City,2008,APARTMENT,3750
+2,1.5,1006,Jersey City,0,None,1325
+2,1.0,1006,Jersey City,1,APARTMENT,1700
+2,1.0,1006,Jersey City,1,TOWNHOUSE,1400
+3,2.0,1423,Jersey City,1,APARTMENT,2400
+3,1.0,900,Jersey City,1,APARTMENT,1895
+2,1.0,1006,Union City,1,APARTMENT,1490
+2,1.0,1006,Jersey City,1,APARTMENT,1699
+1,1.0,680,Union City,1,MULTI_FAMILY,1350
+2,2.0,1118,Union City,1957,APARTMENT,1950
+1,1.0,733,Union City,0,None,2100
+2,1.5,1006,Union City,0,None,2250
+1,1.0,600,Jersey City,1,APARTMENT,2400
+2,1.0,1006,Union City,1,APARTMENT,1700
+2,1.0,900,Union City,2015,APARTMENT,1800
+1,1.0,600,Jersey City,1990,APARTMENT,1150
+2,1.0,1006,Union City,1,MULTI_FAMILY,1650
+1,1.0,733,Union City,0,None,1000
+1,1.0,733,Union City,1,APARTMENT,1300
+2,1.0,1006,Union City,1,MULTI_FAMILY,1514
+1,1.0,733,Union City,1,MULTI_FAMILY,1350
+1,1.0,733,Union City,0,None,1500
+2,1.0,1006,Union City,1,APARTMENT,1650
+2,1.0,1006,Union City,1,MULTI_FAMILY,1514
+1,1.0,625,Union City,1,CONDO,1475
+1,1.0,733,Union City,0,None,1350
+3,2.5,1850,Union City,1,MULTI_FAMILY,2795
+1,1.0,733,Union City,1,APARTMENT,1018
+1,1.0,733,Union City,1,APARTMENT,1395
+1,1.0,733,Union City,0,None,1350
+1,1.0,733,Union City,0,None,1450
+2,1.5,1006,Union City,0,None,1495
+1,1.0,733,Union City,1,APARTMENT,1395
+2,1.5,1006,Union City,0,None,2200
+1,1.0,733,Union City,0,None,1375
+1,1.0,800,Union City,1925,APARTMENT,1795
+2,2.0,1210,Union City,1,APARTMENT,2700
+0,1.0,640,Union City,0,None,1250
+1,1.0,733,Union City,0,None,1300
+3,1.0,1423,Union City,1,MULTI_FAMILY,2300
+1,1.0,733,Union City,1,APARTMENT,1350
+1,1.0,695,Union City,1910,APARTMENT,1400
+2,2.0,1134,Union City,1,APARTMENT,2200
+2,2.0,900,Union City,2014,APARTMENT,2450
+1,1.0,600,Union City,1,MULTI_FAMILY,1600
+1,1.0,733,Union City,1,TOWNHOUSE,1600
+3,1.0,950,Union City,1,APARTMENT,2100
+1,1.0,726,Union City,1,APARTMENT,1875
+2,1.0,1006,Union City,1,APARTMENT,1600
+3,2.0,1423,Union City,1,APARTMENT,2300
+2,1.0,1100,Union City,1,APARTMENT,2000
+3,1.0,2864,Union City,1,APARTMENT,2000
+4,1.0,1200,Union City,1898,APARTMENT,2500
+1,1.0,500,Union City,1,APARTMENT,1375
+1,1.0,733,Union City,0,None,1450
+3,1.0,1000,Union City,1,APARTMENT,1975
+2,1.5,1006,Union City,0,None,2450
+1,1.0,733,Union City,1,MULTI_FAMILY,1425
+2,1.5,684,Union City,1880,SINGLE_FAMILY,3250
+2,0.5,1006,Union City,0,None,1495
+1,1.0,733,Union City,0,None,1350
+2,2.0,1000,Union City,0,None,2400
+4,3.0,2000,Union City,1897,APARTMENT,3195
+0,1.0,500,Union City,0,None,2000
+0,1.0,640,Union City,0,None,1600
+1,1.0,733,Union City,0,None,1800
+3,2.0,1300,Union City,0,None,2600
+1,1.0,513,Union City,0,None,1250
+1,1.0,733,Union City,0,None,1495
+2,1.5,1006,Union City,0,None,1495
+3,1.0,1700,Union City,0,None,2100
+2,1.5,1006,Union City,0,None,1450
+1,1.0,733,Union City,0,None,1650
+3,1.5,1423,Union City,0,None,2400
+3,1.0,2864,Union City,0,None,2000
+1,1.0,733,Union City,0,None,1500
+1,1.0,733,Union City,0,None,1350
+1,1.0,733,Union City,0,None,1295
+2,2.0,1006,Union City,0,None,2200
+3,2.0,1696,Union City,0,None,4400
+1,1.0,733,Union City,0,None,1425
+1,1.0,733,Union City,0,None,1425
+1,1.0,650,Union City,0,None,1395
+1,1.0,690,Union City,0,None,1395
+1,1.0,733,Union City,0,None,1395
+1,1.0,733,Union City,0,None,1375
+3,1.5,1423,Union City,0,None,2295
+1,1.0,733,Union City,0,None,1395
+2,1.5,1006,Union City,0,None,2250
+2,1.0,900,Union City,1,APARTMENT,1650
+1,1.0,733,Union City,0,None,1795
+2,1.5,1006,Union City,0,None,3200
+0,1.0,640,Union City,1,APARTMENT,1400
+2,2.0,930,Union City,1,MULTI_FAMILY,2150
+1,1.0,600,Union City,1800,MULTI_FAMILY,1350
+1,1.0,733,Union City,1,MULTI_FAMILY,1395
+1,1.0,733,Union City,1,MULTI_FAMILY,1395
+3,1.5,1423,Union City,0,None,2300
+2,1.0,1006,Union City,1,MULTI_FAMILY,1495
+2,1.5,1006,Union City,0,None,2375
+1,1.0,733,Union City,0,None,2500
+2,1.5,1006,Union City,0,None,2300
+2,1.5,1006,Union City,0,None,2400
+1,1.0,733,Union City,0,None,2100
+2,1.5,1006,Union City,0,None,2250
+3,1.0,1300,Union City,1,APARTMENT,2100
+1,1.0,733,Union City,1,APARTMENT,1395
+2,1.0,1006,Union City,2015,MULTI_FAMILY,1850
+3,1.0,1423,Union City,1,APARTMENT,2650
+2,1.0,1006,Union City,1,MULTI_FAMILY,1450
+2,1.0,800,Union City,1,APARTMENT,1850
+3,1.0,980,Union City,1970,APARTMENT,1845
+3,1.0,2700,Union City,1892,MULTI_FAMILY,1995
+1,1.0,733,Union City,0,None,1950
+2,1.5,1006,Union City,0,None,3200
+1,1.0,1760,Union City,1,APARTMENT,1550
+3,1.0,1423,Union City,1,APARTMENT,2200
+3,1.0,1423,Union City,1,MULTI_FAMILY,2200
+1,1.0,733,Union City,0,None,2175
+1,1.0,733,Union City,1,APARTMENT,1350
+2,1.0,1200,Union City,1,MULTI_FAMILY,2285
+2,1.0,1000,Union City,1,APARTMENT,1900
+1,1.0,600,Union City,1,APARTMENT,1395
+3,3.0,1529,Union City,1,APARTMENT,2700
+0,1.0,1600,Union City,1,APARTMENT,5000
+2,1.0,1250,Union City,1,APARTMENT,2300
+1,1.0,550,Union City,1910,MULTI_FAMILY,1350
+1,1.0,550,Union City,1,APARTMENT,1350
+1,1.0,733,Union City,0,None,1450
+3,1.5,1423,Union City,0,None,1999
+1,1.0,450,Union City,1,APARTMENT,1395
+1,1.0,800,Union City,1,APARTMENT,1650
+1,1.0,733,Union City,1,APARTMENT,1350
+2,1.0,1006,Union City,1,APARTMENT,1495
+2,1.0,1006,Union City,1,MULTI_FAMILY,1850
+2,1.0,575,Union City,1910,APARTMENT,1500
+2,1.0,1006,Union City,1,APARTMENT,1499
+2,1.5,1006,Union City,0,None,2250
+2,1.0,575,Union City,1,APARTMENT,1499
+2,1.0,1006,Union City,1,APARTMENT,1950
+1,1.0,739,Union City,1,MULTI_FAMILY,1650
+3,1.0,2090,Union City,1900,TOWNHOUSE,2300
+2,1.0,800,Union City,1,APARTMENT,1839
+2,1.0,1006,Union City,1,APARTMENT,2000
+2,1.0,600,Union City,1,APARTMENT,1595
+2,1.0,750,Union City,1950,MULTI_FAMILY,1475
+2,1.0,1006,Union City,2016,APARTMENT,1800
+2,1.5,1006,Union City,0,None,1900
+3,1.5,1423,Union City,0,None,1900
+1,1.0,733,Union City,0,None,1395
+3,1.0,2830,Union City,1990,TOWNHOUSE,2195
+3,2.0,1350,Union City,1,APARTMENT,2350
+2,1.5,1006,Union City,0,None,2200
+3,1.5,1100,Union City,1,APARTMENT,2000
+3,1.0,995,Union City,1,APARTMENT,2050
+2,1.0,1006,Union City,1,APARTMENT,1800
+1,1.0,733,Union City,0,None,1350
+2,1.5,1006,Union City,0,None,1875
+3,1.0,1000,Union City,1897,MULTI_FAMILY,1875
+0,1.0,580,Union City,1,APARTMENT,1475
+3,2.0,1423,Union City,1,MULTI_FAMILY,2200
+3,1.0,1423,Union City,1,MULTI_FAMILY,1950
+3,2.0,1423,Union City,1,APARTMENT,2200
+2,1.0,1450,Union City,2005,APARTMENT,2395
+3,1.5,1423,Union City,0,None,2850
+2,1.0,1200,Union City,1917,APARTMENT,1650
+2,1.0,1000,Union City,1,APARTMENT,1800
+1,1.0,733,Union City,0,None,1250
+2,1.0,800,Union City,1,APARTMENT,1700
+0,1.0,1750,Union City,1,TOWNHOUSE,1950
+0,1.0,565,Union City,0,None,1700
+1,1.0,733,Union City,0,None,2150
+2,2.0,1006,Union City,0,None,2250
+2,1.0,1000,Union City,0,None,1700
+3,1.0,927,Union City,0,None,1895
+1,1.0,700,Union City,0,None,1450
+2,1.0,780,Union City,0,None,1950
+1,1.0,700,Union City,0,None,1900
+2,1.0,1006,Union City,0,None,1800
+2,1.0,765,Union City,0,None,1900
+1,1.0,733,Union City,0,None,1200
+1,1.0,733,Union City,0,None,1800
+3,1.5,1423,Union City,0,None,3600
+3,1.0,1150,Union City,0,None,2150
+1,1.5,800,Union City,0,None,1700
+2,1.0,1006,Union City,0,None,2200
+1,1.0,733,Union City,0,None,1350
+2,1.0,1006,Union City,0,None,1800
+2,2.0,1006,Union City,0,None,1995
+1,1.0,733,Union City,0,None,1350
+1,1.0,733,Union City,0,None,1275
+2,1.0,1000,Union City,0,None,1850
+1,1.0,733,Union City,0,None,1875
+2,1.5,1006,Union City,0,None,2300
+3,1.5,1423,Union City,0,None,3300
+2,2.0,1100,Hoboken,0,None,2700
+2,1.0,800,Union City,0,None,1800
+3,1.0,1300,Union City,0,None,2500
+3,2.0,3080,Union City,0,None,2975
+4,1.5,1400,Union City,0,None,2750
+2,1.0,1006,Union City,0,None,1650
+2,1.0,1006,Union City,0,None,1650
+3,1.5,900,Union City,0,None,2100
+2,2.0,1450,Jersey City,0,None,2400
+3,2.0,1423,Union City,0,None,2500
+2,1.0,750,Union City,0,None,1645
+0,1.0,1300,Union City,0,None,2600
+3,1.0,1000,Union City,0,None,2000
+1,1.0,733,Union City,0,None,2150
+2,1.5,1006,Union City,0,None,2625
+2,2.0,1030,Union City,0,None,2400
+1,1.0,733,Union City,0,None,1500
+2,1.0,650,Union City,0,None,1590
+3,2.0,1500,Union City,0,None,2000
+1,1.0,733,Union City,0,None,1550
+3,1.0,1200,Union City,0,None,2250
+2,1.0,1000,Union City,0,None,1900
+3,1.0,2000,Union City,0,None,2650
+1,1.0,800,Union City,0,None,1750
+3,1.5,1423,Union City,0,None,2300
+2,1.0,1000,Union City,0,None,1900
+3,2.0,1600,Union City,0,None,2500
+2,2.0,1100,Union City,0,None,2000
+4,2.0,600,Union City,0,None,4000
+3,1.0,1423,Union City,0,None,2300
+1,1.0,600,Union City,0,None,1750
+2,1.0,1006,Union City,0,None,2000
+1,1.0,525,Union City,0,None,1425
+1,1.0,733,Union City,0,None,1395
+1,1.0,543,Union City,0,None,1400
+1,1.0,724,Union City,0,None,1800
+2,2.0,1250,Union City,0,None,2300
