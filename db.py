@@ -5,11 +5,10 @@ from api_key import google_keys
 from api import get_coordinate
 import random
 from bson import ObjectId
-
+import pandas as pd
 import numpy as np
 from scipy.integrate import simps
 from numpy import trapz
-
 from sklearn.externals import joblib
 
 
@@ -370,30 +369,32 @@ def update_recommendation():
     # return {'success': True, 'desc': 'Completed'}
 
 # calculate money saved
-def chart_calculus(array, start_date):
+def chart_calculus(path, start_date):
+    df = pd.read_csv(path).tail(24)
+    array = list(df[df['index'] >= start_date]['price'])
     y = array
-    start_price = y[start_date]
-    new_y = [(array[i] - start_price) for i in y]
+    start_price = y[0]
+    new_y = [(array[i] - start_price) for i in range(len(y))]
 
     # Compute the area using the composite trapezoidal rule.
-    if new_y[start_date+1] - new_y[start_date] >= 0:
+    if new_y[1] - new_y[0] >= 0:
         signal = 1
     else:
         signal = -1
 
-    for i in range(start_date+1, len(new_y)):
-        area = trapz(new_y[start_date:i+1], dx=1)
+    for i in range(1, len(new_y)):
+        area = trapz(new_y[0:i+1], dx=1)
         if area == 0:
-            if i - start_date <= 6:  # if it less than 6 months, it should be short-term rental.
+            if i <= 6:  # if it less than 6 months, it should be short-term rental.
                 if new_y[i] < 0 or (new_y[i] == 0 and signal == -1):
                     return {'success': True, 'desc': 'recommended for 6-9 months rental.'}
                 elif new_y[i] > 0 or (new_y[i] == 0 and signal == 1):
                     return {'success': True, 'desc': 'recommended for short-term rental(less than 6 months).'}
-            elif 6 < i - start_date <= 12:
+            elif 6 < i <= 12:
                 if new_y[i] < 0 or (new_y[i] == 0 and signal == -1):
                     return {'success': True, 'desc': 'recommended for 12-18 months rental.'}
                 elif new_y[i] > 0 or (new_y[i] == 0 and signal == 1):
-                    return {'success': True, 'desc': 'recommended for <=12 months rental(unrecommended for any'
+                    return {'success': True, 'desc': 'recommended for 6-12 months rental(unrecommended for any'
                                                      ' longer rental).'}
             else:
                 if new_y[i] < 0 or (new_y[i] == 0 and signal == -1):
@@ -433,4 +434,7 @@ if __name__ == '__main__':
     #print(res)
     # a = predict_post_price(apartment_info, '/Users/franklin/SSW695/SSW695_DuckHome/build_model/SGDRegression_model.pkl')
     # print(a)
-    update_recommendation()
+    #update_recommendation()
+
+    res = chart_calculus('/Users/franklin/SSW695/SSW695_DuckHome/build_model/Hoboken_result_long.csv', '2019-05-01')
+    print(res)
