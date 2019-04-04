@@ -82,7 +82,7 @@ def get_boundry(city):
             for i in set:
                 lat, lng = i[0], i[1]
                 coord = {'lat': lat, 'lng': lng}
-                f.write(str(coord) + '\n')
+                f.write(str(coord) + ',\n')
 
     f.close()
     print(boundry_set)
@@ -90,5 +90,5 @@ def get_boundry(city):
 #xmlstr = get_neighborhood('NJ')
 # xmlstr = get_search_result('333 River St', 'Hoboken', 'NJ')
 # jsonstr = xml_to_json(xmlstr)
-get_boundry('Union city')
+get_boundry('Hoboken')
 
