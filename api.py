@@ -68,8 +68,21 @@ def get_coordinate(addr, gid):
         print(f"{res_json['status']}: {res_json['error_message']}")
         return 'None', 'None'
 
+def get_boundry(city):
+    valid_city = google_validformat(city)
+    # https://nominatim.openstreetmap.org/search.php?q=Warsaw+Poland&polygon_geojson=1&format=json
+    url = f'https://nominatim.openstreetmap.org/search.php?q={valid_city}&polygon_geojson=1&format=json&format=geojson'
+    r = requests.get(url)
+    print(type(r.text))
+    #res_json = json.loads(r.text)
+    #print(type(res_json))
+
+    fileObject = open('jerseycity.json', 'w')
+    fileObject.write(r.text)
+    fileObject.close()
 
 #xmlstr = get_neighborhood('NJ')
 # xmlstr = get_search_result('333 River St', 'Hoboken', 'NJ')
 # jsonstr = xml_to_json(xmlstr)
+get_boundry('Jersey city')
 
