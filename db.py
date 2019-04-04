@@ -398,6 +398,8 @@ def chart_calculus(city, start_date):
         signal = -1
 
     pre_area = 0
+
+    # optimize the for loop to be shorter
     for i in range(1, len(new_y)):
         # Compute the area using the composite trapezoidal rule.
         area = trapz(new_y[0:i+1], dx=1)
