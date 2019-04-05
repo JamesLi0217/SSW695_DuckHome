@@ -87,8 +87,19 @@ def get_boundry(city):
     f.close()
     print(boundry_set)
 
+def read_coor(path1, path2):
+    f1 = open(path1, 'r')
+    f2 = open(path2, 'w')
+    for line in f1.readlines():
+        line_list = line.split()
+        lat, lng = line_list[1], line_list[0]
+        coord = {'lat': lat, 'lng': lng}
+        f2.write(str(coord).replace("'", '') + ',\n')
+
+    f1.close()
+    f2.close()
 #xmlstr = get_neighborhood('NJ')
 # xmlstr = get_search_result('333 River St', 'Hoboken', 'NJ')
 # jsonstr = xml_to_json(xmlstr)
-get_boundry('Union city')
-
+#get_boundry('Union city')
+read_coor('/Users/franklin/SSW695/SSW695_DuckHome/jersey_coor.txt', '/Users/franklin/SSW695/SSW695_DuckHome/Jerseycity.txt')
