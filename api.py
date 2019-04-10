@@ -69,20 +69,37 @@ def get_coordinate(addr, gid):
         return 'None', 'None'
 
 def get_boundry(city):
+
+
     valid_city = google_validformat(city)
     # https://nominatim.openstreetmap.org/search.php?q=Warsaw+Poland&polygon_geojson=1&format=json
     url = f'https://nominatim.openstreetmap.org/search.php?q={valid_city}&polygon_geojson=1&format=json&format=geojson'
     r = requests.get(url)
-    print(type(r.text))
-    #res_json = json.loads(r.text)
-    #print(type(res_json))
+    res_json = json.loads(r.text)
+    boundry_set = res_json['features'][0]['geometry']['coordinates']
+    with open(city.replace(' ', '') + '.txt', 'w', newline='') as f:
+        for set in boundry_set:
+            for i in set:
+                lat, lng = i[0], i[1]
+                coord = {'lat': lat, 'lng': lng}
+                f.write(str(coord).replace("'", '') + ',\n')
 
-    fileObject = open('jerseycity.json', 'w')
-    fileObject.write(r.text)
-    fileObject.close()
+    f.close()
+    print(boundry_set)
 
+def read_coor(path1, path2):
+    f1 = open(path1, 'r')
+    f2 = open(path2, 'w')
+    for line in f1.readlines():
+        line_list = line.split()
+        lat, lng = line_list[1], line_list[0]
+        coord = {'lat': lat, 'lng': lng}
+        f2.write(str(coord).replace("'", '') + ',\n')
+
+    f1.close()
+    f2.close()
 #xmlstr = get_neighborhood('NJ')
 # xmlstr = get_search_result('333 River St', 'Hoboken', 'NJ')
 # jsonstr = xml_to_json(xmlstr)
-get_boundry('Jersey city')
-
+#get_boundry('Union city')
+read_coor('/Users/franklin/SSW695/SSW695_DuckHome/jersey_coor.txt', '/Users/franklin/SSW695/SSW695_DuckHome/Jerseycity.txt')
