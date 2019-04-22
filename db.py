@@ -5,8 +5,13 @@ from api_key import google_keys
 from api import get_coordinate
 import random
 from bson import ObjectId
+import pandas as pd
 import numpy as np
+from scipy.integrate import simps
+from numpy import trapz
 from sklearn.externals import joblib
+
+
 
 
 # Connect mongodb
@@ -293,7 +298,8 @@ def predict_post_price(info, pkl_path):
     try:
         bed, bath, sqft, city = info['bed'], info['bath'], info['sqft'], info['city'].lower()
         min, max = 180, 5000
-        sqft = (sqft - min) / (max - min)
+        sqft = (sqft - min) / (max - min)  #normalization of sqft
+
         dict = {
             'bed': bed,
             'bath': bath,
@@ -302,17 +308,136 @@ def predict_post_price(info, pkl_path):
             'union city': 0,
             'sqft': sqft
         }
+
         dict[city] = 1
         # print(dict)
+
         res = [dict['bed'], dict['bath'], dict['hoboken'], dict['jersey city'], dict['union city'], dict['sqft']]
         a = np.array(res)
+
         # print(a)
+
         model = joblib.load(pkl_path)
         pred_price = model.predict([a])
         pred_price = np.round(pred_price[0], 0)
         return {'success': True, 'data': pred_price}
+
     except Exception as e:
         return {'success': False, 'desc': e}
+
+def update_recommendation():
+    apart_list = list(db.apartment_list.find())
+    for apart in apart_list:
+        _id = apart['_id']
+
+        for ct in ['hoboken', 'jersey city', 'union city']:
+            if ct in apart['location'].lower():
+                city = ct
+
+        print(apart['location'])
+
+        for info in apart['info']:
+            bed, bath, sqft = info['bed'], info['bath'], info['sqft']
+            min, max = 180, 5000
+            sqft = (sqft - min)/(max - min)
+
+            dict = {
+                'bed': bed,
+                'bath': bath,
+                'hoboken': 0,
+                'jersey city': 0,
+                'union city': 0,
+                'sqft': sqft
+            }
+
+            dict[city] = 1
+            #print(dict)
+            res = [dict['bed'], dict['bath'], dict['hoboken'], dict['jersey city'], dict['union city'], dict['sqft']]
+            a = np.array(res)
+            #print(a)
+            model = joblib.load('/Users/franklin/SSW695/SSW695_DuckHome/build_model/SGDRegression_model.pkl')
+            pred_price = model.predict([a])
+            pred_price = np.round(pred_price[0], 0)
+            print(pred_price)
+            price = info['price']
+
+            if price <= pred_price:
+                recommend = True
+            else:
+                recommend = False
+            print(recommend)
+            info['recommend'] = recommend
+
+        res = db.apartment_list.update_one({'_id': _id}, {'$set': {'info': apart['info']}})
+        if res.modified_count == 0:
+            return {'success': False, 'desc': f"Didn't update recommendation when _id: {_id}"}
+
+    # return {'success': True, 'desc': 'Completed'}
+
+# calculate money saved
+def chart_calculus(city, start_date):
+    p = [i.capitalize() for i in city.split()]
+    city = ''.join(p)
+
+    path = f'/Users/franklin/SSW695/SSW695_DuckHome/build_model/{city}_result_long.csv'
+    try:
+        df = pd.read_csv(path).tail(24)
+        array = list(df[df['index'] >= start_date]['price'])
+
+    except:
+        return {'success': False, 'desc': f'Failed to read {path}.'}
+
+    y = array
+    start_price = y[0]
+    new_y = [(array[i] - start_price) for i in range(len(y))]
+
+    # get the slope
+    if new_y[1] - new_y[0] >= 0:
+        signal = 1
+    else:
+        signal = -1
+
+    pre_area = 0
+
+    # optimize the for loop to be shorter
+    for i in range(1, len(new_y)):
+        # Compute the area using the composite trapezoidal rule.
+        area = trapz(new_y[0:i+1], dx=1)
+        if pre_area * area < 0: # area=0 between last i and i
+            if i <= 6:  # if it less than 6 months, it should be short-term rental.
+                if new_y[i] > 0 or (new_y[i] == 0 and signal == 1):
+                    return {'success': True, 'desc': 'recommended for 6< months rental.'}
+                elif new_y[i] < 0 or (new_y[i] == 0 and signal == -1):
+                    return {'success': True, 'desc': 'recommended for short-term rental (less than 6 months).'}
+                else:
+                    return {'success': False, 'desc': 'Failed to calculate.'}
+
+            elif 6 < i <= 12:
+                if new_y[i] > 0 or (new_y[i] == 0 and signal == 1):
+                    return {'success': True, 'desc': f'recommended for {int(i)}-{int(i)+2} months rental.'}
+                elif new_y[i] < 0 or (new_y[i] == 0 and signal == -1):
+                    return {'success': True, 'desc': f'recommended for <={int(i)} months rental (unrecommended for any'
+                                                     ' longer rental).'}
+            else:
+                if new_y[i] > 0 or (new_y[i] == 0 and signal == 1):
+                    return {'success': True, 'desc': f'recommended for {int(i)}-{int(i)+2} months rental.'}
+                elif new_y[i] < 0 or (new_y[i] == 0 and signal == -1):
+                    return {'success': True, 'desc': f'recommended for <={int(i)} months rental (unrecommended for any'
+                                                     ' longer rental).'}
+                else:
+                    return {'success': False, 'desc': 'Failed to calculate.'}
+
+        pre_area = area
+
+    else:
+        if signal == -1:
+            return {'success': True, 'desc': 'recommended for short-term rental (less than 6 months).'}
+        else:
+            return {'success': True, 'desc': 'recommended for long-term rental (2 years).'}
+
+
+
+
 
 if __name__ == '__main__':
     apartment_info = {
@@ -333,5 +458,9 @@ if __name__ == '__main__':
     #print(len(apart['data']))
     #res = delete_apart_by_userid(apartment_info, user_id)
     #print(res)
-    a = predict_post_price(apartment_info, '/Users/franklin/SSW695/SSW695_DuckHome/build_model/SGDRegression_model.pkl')
-    print(a)
+    # a = predict_post_price(apartment_info, '/Users/franklin/SSW695/SSW695_DuckHome/build_model/SGDRegression_model.pkl')
+    # print(a)
+    #update_recommendation()
+
+    res = chart_calculus('Jersey City', '2019-06-01')
+    print(res)
