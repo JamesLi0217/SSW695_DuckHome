@@ -10,7 +10,7 @@ import numpy as np
 from scipy.integrate import simps
 from numpy import trapz
 from sklearn.externals import joblib
-
+import datetime
 
 
 
@@ -403,7 +403,7 @@ def chart_calculus(city, start_date):
     for i in range(1, len(new_y)):
         # Compute the area using the composite trapezoidal rule.
         area = trapz(new_y[0:i+1], dx=1)
-        if pre_area * area < 0: # area=0 between last i and i
+        if pre_area * area < 0: # area=0 between i and last i
             if i <= 6:  # if it less than 6 months, it should be short-term rental.
                 if new_y[i] > 0 or (new_y[i] == 0 and signal == 1):
                     return {'success': True, 'desc': 'recommended for 6< months rental.'}
@@ -462,5 +462,24 @@ if __name__ == '__main__':
     # print(a)
     #update_recommendation()
 
-    res = chart_calculus('Jersey City', '2019-06-01')
-    print(res)
+    print('Jersey city, 2019-04-01' + chart_calculus('Jersey City', '2019-04-01')['desc'])
+    print('Jersey city, 2019-05-01' + chart_calculus('Jersey City', '2019-05-01')['desc'])
+    print('Jersey city, 2019-06-01' + chart_calculus('Jersey City', '2019-06-01')['desc'])
+    print('Jersey city, 2019-07-01' + chart_calculus('Jersey City', '2019-07-01')['desc'])
+    print('Jersey city, 2019-08-01' + chart_calculus('Jersey City', '2019-08-01')['desc'])
+    print('Jersey city, 2019-09-01' + chart_calculus('Jersey City', '2019-09-01')['desc'])
+
+    print('Union city, 2019-04-01' + chart_calculus('Union City', '2019-04-01')['desc'])
+    print('Union city, 2019-05-01' + chart_calculus('Union City', '2019-05-01')['desc'])
+    print('Union city, 2019-06-01' + chart_calculus('Union City', '2019-06-01')['desc'])
+    print('Union city, 2019-07-01' + chart_calculus('Union City', '2019-07-01')['desc'])
+    print('Union city, 2019-08-01' + chart_calculus('Union City', '2019-08-01')['desc'])
+    print('Union city, 2019-09-01' + chart_calculus('Union City', '2019-09-01')['desc'])
+
+    print('Hoboken, 2019-04-01' + chart_calculus('Hoboken', '2019-04-01')['desc'])
+    print('Hoboken, 2019-05-01' + chart_calculus('Hoboken', '2019-05-01')['desc'])
+    print('Hoboken, 2019-06-01' + chart_calculus('Hoboken', '2019-06-01')['desc'])
+    print('Hoboken, 2019-07-01' + chart_calculus('Hoboken', '2019-07-01')['desc'])
+    print('Hoboken, 2019-08-01' + chart_calculus('Hoboken', '2019-08-01')['desc'])
+    print('Hoboken, 2019-09-01' + chart_calculus('Hoboken', '2019-09-01')['desc'])
+
