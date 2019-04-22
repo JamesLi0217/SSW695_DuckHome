@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>first web</title>
+        <link rel="stylesheet" href="{% static 'css/semantic.css' %}"  media="screen" title="no title" charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
+
+        <style type="text/css">
+            column1 {
+                background: url({% static 'images/star_banner.jpg' %})
+                height: 300px;
+                background-size: cover;
+             }
+
+
+            h1 {
+                font-family:'Oswald', sans-serif!important;
+                font-size:40px;
+            }
+
+            body {
+                font-family: 'Raleway', sans-serif;
+            }
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size:18px;
+            }
+            .ui.vertical.segment.masthead {
+                height: 300px;
+                background: url({% static 'images/star_banner.jpg' %});
+                background-size: cover;
+                background-position: 100% 80%;
+            }
+
+            .ui.container.segment {
+                width: 800px;
+            }
+
+            .ui.center.aligned.header.blogslogon {
+                margin-top: 40px;
+            }
+
+            .ui.center.aligned.header.blogslogon p {
+                margin-top: 10px;
+                color: white;
+                font-size: 10px;
+            }
+            .ui.container.nav {
+                width: 500px;
+            }
+            /* Set the size of the div element that contains the map */
+            #map {
+            height: 400px;  /* The height is 400 pixels */
+            width: 100%;  /* The width is the width of the web page */
+            }
+
+            .ui.segment.container {
+                margin-top: 50px;
+                font-size: 20px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="ui inverted vertical  segment masthead">
+
+            <h1 class="ui center aligned header blogslogon" style="font-size:50px;font-family: 'Raleway', sans-serif!important;">
+                DuckHome
+                <p class="ui sub header">
+                    Find The Great Apartment Here!
+                </p>
+
+            </h1>
+        </div>
+        <div class="ui container nav">
+            <div class="ui borderless text five item menu ">
+                <div class="ui simple dropdown item">
+                    location
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_address=hoboken">hoboken</a>
+                        <a class="item" href="?tag_address=jersey city">jersey city</a>
+                        <a class="item" href="?tag_address=union city">union city</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    price
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">0-500</a>
+                        <a class="item" href="?tag_price=500-1000">500-1000</a>
+                        <a class="item" href="?tag_price=1000+">1000+</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    bedroom
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">1 bedroom</a>
+                        <a class="item" href="?tag_price=500-1000">2 bedroom</a>
+                        <a class="item" href="?tag_price=1000+">3 bedroom</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    bathroom
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">1 bathroom</a>
+                        <a class="item" href="?tag_price=500-1000">2 bathroom</a>
+                        <a class="item" href="?tag_price=1000+">3 bathroom</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    Square
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">0-1000</a>
+                        <a class="item" href="?tag_price=500-1000">1000-2000</a>
+                        <a class="item" href="?tag_price=1000+">2000+</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="ui divider"></div>
+        <div class="ui inverted segment card-view" style="background: url(https://photos.zillowstatic.com/cc_ft_1536/IS66k1tljwm9q51000000000.jpg);margin-top: 80px; background-size: cover;background-repeat: no-repeat; height:500px">
+
+        </div>
+        <div class="ui vertical basic segment recommended">
+            <h1 class="ui center aligned header">Rental Information</h1>
+
+
+            <div class="ui two column grid container">
+                <div class="column">
+                    <h1>
+                        Willow Ave Hoboken NJ
+                    </h1>
+                    <h3>
+                        Price :3200.0$ , Apartment Information : 2.0 Bedroom, 1.0 Bedroom, 827.0 sqft
+                    </h3>
+                    <p>The description of Willow Ave Hoboken NJ: All new. All yours. Contemporary style blends with the finest in history and inspiration.Start your day in style with a spa-inspired bathroom complete with white gloss vanities, stone countertops and frameless glass enclosed showers. Use your kitchen's stainless steel GE appliances and sleek white Caesarstone countertops to bring out your inner chef. Spending the day at home? Find time for yourself in our state-of-the-art fitness center. Relax by the pool and the fire pits on the outdoor roof terrace. Work from home in the resident Internet lounge or enjoy the comfort of your own home. And when you re ready for an adventure, the best apartment waits just outside your front door."</p>
+                </div>
+
+                <div class="column">
+                    <h3>Google Map</h3>
+                    <!--The div element for the map -->
+                    <div id="map"></div>
+                    <script>
+
+                    // This example creates a simple polygon representing the host city of the
+                    // Greatest Outdoor Show On Earth.
+
+                     function initMap() {
+                       var map = new google.maps.Map(document.getElementById('map'), {
+                          zoom: 14,
+                          center: {lat: 40.742688, lng: -74.036356},
+                          mapTypeId: 'terrain'
+                        });
+
+                        // Define the LatLng coordinates for the polygon's path.
+                        var triangleCoords = [
+                        {lat: 40.750614, lng: -74.03762},
+                        {lat: 40.751213, lng: -74.037258},
+                        {lat: 40.75124, lng: -74.037241},
+                        {lat: 40.752389, lng: -74.036533},
+                        {lat: 40.752751, lng: -74.036309},
+                        {lat: 40.754845, lng: -74.035075},
+                        {lat: 40.754952, lng: -74.035012},
+                        {lat: 40.755514, lng: -74.034706},
+                        {lat: 40.755974, lng: -74.034448},
+                        {lat: 40.756219, lng: -74.034311},
+                        {lat: 40.7568945, lng: -74.0340165},
+                        {lat: 40.757225, lng: -74.033806},
+                        {lat: 40.7574, lng: -74.033644},
+                        {lat: 40.757433, lng: -74.033607},
+                        {lat: 40.7586749, lng: -74.0327271},
+                        {lat: 40.7588709, lng: -74.0326991},
+                        {lat: 40.7588739, lng: -74.0323531},
+                        {lat: 40.759099, lng: -74.03223},
+                        {lat: 40.758784, lng: -74.03097},
+                        {lat: 40.758726, lng: -74.030332},
+                        {lat: 40.758677, lng: -74.029785},
+                        {lat: 40.758095, lng: -74.029354},
+                        {lat: 40.7581339, lng: -74.0291201},
+                        {lat: 40.7582189, lng: -74.0288141},
+                        {lat: 40.758008, lng: -74.028348},
+                        {lat: 40.7578416, lng: -74.0281342},
+                        {lat: 40.7577099, lng: -74.0279281},
+                        {lat: 40.757504, lng: -74.027602},
+                        {lat: 40.7573009, lng: -74.0273841},
+                        {lat: 40.7574279, lng: -74.0262221},
+                        {lat: 40.7576979, lng: -74.0237991},
+                        {lat: 40.7577007, lng: -74.0236991},
+                        {lat: 40.7577149, lng: -74.0231611},
+                        {lat: 40.7571739, lng: -74.0186141},
+                        {lat: 40.7566009, lng: -74.0137841},
+                        {lat: 40.7501009, lng: -74.0154801},
+                        {lat: 40.7493469, lng: -74.0156771},
+                        {lat: 40.7451009, lng: -74.0167841},
+                        {lat: 40.7406779, lng: -74.0178671},
+                        {lat: 40.7398519, lng: -74.0180701},
+                        {lat: 40.7391169, lng: -74.0182511},
+                        {lat: 40.734588, lng: -74.01936},
+                        {lat: 40.730321, lng: -74.020405},
+                        {lat: 40.7310609, lng: -74.0228881},
+                        {lat: 40.7333519, lng: -74.0305691},
+                        {lat: 40.7334639, lng: -74.0307001},
+                        {lat: 40.7335099, lng: -74.0305481},
+                        {lat: 40.7335639, lng: -74.0303061},
+                        {lat: 40.7336829, lng: -74.0305251},
+                        {lat: 40.7339649, lng: -74.0312361},
+                        {lat: 40.7341919, lng: -74.0318071},
+                        {lat: 40.734287, lng: -74.032048},
+                        {lat: 40.7343699, lng: -74.0322573},
+                        {lat: 40.734584, lng: -74.032952},
+                        {lat: 40.7347629, lng: -74.0335321},
+                        {lat: 40.734811, lng: -74.033688},
+                        {lat: 40.7353009, lng: -74.0352841},
+                        {lat: 40.7358172, lng: -74.0368817},
+                        {lat: 40.7365572, lng: -74.0386436},
+                        {lat: 40.736302, lng: -74.040436},
+                        {lat: 40.7361014, lng: -74.0417232},
+                        {lat: 40.7362443, lng: -74.0424116},
+                        {lat: 40.7365173, lng: -74.0432101},
+                        {lat: 40.7377317, lng: -74.0439879},
+                        {lat: 40.7381795, lng: -74.0437722},
+                        {lat: 40.738402, lng: -74.043822},
+                        {lat: 40.73846, lng: -74.043804},
+                        {lat: 40.7394009, lng: -74.0439851},
+                        {lat: 40.7400139, lng: -74.0435481},
+                        {lat: 40.740362, lng: -74.043227},
+                        {lat: 40.7412009, lng: -74.0422851},
+                        {lat: 40.742861, lng: -74.042445},
+                        {lat: 40.743234, lng: -74.042325},
+                        {lat: 40.7436151, lng: -74.0421357},
+                        {lat: 40.743675, lng: -74.042106},
+                        {lat: 40.744125, lng: -74.041843},
+                        {lat: 40.744342, lng: -74.041692},
+                        {lat: 40.744519, lng: -74.041569},
+                        {lat: 40.744834, lng: -74.041321},
+                        {lat: 40.745137, lng: -74.041083},
+                        {lat: 40.745497, lng: -74.040777},
+                        {lat: 40.746204, lng: -74.040174},
+                        {lat: 40.746546, lng: -74.039875},
+                        {lat: 40.746668, lng: -74.039782},
+                        {lat: 40.746968, lng: -74.039551},
+                        {lat: 40.747539, lng: -74.039201},
+                        {lat: 40.7479109, lng: -74.0390081},
+                        {lat: 40.748053, lng: -74.038935},
+                        {lat: 40.748749, lng: -74.038575},
+                        {lat: 40.749052, lng: -74.038427},
+                        {lat: 40.7498063, lng: -74.0380934},
+                        {lat: 40.75054, lng: -74.037665},
+                        {lat: 40.750614, lng: -74.03762}
+                        ];
+
+                        // Construct the polygon.
+                        var bermudaTriangle = new google.maps.Polygon({
+                          paths: triangleCoords,
+                          strokeColor: '#FF0000',
+                          strokeOpacity: 0.8,
+                          strokeWeight: 2,
+                          fillColor: '#FF0000',
+                          fillOpacity: 0.35
+                        });
+
+                        bermudaTriangle.setMap(map);
+                        var uluru = {lat: 40.742688, lng:-74.036356};
+                        // The map, centered at Uluru
+                        // The marker, positioned at Uluru
+                        var marker = new google.maps.Marker({position: uluru, map: map});
+                      }
+                    </script>
+
+                    <!--Load the API from the specified URL
+                    * The async attribute allows the browser to render the page while the API loads
+                    * The key parameter will contain your own API key (which is not needed for this tutorial)
+                    * The callback parameter executes the initMap() function
+                    -->
+                    <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC9JC6uRITBWXydnWLrDk8j2Fl5ECshPU&callback=initMap"&language=ar&region=HOBOKEN">
+                    </script>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comments&Form's here -->
+        <div class="ui segment container" style="width:1100px;">
+            <h3 class="ui header" style="font-family:'Oswald', sans-serif;">Comments</h3>
+            <div class="ui comments">
+                <div class="comment">
+
+                    <div class="avatar">
+                        <img src="http://semantic-ui.com/images/avatar/small/matt.jpg" alt="" />
+                    </div>
+                    <div class="content">
+                        <a href="#" class="author">Lori Brown</a>
+                        <div class="metadata">
+                            <div class="date">1 days ago</div>
+                        </div>
+                        <p class="text" style="font-family: 'Raleway', sans-serif;">
+                            This community was an extremely beautiful, well kept and peaceful community. Everything was so beautiful that I felt like I was at a resort.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="ui divider"></div>
+            <form class="ui form" action="" method="post">
+                <div class="field">
+                    <label>comment</label>
+                    <textarea></textarea>
+                </div>
+
+
+                <button type="submit" class="ui button" >
+                    <a href="http://127.0.0.1:8000/apartment_details">Submit</a>
+                </button>
+            </form>
+
+        </div>
+
+        <div class="ui inverted  vertical very padded  segment">
+            DuckHome®
+        </div>
+    </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>first web</title>
+        <link rel="stylesheet" href="{% static 'css/semantic.css' %}"  media="screen" title="no title" charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
+
+        <style type="text/css">
+            column1 {
+                background: url({% static 'images/star_banner.jpg' %})
+                height: 300px;
+                background-size: cover;
+             }
+
+            .ui.dropdown {
+                width: 120px;
+                height: 120px;
+                font-size: 25px;
+                color: black;
+            }
+
+            h1 {
+                font-family:'Oswald', sans-serif!important;
+                font-size:40px;
+            }
+
+            body {
+                font-family: 'Raleway', sans-serif;
+            }
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size:18px;
+            }
+            .ui.vertical.segment.masthead {
+                height: 300px;
+                background: url({% static 'images/star_banner.jpg' %});
+                background-size: cover;
+                background-position: 100% 80%;
+            }
+
+            .ui.container.segment {
+                width: 800px;
+            }
+
+            .ui.center.aligned.header.blogslogon {
+                margin-top: 40px;
+            }
+
+            .ui.center.aligned.header.blogslogon p {
+                margin-top: 10px;
+                color: white;
+                font-size: 10px;
+            }
+            .ui.container.nav {
+                width: 500px;
+            }
+            /* Set the size of the div element that contains the map */
+            #map {
+            height: 400px;  /* The height is 400 pixels */
+            width: 100%;  /* The width is the width of the web page */
+            }
+
+            .ui.segment.container {
+                margin-top: 50px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="ui inverted vertical  segment masthead">
+
+            <h1 class="ui center aligned header blogslogon" style="font-size:50px;font-family: 'Raleway', sans-serif!important;">
+                DuckHome
+                <p class="ui sub header">
+                    Find The Great Apartment Here!
+                </p>
+
+            </h1>
+        </div>
+
+        <!-- Comments&Form's here -->
+        <div class="ui segment container" style="width:1100px;">
+            <h3 class="ui header" style="font-family:'Oswald', sans-serif;">List Your Rental</h3>
+            <div class="ui divider"></div>
+            <form class="ui form" action="" method="post">
+                <div class="field">
+                    <label> City</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label> Bedroom</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label> Bathroom</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label> sqft</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <button type="submit" class="ui button" >
+                    <a href="http://127.0.0.1:8000/lists">Suggest Price</a>
+                </button>
+                <div class="ui divider"></div>
+                <div class="field">
+                    <label> Price</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label> Address</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label> State</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label> Postal_code</label>
+                    <input type="text" name="name" value="">
+                </div>
+                <div class="field">
+                    <label>Description</label>
+                    <textarea></textarea>
+                </div>
+
+                <button type="submit" class="ui button" >
+                    <a href="http://127.0.0.1:8000/apartment">Submit</a>
+                </button>
+                <button type="submit" class="ui button" >
+                    <a href="http://127.0.0.1:8000/homepage">Return</a>
+                </button>
+            </form>
+
+        </div>
+
+        <div class="ui inverted  vertical very padded  segment">
+            DuckHome®
+        </div>
+    </body>
+</html>
