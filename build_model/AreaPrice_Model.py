@@ -91,6 +91,7 @@ def build_model(data):
     return out_lstm_model, data_scaled, scaler
 
 
+# Make prediction
 def prediction(model, data_scaled, scaler, data, step):
     raw_values = data.values
     result = list()
@@ -106,9 +107,9 @@ def prediction(model, data_scaled, scaler, data, step):
         result.append(yhat[0])
 
     pred_long = np.array(result)
-    d = np.ones(26) * 256
+    d = np.ones(step) * 256
     pred_long = pred_long - d
-    time_long = pd.date_range('20190201', periods=26, freq='MS')
+    time_long = pd.date_range('20190201', periods=step, freq='MS')
     pred_long_df = pd.DataFrame(np.round(pred_long, 1), index=time_long, columns=['price'])
     result_long = pd.concat([data, pred_long_df], axis=0)
     result_long = result_long.reset_index()
