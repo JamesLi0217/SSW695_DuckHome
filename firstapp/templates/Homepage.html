@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>First landing page</title>
+        <link rel="stylesheet" href="{% static 'css/semantic.css' %}"  media="screen" title="no title" charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+        <style type="text/css">
+            .ui.vertical.basic.segment.masthead {
+                    height: 700px;
+                    background: url({% static 'images/star_banner.jpg' %});
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    padding-left: 40px;
+                    padding-right: 40px;
+            }
+
+            .ui.inverted.center.aligned.header.slogan {
+                    font-size: 50px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+            .ui.dropdown {
+                    width: 120px;
+                    height: 120px;
+                    font-size: 15px;
+                    color: black;
+                    font-color:black;
+                }
+
+            .ui.red.circular.button {
+                    width: 220px;
+                }
+
+            .ui.header.logo {
+                    font-size: 30px;
+                    color: rgb(196, 196, 196);
+                }
+
+            .ui.inverted.segment.card-view {
+                    height: 220px;
+
+                }
+
+            .ui.vertical.basic.segment.recommended > .ui.center.aligned.header {
+                    font-size: 40px;
+                    color: rgb(56, 56, 56);
+                    margin-top: 50px;
+                    margin-bottom: 50px;
+                }
+
+             .ui.header.title {
+                    margin-bottom: 100px;
+                }
+
+            .ui.inverted.red.basic.segment.people-say {
+                    height: 450px;
+                    background: url('images/people-say.png');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    margin-bottom: 200px;
+
+                }
+
+            .four.wide.column {
+                    position: relative;
+                }
+
+            .ui.circular.inverted.segment {
+                    background: url('images/profile.png');
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    width: 120px;
+                    height: 120px;
+                    position: absolute;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+
+                }
+            .ui.inverted.red.basic.segment.people-say > .ui.center.aligned.header {
+                    position: absolute;
+                    top: 100px;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+
+            .ui.inverted.red.basic.segment.people-say > .ui.grid {
+                    position: relative;
+                    top: 50%;
+                    transform: translate(0,-50%);
+                }
+
+            .ui.circular.inverted.segment > .ui.inverted.header {
+                    position: absolute;
+                    top: 110%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    width: 200px;
+
+                }
+
+            .icon.red.inverted.circular.star {
+                    position: absolute;
+                    transform: translate(-100%,-100%);
+                    left: 100%;
+                    top: 100%;
+                }
+
+            .ui.inverted.red.basic.segment.people-say > .ui.inverted.red.circular.button {
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    background: white;
+                }
+
+            .ui.inverted.circular.button {
+                    width: 180px;
+                }
+
+            .box{
+            text-align: center;
+            }
+            .box .tab{
+                display: inline-block;
+                width: 120px;
+                height: 44px;
+                padding: 7px;
+                border: 1px solid #ccc;
+                border-bottom: 0px;
+                box-sizing:border-box;
+                background: #fff;
+                font-size: 16px;
+                line-height: 26px;
+                color: #555;
+                transition: all 0.5s linear;
+            }
+            .box .tab:hover{
+                background: #eee;
+                transition: all 0.5s linear;
+            }
+            .con{
+                width: 1000px;
+                height: 600px;
+                margin:0 auto;
+            }
+            .con .list{
+                width: 1000px;
+                height: 500px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                position: absolute;
+                z-index: 1;
+                box-sizing:border-box;
+            }
+            .list img{
+                height: 400px;
+                width: auto;
+                margin: 40px auto;
+            }
+            .box>.tab:nth-child(1):hover~.con>.list:nth-child(1),
+            .box>.tab:nth-child(2):hover~.con>.list:nth-child(2),
+            .box>.tab:nth-child(3):hover~.con>.list:nth-child(3),
+            .list:hover{
+                z-index: 2;
+            }
+
+        </style>
+
+
+    </head>
+    <body>
+        
+        <div class="ui vertical basic segment masthead">
+            <div class="ui inverted text menu">
+                <div class="ui simple dropdown item">
+                    Menu
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <div class="item">
+                            <a href="http://127.0.0.1:8000/list">Listing</a>
+                        </div>
+                        <div class="item">
+                            <a href="http://127.0.0.1:8000/apartment">Search</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right menu">
+                    <div class="item">
+                        <button type="button" name="button" class="ui inverted circular button">Login</button>
+                    </div>
+                </div>
+            </div>
+
+            <h1 class="ui inverted center aligned header slogan">
+                Duck Home
+                <p class="inverted sub header">
+                    Great Apartment For Students
+                </p>
+                <div class="item1">
+                        <button type="button" name="button" class="ui inverted circular button">
+                            <a href="http://127.0.0.1:8000/apartment">Rent</a>
+                        </button>
+                </div>
+                <div class="item1">
+                        <button type="button" name="button" class="ui inverted circular button">
+                            <a href="http://127.0.0.1:8000/list">List your Rental</a>
+                        </button>
+                </div>
+            </h1>
+        </div>
+
+        <div class="ui vertical basic segment recommended">
+            <h1 class="ui center aligned header">Apartment Rental Price Prediction</h1>
+            <div class="box">
+            <a class="tab">Hoboken</a>
+            <a class="tab">JerseyCity</a>
+            <a class="tab">UnionCity</a>
+            <div class="con">
+                <div class="list">
+                  <img src="{% static 'images/Hoboken.jpg' %}">
+                </div>
+                <div class="list"><img src="{% static 'images/JerseyCity.jpg' %}"></div>
+                <div class="list"><img src="{% static 'images/UnionCity.jpg' %}"></div>
+            </div>
+        </div>
+        </div>
+
+        <div class="ui vertical  very padded red segment">
+            <div class="ui grid">
+                <div class="four wide column">
+                    <div class="ui image">
+                        <img src="{% static 'images/th.jpeg' %}"  alt="" />
+                    </div>
+                </div>
+
+                <div class="four wide column">
+                    <div class="ui vertical  text menu">
+                        <div class="item">
+                            <h3 class="ui  header">Duck Home</h3>
+                        </div>
+
+                        <div class="item">
+                            Address : Stevens Institude of Technology
+                        </div>
+
+                        <div class="item">
+                            Tel : 010-xxxxxx
+                        </div>
+
+                        <div class="item">
+                            Fax : 010-xxxxxx
+                        </div>
+                    </div>
+                </div>
+
+                <div class="four wide column">
+                    <div class="ui vertical  text menu">
+                        <div class="item">
+                            <h3 class="ui  header">Duck Home</h3>
+                        </div>
+
+                        <div class="item">
+                            Address : Stevens Institude of Technology
+                        </div>
+
+                        <div class="item">
+                            Tel : 010-xxxxxx
+                        </div>
+
+                        <div class="item">
+                            Fax : 010-xxxxxx
+                        </div>
+                    </div>
+                </div>
+
+                <div class="four wide column">
+                    <div class="ui vertical  text menu">
+                        <div class="item">
+                            Designed by
+                        </div>
+                        <div class="item">
+                            <h3 class="ui header logo">Duck Home</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

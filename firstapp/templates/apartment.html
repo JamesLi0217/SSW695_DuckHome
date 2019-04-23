@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>first web</title>
+        <link rel="stylesheet" href="{% static 'css/semantic.css' %}"  media="screen" title="no title" charset="utf-8">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway" rel="stylesheet">
+
+
+        <style type="text/css">
+            h1 {
+                font-family:'Oswald', sans-serif!important;
+                font-size:40px;
+            }
+
+            body {
+                font-family: 'Raleway', sans-serif;
+            }
+            p {
+                font-family: 'Raleway', sans-serif;
+                font-size:18px;
+            }
+            .ui.vertical.segment.masthead {
+                height: 300px;
+                background: url({% static 'images/star_banner.jpg' %});
+                background-size: cover;
+                background-position: 100% 80%;
+            }
+
+            .ui.container.segment {
+                width: 800px;
+            }
+
+            .ui.center.aligned.header.blogslogon {
+                margin-top: 40px;
+            }
+
+            .ui.center.aligned.header.blogslogon p {
+                margin-top: 10px;
+                color: white;
+                font-size: 10px;
+            }
+            .ui.container.nav {
+                width: 500px;
+            }
+
+            .box{
+            text-align: center;
+            }
+            .box .tab{
+                display: inline-block;
+                width: 120px;
+                height: 44px;
+                padding: 7px;
+                border: 1px solid #ccc;
+                border-bottom: 0px;
+                box-sizing:border-box;
+                background: #fff;
+                font-size: 16px;
+                line-height: 26px;
+                color: #555;
+                transition: all 0.5s linear;
+            }
+            .box .tab:hover{
+                background: #eee;
+                transition: all 0.5s linear;
+            }
+            .con{
+                width: 800px;
+                height: 600px;
+                margin:0 auto;
+            }
+            .con .list{
+                width: 800px;
+                height: 600px;
+                border: 1px solid #ccc;
+                padding: 10px;
+                position: absolute;
+                z-index: 1;
+                box-sizing:border-box;
+            }
+            .list img{
+                height: 300px;
+                width: auto;
+                margin: 40px auto;
+            }
+            .box>.tab:nth-child(1):hover~.con>.list:nth-child(1),
+            .box>.tab:nth-child(2):hover~.con>.list:nth-child(2),
+            .box>.tab:nth-child(3):hover~.con>.list:nth-child(3),
+            .list:hover{
+                z-index: 2;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="ui inverted vertical segment masthead">
+
+            <h1 class="ui center aligned header blogslogon" style="font-size:50px;font-family: 'Raleway', sans-serif!important;">
+                DuckHome
+                <p class="ui sub header">
+                    Find The Great Apartment Here!
+                </p>
+
+            </h1>
+        </div>
+        <div class="ui divider"></div>
+        <div class="box">
+            <a class="tab">Hoboken</a>
+            <a class="tab">JerseyCity</a>
+            <a class="tab">UnionCity</a>
+            <div class="con">
+                <div class="list">
+                  <img src="{% static 'images/Hoboken_long.jpg' %}">
+                    <p>2019-04-01 recommended for short-term rental (less than 6 months)</p>
+                    <p>2019-05-01 recommended for short-term rental (less than 6 months)</p>
+                    <p>2019-06-01 recommended for 6< months rental</p>
+                    <p>2019-07-01 recommended for <=12 months rental (unrecommended for any longer rental)</p>
+                </div>
+                <div class="list">
+                    <img src="{% static 'images/JerseyCity_long.jpg' %}">
+                </div>
+                <div class="list">
+                    <img src="{% static 'images/UnionCity_long.jpg' %}">
+                </div>
+            </div>
+        </div>
+        <div class="ui divider"></div>
+        <div class="ui container nav">
+            <div class="ui borderless text five item menu ">
+                <div class="ui simple dropdown item">
+                    location
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?city=Hoboken">hoboken</a>
+                        <a class="item" href="?city=Jersey City">jersey city</a>
+                        <a class="item" href="?city=Union City">union city</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    price
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">0-500</a>
+                        <a class="item" href="?tag_price=500-1000">500-1000</a>
+                        <a class="item" href="?tag_price=1000+">1000+</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    bedroom
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">1 bedroom</a>
+                        <a class="item" href="?tag_price=500-1000">2 bedroom</a>
+                        <a class="item" href="?tag_price=1000+">3 bedroom</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    bathroom
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">1 bathroom</a>
+                        <a class="item" href="?tag_price=500-1000">2 bathroom</a>
+                        <a class="item" href="?tag_price=1000+">3 bathroom</a>
+                    </div>
+                </div>
+                <div class="ui simple dropdown item">
+                    Square
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a class="item" href="?tag_price=0-500">0-1000</a>
+                        <a class="item" href="?tag_price=500-1000">1000-2000</a>
+                        <a class="item" href="?tag_price=1000+">2000+</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+        <div class="ui divider"></div>
+
+        <div class="ui  vertical segment">
+
+            <div class="ui container vertical segment">
+                    <a href="#">
+                        <h1 class="ui header">
+                            Jefferson St Hoboekn NJ
+                        </h1>
+                    </a>
+                    <a class="ui red right ribbon label">Not Recommended</a>
+                    <p>
+                        <i class="icon grey small unhide"></i>
+                        Price :2889$ ,  Apartment Information : 2 Bedroom, 2 Bedroom, 1066 sqft
+                    </p>
+                    <p>
+                        The description of Madison St Hoboken NJ: All new. All yours. Contemporary style blends with the finest in history and inspiration.Start your day in style with a spa-inspired bathroom complete with white gloss vanities, stone countertops and frameless glass enclosed showers. Use your kitchen's stainless steel GE appliances and sleek white Caesarstone countertops to bring out your inner chef. Spending the day at home? Find time for yourself in our state-of-the-art fitness center. Relax by the pool and the fire pits on the outdoor roof terrace. Work from home in the resident Internet lounge or enjoy the comfort of your
+                        <a href="#">
+                            <i class="angle tiny double grey right icon">READMORE</i>
+                        </a>
+                    </p>
+
+                    <button type="button" name="button" class="ui black circular button">
+                        <a href="http://127.0.0.1:8000/apartment_detail">Detail</a>
+                    </button>
+            </div>
+
+            {% for apartment in apartment_list %}
+                <div class="ui container vertical segment">
+                    <a href="#">
+                        <h1 class="ui header">
+                            {{ apartment.location }}
+                        </h1>
+                    </a>
+                    {% for each in apartment.info %}
+                        <a class="ui blue right ribbon label">Recommended</a>
+                        <p>
+                            <i class="icon grey small unhide"></i>
+                            Price :{{ each.price }}$ ,  Apartment Information : {{ each.bed }} Bedroom, {{ each.bath }} Bedroom, {{ each.sqft }} sqft
+                        </p>
+                        <p>
+                            <i class="thumbs up icon"></i>
+                            Recommendation(True or False): {{ each.recommend }}
+                        </p>
+                    {% endfor %}
+                    <p>
+                        {{ apartment.desc | truncatewords:100 }}
+                        <a href="#">
+                            <i class="angle tiny double grey right icon">READMORE</i>
+                        </a>
+                    </p>
+
+                    <button type="button" name="button" class="ui black circular button">
+                        <a href="http://127.0.0.1:8000/apartment_detail">Detail</a>
+                    </button>
+                </div>
+            {% endfor %}
+
+
+        </div>
+
+        <div class="ui inverted  vertical very padded  segment">
+            DuckHome®
+        </div>
+    </body>
+</html>
