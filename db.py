@@ -146,12 +146,12 @@ def add_apartment_by_userID(apartment_info, user_id):
         return {'success': False, 'desc': 'bed, price, bath, sqft should be numeral values'}
     apart_list = list(apartments)
     if apart_list: #have this location in tht database
-        print('go inside the apartments')
+        #print('go inside the apartments')
         for apartment in apart_list: # check the info list
-            print(apartment)
+            #print(apartment)
             for info in apartment['info']:
                 if info_dict.__eq__(info): # already has this type of feature
-                    print('already have a same one')
+                    #print('already have a same one')
                     return {'success': False, 'desc': f'Already has this type of features under the location:{location}'}
             else:
                 info_list = apartment['info']
@@ -163,7 +163,7 @@ def add_apartment_by_userID(apartment_info, user_id):
                     return {'success': False, 'desc': "Didn't update anything"}
 
     else: # a new apartment address added
-        print('add a new set in database')
+        #print('add a new set in database')
         api_pool = google_keys()
         key = random.choice(api_pool)
         lat, lng = get_coordinate(address, key)
@@ -183,7 +183,7 @@ def add_apartment_by_userID(apartment_info, user_id):
                 'lng': lng
             }
         }
-        print(apartment_info)
+        #print(apartment_info)
         result = db.apartment_list.insert_one(apartment_info)
         new_id = result.inserted_id
         new_apart = db.apartment_list.find_one({'_id': new_id})
@@ -212,7 +212,7 @@ def get_apartment_by_userID(user_id):
         if len(user_apart['info']) > 0:
             res.append(user_apart)
 
-    print(res)
+    #print(res)
     if len(res) == 0:
         return {'success': False, 'desc': f"Didn't find the matched apartment with the user id: {user_id}"}
     else:
@@ -251,7 +251,7 @@ def delete_apart_by_userid(apartment_info, user_id):
             _id = apartment['_id']
             if len(apartment['info']) == 1 and info_dict.__eq__(apartment['info'][0]): #if len of info == 1 and match the delete item. Remove it
                 apart_list.pop(i)
-                print('Delete whole list:')
+                #print('Delete whole list:')
                 res = db.apartment_list.delete_one({'_id': _id})
                 if res.deleted_count == 1:
                     return {'success': True, 'desc': f'Delete an apartment info:{_id} successfully'}
@@ -261,7 +261,7 @@ def delete_apart_by_userid(apartment_info, user_id):
                 for j, info in enumerate(apartment['info']):
                     if info_dict.__eq__(info): #if find the matched info in the apartment
                         info.pop(j)
-                        print('Delete one item:')
+                        #print('Delete one item:')
                         res = db.apartment_list.update_one({'_id': _id}, {'$set': {'info': info}})
                         if res.modified_count == 1:
                             return {'success': True, 'desc': f'Delete an item in apartment:{_id} successfully'}
@@ -299,7 +299,8 @@ def predict_post_price(info, pkl_path):
         bed, bath, sqft, city = info['bed'], info['bath'], info['sqft'], info['city'].lower()
         min, max = 180, 5000
         sqft = (sqft - min) / (max - min)  #normalization of sqft
-
+        if city not in ['hoboken', 'jersey city', 'union city']:
+            raise Exception(f'The city: {city} is not included')
         dict = {
             'bed': bed,
             'bath': bath,
@@ -311,7 +312,6 @@ def predict_post_price(info, pkl_path):
 
         dict[city] = 1
         # print(dict)
-
         res = [dict['bed'], dict['bath'], dict['hoboken'], dict['jersey city'], dict['union city'], dict['sqft']]
         a = np.array(res)
 
@@ -334,7 +334,7 @@ def update_recommendation():
             if ct in apart['location'].lower():
                 city = ct
 
-        print(apart['location'])
+        #print(apart['location'])
 
         for info in apart['info']:
             bed, bath, sqft = info['bed'], info['bath'], info['sqft']
@@ -358,14 +358,14 @@ def update_recommendation():
             model = joblib.load('/Users/franklin/SSW695/SSW695_DuckHome/build_model/SGDRegression_model.pkl')
             pred_price = model.predict([a])
             pred_price = np.round(pred_price[0], 0)
-            print(pred_price)
+            #print(pred_price)
             price = info['price']
 
             if price <= pred_price:
                 recommend = True
             else:
                 recommend = False
-            print(recommend)
+            #print(recommend)
             info['recommend'] = recommend
 
         res = db.apartment_list.update_one({'_id': _id}, {'$set': {'info': apart['info']}})
@@ -440,18 +440,18 @@ def chart_calculus(city, start_date):
 
 
 if __name__ == '__main__':
-    apartment_info = {
-        'address': '20 River Ct',
-        'city': 'Jersey city',
-        'state': 'NJ',
-        'postal_code': '07310',
-        'bed': 2,
-        'bath': 2,
-        'sqft': 1200,
-        'price': 3900,
-        'title': 'Apartment for rent'
-    }
-    user_id = "5c86bace0840c437cf3d6938"
+    # apartment_info = {
+    #     'address': '20 River Ct',
+    #     'city': 'Jersey city',
+    #     'state': 'NJ',
+    #     'postal_code': '07310',
+    #     'bed': 2,
+    #     'bath': 2,
+    #     'sqft': 1200,
+    #     'price': 3900,
+    #     'title': 'Apartment for rent'
+    # }
+    # user_id = "5c86bace0840c437cf3d6938"
     #new_apart = add_apartment_by_userID(apartment_info, user_id)
     #print(new_apart)
     #apart = get_apartment_by_userID("5c86bace0840c437cf3d697d")

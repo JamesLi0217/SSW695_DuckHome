@@ -42,7 +42,7 @@ def get_address(lat, lng):
     url = f'https://maps.googleapis.com/maps/api/geocode/json?latlng={str(lat)},{str(lng)}&location_type=ROOFTOP&result_type=street_address&key={gid}'
     r = requests.get(url)
     res_json = json.loads(r.text)
-    print(res_json)
+    #print(res_json)
 
 #aquire coordinate info with Google API
 def get_coordinate(addr, gid):
@@ -52,7 +52,7 @@ def get_coordinate(addr, gid):
     headers = {'User-Agent': random.choice(user_agents)}
     valid_addr = google_validformat(addr)
     url = f'https://maps.googleapis.com/maps/api/geocode/json?address={valid_addr}&components=administrative_area:NJ|country:US&key={gid}'
-    print(url)
+    #print(url)
     r = requests.get(url, headers=headers)
     #print(r.text)
     res_json = json.loads(r.text)
@@ -64,8 +64,8 @@ def get_coordinate(addr, gid):
     elif res_json['status'] == 'ZERO_RESULTS':
         return 'None', 'None'
     else:
-        print(res_json)
-        print(f"{res_json['status']}: {res_json['error_message']}")
+        #print(res_json)
+        #print(f"{res_json['status']}: {res_json['error_message']}")
         return 'None', 'None'
 
 def get_boundry(city):
@@ -85,7 +85,7 @@ def get_boundry(city):
                 f.write(str(coord).replace("'", '') + ',\n')
 
     f.close()
-    print(boundry_set)
+    #print(boundry_set)
 
 def read_coor(path1, path2):
     f1 = open(path1, 'r')
